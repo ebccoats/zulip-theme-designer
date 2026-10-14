@@ -78,6 +78,19 @@ const TOKEN_DEFS = COLOR_CATALOG.map((item) => ({
 
 const EMBEDDED_DEFAULT = ISOLATE_THEME;
 
+function stockTheme() {
+  const tokens = {};
+  for (const item of COLOR_CATALOG) {
+    tokens[item.id] = { light: item.light, dark: item.dark };
+  }
+  return { name: "default", tokens };
+}
+
+const PRESETS = {
+  isolate: ISOLATE_THEME,
+  default: stockTheme(),
+};
+
 const state = {
   seed: null,
   theme: null,
@@ -88,6 +101,7 @@ const state = {
 
 const dummy = document.getElementById("dummy");
 const themeName = document.getElementById("theme-name");
+const themePreset = document.getElementById("theme-preset");
 const status = document.getElementById("status");
 const inspectorEmpty = document.getElementById("inspector-empty");
 const inspectorBody = document.getElementById("inspector-body");
@@ -349,20 +363,41 @@ function fallbackCopy(value, done) {
   done();
 }
 
-async function loadSeed() {
+async function loadPresetFile(url, fallback) {
   try {
-    const response = await fetch("themes/isolate.json");
-    if (!response.ok) throw new Error("missing seed");
-    return normalizeTheme(await response.json(), EMBEDDED_DEFAULT);
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("missing theme");
+    return normalizeTheme(await response.json(), fallback);
   } catch {
-    return cloneTheme(EMBEDDED_DEFAULT);
+    return cloneTheme(fallback);
   }
+}
+
+function syncCatalog() {
+  for (const def of TOKEN_DEFS) syncCatalogRow(def.id);
+}
+
+function applyPreset(id) {
+  const preset = PRESETS[id] || PRESETS.isolate;
+  state.seed = preset;
+  state.theme = cloneTheme(preset);
+  themePreset.value = PRESETS[id] ? id : "isolate";
+  syncName();
+  applyColors();
+  renderInspector();
+  syncCatalog();
+  persist();
 }
 
 dummy.addEventListener("click", (event) => {
   const target = event.target.closest("[data-token]");
   if (!target || !dummy.contains(target)) return;
   select(target);
+});
+
+themePreset.addEventListener("change", () => {
+  applyPreset(themePreset.value);
+  setStatus("Loaded " + themePreset.value);
 });
 
 themeName.addEventListener("input", () => {
@@ -433,10 +468,16 @@ loadFile.addEventListener("change", () => {
   reader.onload = () => {
     try {
       state.theme = normalizeTheme(JSON.parse(String(reader.result)), state.seed);
+      const loadedName = state.theme.name;
+      if (loadedName === "isolate" || loadedName === "default" || loadedName === "zulip-default") {
+        themePreset.value = loadedName === "isolate" ? "isolate" : "default";
+        state.seed = PRESETS[themePreset.value];
+      }
       persist();
       applyColors();
       syncName();
       renderInspector();
+      syncCatalog();
       setStatus("Loaded " + file.name);
     } catch {
       setStatus("Could not read that file");
@@ -559,13 +600,11 @@ function renderCatalog() {
 }
 
 async function start() {
-  const isolate = await loadSeed();
-  state.seed = isolate;
-  state.theme = cloneTheme(isolate);
+  PRESETS.isolate = await loadPresetFile("themes/isolate.json", ISOLATE_THEME);
+  const savedDefault = await loadPresetFile("themes/zulip-default.json", PRESETS.default);
+  PRESETS.default = savedDefault.name === "zulip-default" ? { name: "default", tokens: savedDefault.tokens } : savedDefault;
   state.mode = "light";
-  syncName();
-  applyColors();
-  renderInspector();
+  applyPreset("isolate");
   renderCatalog();
 }
 

@@ -63,8 +63,12 @@ button {
   background: #2f9f52;
 }
 
+.preset select {
+  width: 120px;
+}
+
+.preset select,
 .theme-name input {
-  width: 180px;
   height: 36px;
   padding: 0 12px;
   border: 1px solid #d9dde5;
