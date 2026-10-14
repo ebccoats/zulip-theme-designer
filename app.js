@@ -76,12 +76,7 @@ const TOKEN_DEFS = COLOR_CATALOG.map((item) => ({
   mention: item.mention,
 }));
 
-const EMBEDDED_DEFAULT = {
-  name: "zulip-default",
-  tokens: Object.fromEntries(
-    COLOR_CATALOG.map((item) => [item.id, { light: item.light, dark: item.dark }]),
-  ),
-};
+const EMBEDDED_DEFAULT = ISOLATE_THEME;
 
 const state = {
   seed: null,
@@ -356,7 +351,7 @@ function fallbackCopy(value, done) {
 
 async function loadSeed() {
   try {
-    const response = await fetch("themes/zulip-default.json");
+    const response = await fetch("themes/isolate.json");
     if (!response.ok) throw new Error("missing seed");
     return normalizeTheme(await response.json(), EMBEDDED_DEFAULT);
   } catch {
@@ -563,15 +558,15 @@ function renderCatalog() {
   });
 }
 
-state.seed = cloneTheme(EMBEDDED_DEFAULT);
-const savedTheme = readStorage(state.seed);
-state.theme = savedTheme ? savedTheme.theme : cloneTheme(state.seed);
-state.mode = savedTheme ? savedTheme.mode : "light";
-syncName();
-applyColors();
-renderInspector();
-renderCatalog();
+async function start() {
+  const isolate = await loadSeed();
+  state.seed = isolate;
+  state.theme = cloneTheme(isolate);
+  state.mode = "light";
+  syncName();
+  applyColors();
+  renderInspector();
+  renderCatalog();
+}
 
-loadSeed().then((seed) => {
-  state.seed = seed;
-});
+start();
