@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zulip Themer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        <span class="brand-name">Zulip Themer</span>
+      </div>
+      <label class="theme-name">
+        <span class="visually-hidden">Theme name</span>
+        <input id="theme-name" type="text" spellcheck="false" value="zulip-default" />
+      </label>
+      <p id="status" class="status" role="status"></p>
+      <div class="mode-toggle" role="group" aria-label="Preview color scheme">
+        <button id="mode-light" type="button" aria-pressed="true">Light</button>
+        <button id="mode-dark" type="button" aria-pressed="false">Dark</button>
+      </div>
+      <button id="load-json" type="button">Load JSON</button>
+      <input id="load-file" type="file" accept="application/json,.json" hidden />
+      <button id="save-json" type="button">Save JSON</button>
+      <button id="export-css" type="button">Export CSS</button>
+    </header>
+
+    <main class="workspace">
+      <div class="dummy" id="dummy">
+        <aside class="org-rail" data-token="desktop-org-rail">
+          <span class="rail-mark" aria-hidden="true"></span>
+          <span class="rail-icon" aria-hidden="true">▦</span>
+          <span class="rail-spacer" aria-hidden="true"></span>
+          <span class="rail-icon" aria-hidden="true">⌂</span>
+          <span class="rail-icon" aria-hidden="true">↻</span>
+          <span class="rail-icon" aria-hidden="true">←</span>
+          <span class="rail-icon" aria-hidden="true">⚙</span>
+        </aside>
+
+        <div class="app-shell">
+          <nav class="left-sidebar" data-token="--color-background" aria-label="Left sidebar">
+            <div class="filter-box is-focus" data-token="--color-background">
+              <span class="focus-ring" data-token="--color-outline-focus"></span>
+              <span class="search-icon" data-token="--color-search-icons">⌕</span>
+              <span class="placeholder" data-token="--color-text-search-placeholder">Filter left sidebar</span>
+            </div>
+
+            <h4 class="section-title" data-token="--color-text-sidebar-heading">Views</h4>
+            <div class="row is-current" data-token="--color-background-active-narrow-filter">
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">◉</span>
+              <span class="row-label" data-token="--color-text-active-narrow-filter">Recent conversations</span>
+            </div>
+            <div class="row">
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">⌂</span>
+              <span class="row-label" data-token="--color-text-sidebar-row">Inbox</span>
+            </div>
+            <div class="row is-hover" data-token="--color-background-hover-narrow-filter">
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">≡</span>
+              <span class="row-label" data-token="--color-text-sidebar-row">Combined feed</span>
+            </div>
+            <div class="row">
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">@</span>
+              <span class="row-label" data-token="--color-text-sidebar-row">Mentions</span>
+            </div>
+            <div class="row">
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">☺</span>
+              <span class="row-label" data-token="--color-text-sidebar-row">Reactions</span>
+            </div>
+            <div class="row">
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">★</span>
+              <span class="row-label" data-token="--color-text-sidebar-row">Starred messages</span>
+              <span class="quiet-count" data-token="--color-unread-counter-quiet">8</span>
+            </div>
+            <div class="row">
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">✎</span>
+              <span class="row-label" data-token="--color-text-sidebar-row">Drafts</span>
+            </div>
+
+            <h4 class="section-title" data-token="--color-text-sidebar-heading">Direct messages</h4>
+            <p class="action-heading" data-token="--color-text-sidebar-action-heading">More conversations</p>
+            <div class="row">
+              <span class="presence" aria-hidden="true"></span>
+              <span class="row-label" data-token="--color-text-sidebar-base">Ada Lovelace</span>
+              <span class="badge-edge" data-token="--color-border-unread-counter">
+                <span class="badge-fill" data-token="--color-background-unread-counter-normal">
+                  <span class="badge-num" data-token="--color-unread-counter-normal">3</span>
+                </span>
+              </span>
+            </div>
+            <div class="row">
+              <span class="presence away" aria-hidden="true"></span>
+              <span class="row-label" data-token="--color-text-sidebar-base">Bo Davis</span>
+            </div>
+
+            <h4 class="section-title">
+              <span data-token="--color-text-sidebar-heading">Pinned channels</span>
+              <span class="sidebar-action" data-token="--color-sidebar-action">+</span>
+            </h4>
+            <div class="row">
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">#</span>
+              <span class="row-label" data-token="--color-text-sidebar-base">welcome</span>
+            </div>
+            <div class="row is-current" data-token="--color-background-active-narrow-filter">
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">#</span>
+              <span class="row-label" data-token="--color-text-sidebar-base">general</span>
+              <span class="vdots" data-token="--color-vdots-visible">⋮</span>
+            </div>
+            <div class="topic-list">
+              <span class="topic-bracket" data-token="--color-topic-indent-border"></span>
+              <div class="topic">
+                <span class="topic-name" data-token="--color-text-sidebar-row">standup</span>
+              </div>
+              <div class="topic is-current" data-token="--color-background-active-narrow-filter">
+                <span class="topic-name" data-token="--color-text-active-narrow-filter">design sync</span>
+              </div>
+              <div class="topic">
+                <span class="topic-name" data-token="--color-text-sidebar-row">mockups</span>
+              </div>
+              <p class="action-heading show-all" data-token="--color-text-sidebar-action-heading">Show all topics</p>
+            </div>
+            <div class="row is-focus">
+              <span class="focus-ring" data-token="--color-outline-focus"></span>
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">#</span>
+              <span class="row-label" data-token="--color-text-sidebar-base">design</span>
+              <span class="badge-edge" data-token="--color-border-unread-counter">
+                <span class="badge-fill prominent" data-token="--color-background-unread-counter-prominent">
+                  <span class="badge-num" data-token="--color-unread-counter-prominent">2</span>
+                </span>
+              </span>
+            </div>
+
+            <h4 class="section-title" data-token="--color-text-sidebar-heading">Other</h4>
+            <div class="row">
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">#</span>
+              <span class="row-label" data-token="--color-text-sidebar-base">announcements</span>
+            </div>
+            <div class="row">
+              <span class="nav-icon" data-token="--color-left-sidebar-navigation-icon">#</span>
+              <span class="row-label" data-token="--color-text-sidebar-base">random</span>
+            </div>
+          </nav>
+
+          <section class="conversation">
+            <header class="navbar" data-token="--color-background-navbar">
+              <span class="nav-icon navbar-hash" data-token="--color-navbar-icon">#</span>
+              <span class="navbar-title" data-token="--color-text-message-view-header">general</span>
+              <span class="navbar-desc" data-token="--color-text-message-view-header">Team updates and daily notes</span>
+              <div class="search" data-token="--color-background-search">
+                <span class="search-icon" data-token="--color-search-icons">⌕</span>
+                <span class="placeholder" data-token="--color-text-search-placeholder">Search</span>
+              </div>
+              <span class="navbar-icon" data-token="--color-navbar-icon">?</span>
+              <span class="navbar-icon" data-token="--color-navbar-icon">⚙</span>
+              <span class="navbar-avatar" aria-hidden="true">A</span>
+              <span class="navbar-icon" data-token="--color-navbar-icon">☰</span>
+            </header>
+            <div class="feed" data-token="--color-background">
+              <div class="recipient-bar">
+                <span class="unread-marker" data-token="--color-unread-marker"></span>
+                <div class="recipient-box" data-token="--color-message-header-contents-border">
+                  <span class="recipient" data-token="--color-text-message-header">#general</span>
+                  <span class="chevron" data-token="--color-message-header-icon-non-interactive">&gt;</span>
+                  <span class="recipient" data-token="--color-text-message-header">standup</span>
+                  <span class="header-icon" data-token="--color-message-header-icon-interactive">🔗</span>
+                  <span class="header-icon" data-token="--color-message-header-icon-interactive">🔔</span>
+                  <span class="header-icon" data-token="--color-message-header-icon-interactive">☆</span>
+                  <span class="date-label" data-token="--color-date">Today</span>
+                </div>
+              </div>
+
+              <article class="mention-card" data-token="--color-background-direct-mention">
+                <div class="message">
+                  <span class="avatar" aria-hidden="true">AL</span>
+                  <div class="message-main">
+                    <p class="sender">
+                      <span data-token="--color-text-sender-name">Ada Lovelace</span>
+                      <time data-token="--color-text-default">10:15 AM</time>
+                    </p>
+                    <p class="body" data-token="--color-text-message-default">
+                      Can you review
+                      <span class="mention-pill" data-token="--color-background-text-direct-mention">
+                        <span data-token="--color-text-self-direct-mention">@Ada Lovelace</span>
+                      </span>
+                      before standup?
+                    </p>
+                    <span class="reaction" data-token="--color-message-reaction-border">
+                      <span class="reaction-fill" data-token="--color-message-reaction-background">
+                        <span data-token="--color-message-reaction-text">🐸 4</span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="stream-card" data-token="--color-background-stream-message-content">
+                <div class="message">
+                  <span class="avatar" aria-hidden="true">BD</span>
+                  <div class="message-main">
+                    <p class="sender">
+                      <span data-token="--color-text-sender-name">Bo Davis</span>
+                      <time data-token="--color-text-default">10:18 AM</time>
+                    </p>
+                    <p class="body" data-token="--color-text-message-default">
+                      Latest notes are in
+                      <span class="inline-code" data-token="--color-markdown-code-background">
+                        <span data-token="--color-markdown-code-text">notes.md</span>
+                      </span>
+                      and
+                      <span class="msg-link" data-token="--color-markdown-link">the doc</span>.
+                    </p>
+                    <pre class="code-block" data-token="--color-markdown-pre-background"><code data-token="--color-markdown-pre-text">status: ready
+next: share mockups</code></pre>
+                    <span class="mention-pill" data-token="--color-background-text-direct-mention">
+                      <span data-token="--color-text-self-direct-mention">@Bo Davis</span>
+                    </span>
+                    <span class="reaction" data-token="--color-message-reaction-border">
+                      <span class="reaction-fill" data-token="--color-message-reaction-background">
+                        <span data-token="--color-message-reaction-text">🐸 4</span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </article>
+
+              <div class="recipient-bar">
+                <div class="recipient-box" data-token="--color-message-header-contents-border">
+                  <span class="recipient" data-token="--color-text-message-header">#general</span>
+                  <span class="chevron" data-token="--color-message-header-icon-non-interactive">&gt;</span>
+                  <span class="recipient" data-token="--color-text-message-header">mockups</span>
+                  <span class="header-icon" data-token="--color-message-header-icon-interactive">☆</span>
+                  <span class="date-label" data-token="--color-date">Today</span>
+                </div>
+              </div>
+
+              <article class="dm-card" data-token="--color-background-private-message-content">
+                <header class="dm-header" data-token="--color-background-private-message-header">
+                  <span data-token="--color-text-message-header">Ada Lovelace</span>
+                </header>
+                <div class="message">
+                  <span class="avatar" aria-hidden="true">AL</span>
+                  <p class="body" data-token="--color-text-message-default">Sending this as a direct message.</p>
+                </div>
+              </article>
+            </div>
+            <footer class="compose" data-token="--color-compose-box-background">
+              <div class="compose-input" data-token="--color-compose-message-content-background">
+                <div class="compose-top">
+                  <span class="compose-hint" data-token="--color-text-search-placeholder">Message #general &gt; standup</span>
+                  <span class="drafts" data-token="--color-compose-send-control-button">Drafts</span>
+                </div>
+                <div class="format-bar" data-token="--color-message-formatting-controls-container">
+                  <span class="tool" data-token="--color-composebox-button">☺</span>
+                  <span class="tool" data-token="--color-composebox-button">GIF</span>
+                  <span class="tool" data-token="--color-composebox-button">B</span>
+                  <span class="tool" data-token="--color-composebox-button">I</span>
+                  <span class="tool" data-token="--color-composebox-button">S</span>
+                  <span class="tool" data-token="--color-composebox-button">"</span>
+                  <span class="tool" data-token="--color-composebox-button">&lt;/&gt;</span>
+                  <span class="send" data-token="--color-compose-send-button-background">
+                    <span data-token="--color-compose-send-button-icon-color">▶</span>
+                  </span>
+                </div>
+              </div>
+            </footer>
+          </section>
+        </div>
+      </div>
+
+      <aside class="inspector" aria-label="Color inspector">
+        <p id="inspector-empty">Click a surface in the preview.</p>
+        <div id="inspector-body" hidden>
+          <h2 id="inspector-label"></h2>
+          <p id="inspector-var"></p>
+          <p id="inspector-note" class="note" hidden></p>
+          <div class="color-row">
+            <span>Light</span>
+            <input id="light-picker" type="color" aria-label="Light color" value="#ffffff" />
+            <input id="light-hex" type="text" spellcheck="false" aria-label="Light hex" />
+            <button id="copy-light" type="button">Copy</button>
+          </div>
+          <div class="color-row">
+            <span>Dark</span>
+            <input id="dark-picker" type="color" aria-label="Dark color" value="#000000" />
+            <input id="dark-hex" type="text" spellcheck="false" aria-label="Dark hex" />
+            <button id="copy-dark" type="button">Copy</button>
+          </div>
+          <button id="reset-token" type="button">Reset</button>
+        </div>
+      </aside>
+    </main>
+    <section class="catalog" aria-label="All colors">
+      <div class="catalog-head">
+        <h2>All colors</h2>
+        <p>
+          Every chat theme variable from the web styles the desktop app renders, then every color in Zulip.app's own stylesheets.
+          Light and dark are both editable. Export CSS writes the colors in this list.
+        </p>
+        <input id="catalog-search" type="search" placeholder="Filter colors" aria-label="Filter colors" />
+      </div>
+      <div class="catalog-columns" aria-hidden="true">
+        <span>CSS</span>
+        <span>Light</span>
+        <span></span>
+        <span>Dark</span>
+        <span></span>
+      </div>
+      <div id="catalog-list"></div>
+    </section>
+    <script src="catalog.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
