@@ -76,7 +76,93 @@ const TOKEN_DEFS = COLOR_CATALOG.map((item) => ({
   mention: item.mention,
 }));
 
-const EMBEDDED_DEFAULT = ISOLATE_THEME;
+const TEXT_VARS = TOKEN_DEFS.filter((def) => /text/i.test(def.id));
+const BORDER_VARS = TOKEN_DEFS.filter((def) => /border/i.test(def.id) || /border/i.test(def.property));
+const BORDER_STYLES = ["solid", "dashed", "dotted", "double", "groove", "ridge", "inset", "outset", "none"];
+
+function emptyFonts() {
+  return { family: "", size: "", text: {} };
+}
+
+function cloneFonts(fonts) {
+  const source = fonts || emptyFonts();
+  const text = {};
+  for (const [id, row] of Object.entries(source.text || {})) {
+    text[id] = { family: row.family || "", size: row.size || "" };
+  }
+  return { family: source.family || "", size: source.size || "", text };
+}
+
+function cloneBorders(borders) {
+  const copy = {};
+  for (const [id, row] of Object.entries(borders || {})) {
+    copy[id] = { style: row.style || "", width: row.width || "", radius: row.radius || "" };
+  }
+  return copy;
+}
+
+function quoteFont(name) {
+  const cleaned = String(name || "").replace(/["\\;{}<>]/g, "").trim();
+  if (!cleaned || !/^[\p{L}\p{N} .+-]+$/u.test(cleaned)) return "";
+  return cleaned;
+}
+
+function cssSize(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+  if (/^(thin|medium|thick)$/i.test(raw)) return raw.toLowerCase();
+  const match = raw.match(/^(\d+(?:\.\d+)?)(px|rem|em|%)?$/i);
+  if (!match) return "";
+  return match[1] + (match[2] ? match[2].toLowerCase() : "px");
+}
+
+function borderStyle(value) {
+  const raw = String(value || "").trim().toLowerCase();
+  return BORDER_STYLES.includes(raw) ? raw : "";
+}
+
+function fontStack(name) {
+  const cleaned = quoteFont(name);
+  if (!cleaned) return "";
+  return `"${cleaned}", "Installed ${cleaned}", sans-serif`;
+}
+
+function normalizeFonts(data, name) {
+  const fonts = emptyFonts();
+  const incoming = data && data.fonts;
+  if (incoming && typeof incoming === "object") {
+    if (typeof incoming.family === "string") fonts.family = incoming.family;
+    if (typeof incoming.size === "string") fonts.size = incoming.size;
+    if (incoming.text && typeof incoming.text === "object") {
+      for (const def of TEXT_VARS) {
+        const row = incoming.text[def.id];
+        if (!row || typeof row !== "object") continue;
+        const family = typeof row.family === "string" ? row.family : "";
+        const size = typeof row.size === "string" ? row.size : "";
+        if (family || size) fonts.text[def.id] = { family, size };
+      }
+    }
+  } else if (data && (data.font === "pixel" || name === "nes")) {
+    fonts.family = "Press Start 2P";
+    fonts.size = "8px";
+  }
+  return fonts;
+}
+
+function normalizeBorders(data) {
+  const borders = {};
+  const incoming = data && data.borders;
+  if (!incoming || typeof incoming !== "object") return borders;
+  for (const def of BORDER_VARS) {
+    const row = incoming[def.id];
+    if (!row || typeof row !== "object") continue;
+    const style = typeof row.style === "string" ? row.style : "";
+    const width = typeof row.width === "string" ? row.width : "";
+    const radius = typeof row.radius === "string" ? row.radius : "";
+    if (style || width || radius) borders[def.id] = { style, width, radius };
+  }
+  return borders;
+}
 
 function stockTheme() {
   const tokens = {};
@@ -86,10 +172,7 @@ function stockTheme() {
   return { name: "default", tokens };
 }
 
-const PRESETS = {
-  isolate: ISOLATE_THEME,
-  default: stockTheme(),
-};
+const themeFilenames = new Set();
 
 const state = {
   seed: null,
@@ -136,7 +219,36 @@ function cloneTheme(theme) {
   for (const def of TOKEN_DEFS) {
     tokens[def.id] = { light: theme.tokens[def.id].light, dark: theme.tokens[def.id].dark };
   }
-  return { name: theme.name, tokens };
+  const copy = { name: theme.name, tokens, fonts: cloneFonts(theme.fonts), borders: cloneBorders(theme.borders) };
+  if (theme.font) copy.font = theme.font;
+  if (theme.shadow) copy.shadow = { x: theme.shadow.x, y: theme.shadow.y, blur: theme.shadow.blur, color: theme.shadow.color };
+  return copy;
+}
+
+function normalizeShadow(data) {
+  const shadow = data && data.shadow;
+  if (!shadow || typeof shadow !== "object") return null;
+  const blur = cssSize(shadow.blur);
+  const color = typeof shadow.color === "string" ? parseHex(shadow.color) : "";
+  if (!blur || !color) return null;
+  return {
+    x: cssSize(shadow.x) || "0px",
+    y: cssSize(shadow.y) || "0px",
+    blur,
+    color,
+  };
+}
+
+function shadowValue(shadow) {
+  if (!shadow) return "";
+  return `${shadow.x} ${shadow.y} ${shadow.blur} ${shadow.color}`;
+}
+
+function slotColor(incoming, slot, fallbackColor) {
+  if (!incoming || typeof incoming[slot] !== "string") return fallbackColor;
+  const raw = incoming[slot].trim();
+  if (!raw) return "";
+  return parseHex(raw) || fallbackColor;
 }
 
 function normalizeTheme(data, fallback) {
@@ -147,14 +259,16 @@ function normalizeTheme(data, fallback) {
   const tokens = {};
   for (const def of TOKEN_DEFS) {
     const incoming = data.tokens && data.tokens[def.id];
-    const light = incoming && parseHex(incoming.light);
-    const dark = incoming && parseHex(incoming.dark);
     tokens[def.id] = {
-      light: light || fallback.tokens[def.id].light,
-      dark: dark || fallback.tokens[def.id].dark,
+      light: slotColor(incoming, "light", fallback.tokens[def.id].light),
+      dark: slotColor(incoming, "dark", fallback.tokens[def.id].dark),
     };
   }
-  return { name, tokens };
+  const theme = { name, tokens, fonts: normalizeFonts(data, name), borders: normalizeBorders(data) };
+  const shadow = normalizeShadow(data);
+  if (shadow) theme.shadow = shadow;
+  if (data.font === "pixel" || name === "nes") theme.font = "pixel";
+  return theme;
 }
 
 function persist() {
@@ -164,6 +278,9 @@ function persist() {
       JSON.stringify({
         name: state.theme.name,
         tokens: state.theme.tokens,
+        fonts: state.theme.fonts,
+        borders: state.theme.borders,
+        shadow: state.theme.shadow,
         mode: state.mode,
       }),
     );
@@ -197,8 +314,13 @@ function setStatus(message) {
 function applyColors() {
   for (const def of TOKEN_DEFS) {
     if (!def.cssVar) continue;
-    dummy.style.setProperty(def.cssVar, state.theme.tokens[def.id][state.mode]);
+    const value = state.theme.tokens[def.id][state.mode];
+    if (value) dummy.style.setProperty(def.cssVar, value);
+    else dummy.style.removeProperty(def.cssVar);
   }
+  applyFonts();
+  applyBorders();
+  applyShadow();
   document.getElementById("mode-light").setAttribute("aria-pressed", String(state.mode === "light"));
   document.getElementById("mode-dark").setAttribute("aria-pressed", String(state.mode === "dark"));
 }
@@ -273,7 +395,15 @@ function snapshotTheme() {
       dark: state.theme.tokens[def.id].dark,
     };
   }
-  return { name, tokens };
+  const theme = {
+    name,
+    tokens,
+    fonts: cloneFonts(state.theme.fonts),
+    borders: cloneBorders(state.theme.borders),
+  };
+  if (state.theme.shadow) theme.shadow = { x: state.theme.shadow.x, y: state.theme.shadow.y, blur: state.theme.shadow.blur, color: state.theme.shadow.color };
+  if (state.theme.font === "pixel" || name === "nes") theme.font = "pixel";
+  return theme;
 }
 
 const SHELL_COLOR_RE = /#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)|hsla?\([^)]*\)|\b(?:black|white|transparent)\b/gi;
@@ -284,16 +414,87 @@ function shellValue(defs, theme) {
   return ordered[0].value.replace(SHELL_COLOR_RE, () => {
     const def = ordered[index] || ordered[ordered.length - 1];
     index += 1;
-    const colors = theme.tokens[def.id];
-    if (colors.light === colors.dark) return colors.light;
-    return `light-dark(${colors.light}, ${colors.dark})`;
+    return cssColor(theme.tokens[def.id]);
   });
+}
+
+function fontFaceRule(name) {
+  const cleaned = quoteFont(name);
+  if (!cleaned) return "";
+  const locals = [`local("${cleaned}")`];
+  if (!/regular$/i.test(cleaned)) locals.push(`local("${cleaned} Regular")`);
+  return `@font-face {
+  font-family: "Installed ${cleaned}";
+  src: ${locals.join(", ")};
+  font-weight: 400;
+  font-style: normal;
+}
+`;
+}
+
+function fontCss(theme) {
+  const fonts = theme.fonts || emptyFonts();
+  const names = new Set();
+  if (quoteFont(fonts.family)) names.add(quoteFont(fonts.family));
+  for (const row of Object.values(fonts.text || {})) {
+    const name = quoteFont(row.family);
+    if (name) names.add(name);
+  }
+  const faces = [...names].map(fontFaceRule).join("");
+  const family = fontStack(fonts.family);
+  const size = cssSize(fonts.size);
+  const body = [];
+  if (family) body.push(`  font-family: ${family} !important;`);
+  if (size) body.push(`  font-size: ${size} !important;`);
+  const bodyRule = body.length ? `body, body * {\n${body.join("\n")}\n}\n\n` : "";
+  const lines = [];
+  for (const [id, row] of Object.entries(fonts.text || {})) {
+    const rowFamily = fontStack(row.family);
+    const rowSize = cssSize(row.size);
+    if (rowFamily) lines.push(`  --theme-font-${id}: ${rowFamily};`);
+    if (rowSize) lines.push(`  --theme-font-size-${id}: ${rowSize};`);
+  }
+  const root = lines.length ? `:root {\n${lines.join("\n")}\n}\n\n` : "";
+  return faces + bodyRule + root;
+}
+
+function squareCorners(theme) {
+  const rows = Object.values((theme && theme.borders) || {});
+  if (!rows.length) return false;
+  return rows.every((row) => cssSize(row.radius) === "0px");
+}
+
+function shadowCss(theme) {
+  const value = shadowValue(theme.shadow);
+  if (!value) return "";
+  return `body {\n  filter: drop-shadow(${value});\n}\n\n`;
+}
+
+function borderCss(theme) {
+  const lines = [];
+  for (const [id, row] of Object.entries(theme.borders || {})) {
+    const style = borderStyle(row.style);
+    const width = cssSize(row.width);
+    const radius = cssSize(row.radius);
+    if (style) lines.push(`  --theme-border-style-${id}: ${style};`);
+    if (width) lines.push(`  --theme-border-width-${id}: ${width};`);
+    if (radius) lines.push(`  --theme-border-radius-${id}: ${radius};`);
+  }
+  const square = squareCorners(theme) ? "body, body * {\n  border-radius: 0 !important;\n}\n\n" : "";
+  if (!lines.length) return square;
+  return square + `:root {\n${lines.join("\n")}\n}\n\n`;
+}
+
+function cssColor(colors) {
+  if (!colors.dark) return colors.light;
+  if (!colors.light) return colors.dark;
+  if (colors.light === colors.dark) return colors.light;
+  return `light-dark(${colors.light}, ${colors.dark})`;
 }
 
 function buildCss(theme) {
   const lines = TOKEN_DEFS.filter((def) => def.kind === "web").map((def) => {
-    const colors = theme.tokens[def.id];
-    return `  ${def.id}: light-dark(${colors.light}, ${colors.dark}) !important;`;
+    return `  ${def.id}: ${cssColor(theme.tokens[def.id])} !important;`;
   });
   const bySelector = new Map();
   const grouped = new Map();
@@ -311,7 +512,7 @@ function buildCss(theme) {
   const shellBlocks = [...bySelector.entries()].map(
     ([selector, props]) => `${selector} {\n${props.join("\n")}\n}`,
   );
-  return `/* zulip theme: ${theme.name}
+  return `${fontCss(theme)}${shadowCss(theme)}${borderCss(theme)}/* zulip theme: ${theme.name}
    Same colors as the theme in the editor.
 */
 :root {
@@ -363,30 +564,109 @@ function fallbackCopy(value, done) {
   done();
 }
 
-async function loadPresetFile(url, fallback) {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error("missing theme");
-    return normalizeTheme(await response.json(), fallback);
-  } catch {
-    return cloneTheme(fallback);
-  }
-}
-
 function syncCatalog() {
   for (const def of TOKEN_DEFS) syncCatalogRow(def.id);
 }
 
-function applyPreset(id) {
-  const preset = PRESETS[id] || PRESETS.isolate;
-  state.seed = preset;
-  state.theme = cloneTheme(preset);
-  themePreset.value = PRESETS[id] ? id : "isolate";
-  syncName();
+function themeJsonNames(html) {
+  const names = new Set();
+  const pattern = /href="([^"]+)"/gi;
+  let match = pattern.exec(html);
+  while (match) {
+    let href = match[1].split("#")[0].split("?")[0];
+    try {
+      href = decodeURIComponent(href);
+    } catch {
+      href = "";
+    }
+    const filename = href.split("/").pop();
+    if (filename && filename.toLowerCase().endsWith(".json") && !filename.startsWith(".")) names.add(filename);
+    match = pattern.exec(html);
+  }
+  return [...names].sort((a, b) => a.localeCompare(b));
+}
+
+function bundledThemeFiles() {
+  const bundle = window.THEME_BUNDLE;
+  if (!bundle || typeof bundle !== "object") return [];
+  return Object.keys(bundle)
+    .filter((name) => name.toLowerCase().endsWith(".json"))
+    .sort((a, b) => a.localeCompare(b));
+}
+
+async function listThemeJsonFiles() {
+  try {
+    const response = await fetch("themes/", { cache: "no-store" });
+    if (response.ok) {
+      const names = themeJsonNames(await response.text());
+      if (names.length) return names;
+    }
+  } catch {
+    // Opening index.html as a file cannot list the themes folder.
+  }
+  const bundled = bundledThemeFiles();
+  if (bundled.length) return bundled;
+  throw new Error("missing themes");
+}
+
+function fillThemeMenu(filenames) {
+  themeFilenames.clear();
+  const options = filenames.map((filename) => {
+    themeFilenames.add(filename);
+    const option = document.createElement("option");
+    option.value = filename;
+    option.textContent = filename.replace(/\.json$/i, "");
+    return option;
+  });
+  themePreset.replaceChildren(...options);
+}
+
+async function refreshThemeMenu() {
+  const filenames = await listThemeJsonFiles();
+  const current = themePreset.value;
+  const unchanged =
+    filenames.length === themePreset.options.length &&
+    filenames.every((filename, index) => themePreset.options[index].value === filename);
+  if (unchanged) {
+    for (const filename of filenames) themeFilenames.add(filename);
+    return;
+  }
+  fillThemeMenu(filenames);
+  if (themeFilenames.has(current)) themePreset.value = current;
+}
+
+function applyLoadedJson(data, label, announce) {
+  const fallback = state.seed || stockTheme();
+  const theme = normalizeTheme(data, fallback);
+  state.seed = cloneTheme(theme);
+  state.theme = cloneTheme(theme);
+  if (label && themeFilenames.has(label)) themePreset.value = label;
+  persist();
   applyColors();
+  syncName();
   renderInspector();
   syncCatalog();
-  persist();
+  syncStyleControls();
+  if (announce) setStatus("Loaded " + label);
+}
+
+async function readThemeFile(filename) {
+  try {
+    const response = await fetch("themes/" + encodeURIComponent(filename), { cache: "no-store" });
+    if (response.ok) {
+      const text = await response.text();
+      if (text.trim().startsWith("{")) return JSON.parse(text);
+    }
+  } catch {
+    // Opening index.html as a file cannot fetch the JSON.
+  }
+  const bundled = window.THEME_BUNDLE && window.THEME_BUNDLE[filename];
+  if (bundled && typeof bundled === "object") return bundled;
+  throw new Error("missing theme");
+}
+
+async function loadThemeFromDirectory(filename, announce) {
+  applyLoadedJson(await readThemeFile(filename), filename, announce);
 }
 
 dummy.addEventListener("click", (event) => {
@@ -395,9 +675,15 @@ dummy.addEventListener("click", (event) => {
   select(target);
 });
 
+themePreset.addEventListener("focus", () => {
+  refreshThemeMenu().catch(() => {
+    if (!themePreset.options.length) setStatus("Could not read the themes folder");
+  });
+});
+
 themePreset.addEventListener("change", () => {
-  applyPreset(themePreset.value);
-  setStatus("Loaded " + themePreset.value);
+  const filename = themePreset.value;
+  loadThemeFromDirectory(filename, true).catch(() => setStatus("Could not read that file"));
 });
 
 themeName.addEventListener("input", () => {
@@ -467,18 +753,7 @@ loadFile.addEventListener("change", () => {
   const reader = new FileReader();
   reader.onload = () => {
     try {
-      state.theme = normalizeTheme(JSON.parse(String(reader.result)), state.seed);
-      const loadedName = state.theme.name;
-      if (loadedName === "isolate" || loadedName === "default" || loadedName === "zulip-default") {
-        themePreset.value = loadedName === "isolate" ? "isolate" : "default";
-        state.seed = PRESETS[themePreset.value];
-      }
-      persist();
-      applyColors();
-      syncName();
-      renderInspector();
-      syncCatalog();
-      setStatus("Loaded " + file.name);
+      applyLoadedJson(JSON.parse(String(reader.result)), file.name, true);
     } catch {
       setStatus("Could not read that file");
     }
@@ -599,13 +874,224 @@ function renderCatalog() {
   });
 }
 
+function applyShadow() {
+  const value = shadowValue(state.theme.shadow);
+  dummy.classList.toggle("has-drop-shadow", Boolean(value));
+  if (value) dummy.style.setProperty("--theme-drop-shadow", value);
+  else dummy.style.removeProperty("--theme-drop-shadow");
+}
+
+function applyFonts() {
+  const fonts = state.theme.fonts || emptyFonts();
+  const family = fontStack(fonts.family);
+  const size = cssSize(fonts.size);
+  dummy.classList.toggle("use-font-family", Boolean(family));
+  dummy.classList.toggle("use-font-size", Boolean(size));
+  dummy.style.setProperty("--theme-font", family || "inherit");
+  dummy.style.setProperty("--theme-font-size", size || "inherit");
+  for (const el of dummy.querySelectorAll("[data-token]")) {
+    const row = fonts.text[el.dataset.token];
+    const rowFamily = row ? fontStack(row.family) : "";
+    const rowSize = row ? cssSize(row.size) : "";
+    el.classList.toggle("has-font", Boolean(rowFamily));
+    el.classList.toggle("has-size", Boolean(rowSize));
+    if (rowFamily) el.style.setProperty("--theme-font", rowFamily);
+    else el.style.removeProperty("--theme-font");
+    if (rowSize) el.style.setProperty("--theme-font-size", rowSize);
+    else el.style.removeProperty("--theme-font-size");
+  }
+}
+
+function applyBorders() {
+  const borders = state.theme.borders || {};
+  dummy.classList.toggle("is-square", squareCorners(state.theme));
+  for (const el of dummy.querySelectorAll("[data-token]")) {
+    const row = borders[el.dataset.token];
+    const style = row ? borderStyle(row.style) : "";
+    const width = row ? cssSize(row.width) : "";
+    const radius = row ? cssSize(row.radius) : "";
+    el.style.borderStyle = style;
+    el.style.borderWidth = width;
+    el.style.borderRadius = radius;
+    if (el.classList.contains("topic-bracket") && (style || width)) {
+      el.style.borderRightStyle = "none";
+      el.style.borderRightWidth = "0";
+    } else if (el.classList.contains("topic-bracket")) {
+      el.style.borderRightStyle = "";
+      el.style.borderRightWidth = "";
+    }
+  }
+}
+
+function syncStyleControls() {
+  const fonts = state.theme.fonts || emptyFonts();
+  const familyInput = document.getElementById("font-family");
+  const sizeInput = document.getElementById("font-size");
+  if (document.activeElement !== familyInput) familyInput.value = fonts.family;
+  if (document.activeElement !== sizeInput) sizeInput.value = fonts.size;
+  for (const def of TEXT_VARS) {
+    const row = fonts.text[def.id] || { family: "", size: "" };
+    const family = document.querySelector(`[data-font-family="${CSS.escape(def.id)}"]`);
+    const size = document.querySelector(`[data-font-size="${CSS.escape(def.id)}"]`);
+    if (family && document.activeElement !== family) family.value = row.family;
+    if (size && document.activeElement !== size) size.value = row.size;
+  }
+  for (const def of BORDER_VARS) {
+    const row = state.theme.borders[def.id] || { style: "", width: "", radius: "" };
+    const style = document.querySelector(`[data-border-style="${CSS.escape(def.id)}"]`);
+    const width = document.querySelector(`[data-border-width="${CSS.escape(def.id)}"]`);
+    const radius = document.querySelector(`[data-border-radius="${CSS.escape(def.id)}"]`);
+    if (style && document.activeElement !== style) style.value = borderStyle(row.style);
+    if (width && document.activeElement !== width) width.value = row.width;
+    if (radius && document.activeElement !== radius) radius.value = row.radius;
+  }
+}
+
+function renderStyleLists() {
+  const fontList = document.getElementById("font-text-list");
+  const borderList = document.getElementById("border-list");
+  for (const def of TEXT_VARS) {
+    const row = document.createElement("div");
+    row.className = "font-row";
+    row.dataset.search = def.id.toLowerCase();
+    const code = document.createElement("code");
+    code.textContent = def.id;
+    const family = document.createElement("input");
+    family.type = "text";
+    family.spellcheck = false;
+    family.placeholder = "Font name";
+    family.setAttribute("aria-label", def.id + " font");
+    family.dataset.fontFamily = def.id;
+    const size = document.createElement("input");
+    size.type = "text";
+    size.spellcheck = false;
+    size.placeholder = "Size";
+    size.setAttribute("aria-label", def.id + " font size");
+    size.dataset.fontSize = def.id;
+    family.addEventListener("input", () => {
+      const current = state.theme.fonts.text[def.id] || { family: "", size: "" };
+      current.family = family.value;
+      if (current.family || current.size) state.theme.fonts.text[def.id] = current;
+      else delete state.theme.fonts.text[def.id];
+      persist();
+      applyFonts();
+    });
+    size.addEventListener("input", () => {
+      const current = state.theme.fonts.text[def.id] || { family: "", size: "" };
+      current.size = size.value;
+      if (current.family || current.size) state.theme.fonts.text[def.id] = current;
+      else delete state.theme.fonts.text[def.id];
+      persist();
+      applyFonts();
+    });
+    row.append(code, family, size);
+    fontList.appendChild(row);
+  }
+  for (const def of BORDER_VARS) {
+    const item = document.createElement("details");
+    item.className = "border-item";
+    item.dataset.search = (def.id + " " + (def.property || "")).toLowerCase();
+    const summary = document.createElement("summary");
+    const code = document.createElement("code");
+    code.textContent = def.id;
+    summary.appendChild(code);
+    const fields = document.createElement("div");
+    fields.className = "border-fields";
+    const styleLabel = document.createElement("label");
+    styleLabel.append("Type");
+    const style = document.createElement("select");
+    style.dataset.borderStyle = def.id;
+    style.setAttribute("aria-label", def.id + " border type");
+    const blank = document.createElement("option");
+    blank.value = "";
+    blank.textContent = "Default";
+    style.appendChild(blank);
+    for (const name of BORDER_STYLES) {
+      const option = document.createElement("option");
+      option.value = name;
+      option.textContent = name;
+      style.appendChild(option);
+    }
+    styleLabel.appendChild(style);
+    const widthLabel = document.createElement("label");
+    widthLabel.append("Weight");
+    const width = document.createElement("input");
+    width.type = "text";
+    width.spellcheck = false;
+    width.placeholder = "1px";
+    width.dataset.borderWidth = def.id;
+    width.setAttribute("aria-label", def.id + " border weight");
+    widthLabel.appendChild(width);
+    const radiusLabel = document.createElement("label");
+    radiusLabel.append("Radius");
+    const radius = document.createElement("input");
+    radius.type = "text";
+    radius.spellcheck = false;
+    radius.placeholder = "0";
+    radius.dataset.borderRadius = def.id;
+    radius.setAttribute("aria-label", def.id + " border radius");
+    radiusLabel.appendChild(radius);
+    const write = () => {
+      const next = { style: style.value, width: width.value, radius: radius.value };
+      if (next.style || next.width || next.radius) state.theme.borders[def.id] = next;
+      else delete state.theme.borders[def.id];
+      persist();
+      applyBorders();
+    };
+    style.addEventListener("change", write);
+    width.addEventListener("input", write);
+    radius.addEventListener("input", write);
+    fields.append(styleLabel, widthLabel, radiusLabel);
+    item.append(summary, fields);
+    borderList.appendChild(item);
+  }
+  const filter = (input, list) => {
+    const query = input.value.trim().toLowerCase();
+    for (const child of list.children) child.hidden = Boolean(query) && !child.dataset.search.includes(query);
+  };
+  document.getElementById("font-text-filter").addEventListener("input", (event) => filter(event.target, fontList));
+  document.getElementById("border-filter").addEventListener("input", (event) => filter(event.target, borderList));
+  document.getElementById("font-family").addEventListener("input", (event) => {
+    state.theme.fonts.family = event.target.value;
+    persist();
+    applyFonts();
+  });
+  document.getElementById("font-size").addEventListener("input", (event) => {
+    state.theme.fonts.size = event.target.value;
+    persist();
+    applyFonts();
+  });
+  syncStyleControls();
+}
+
 async function start() {
-  PRESETS.isolate = await loadPresetFile("themes/isolate.json", ISOLATE_THEME);
-  const savedDefault = await loadPresetFile("themes/zulip-default.json", PRESETS.default);
-  PRESETS.default = savedDefault.name === "zulip-default" ? { name: "default", tokens: savedDefault.tokens } : savedDefault;
   state.mode = "light";
-  applyPreset("isolate");
+  let filenames = [];
+  try {
+    filenames = await listThemeJsonFiles();
+  } catch {
+    filenames = [];
+  }
+  fillThemeMenu(filenames);
+  const initial = filenames.includes("isolate.json") ? "isolate.json" : filenames[0];
+  if (initial) {
+    try {
+      await loadThemeFromDirectory(initial, false);
+    } catch {
+      state.seed = cloneTheme(ISOLATE_THEME);
+      state.theme = cloneTheme(ISOLATE_THEME);
+      syncName();
+      applyColors();
+      setStatus("Could not read that file");
+    }
+  } else {
+    state.seed = cloneTheme(ISOLATE_THEME);
+    state.theme = cloneTheme(ISOLATE_THEME);
+    syncName();
+    applyColors();
+  }
   renderCatalog();
+  renderStyleLists();
 }
 
 start();

@@ -13,11 +13,8 @@
         <span class="brand-name">Zulip Themer</span>
       </div>
       <label class="preset">
-        <span class="visually-hidden">Built-in theme</span>
-        <select id="theme-preset" aria-label="Built-in theme">
-          <option value="isolate" selected>isolate</option>
-          <option value="default">default</option>
-        </select>
+        <span class="visually-hidden">Theme</span>
+        <select id="theme-preset" aria-label="Theme"></select>
       </label>
       <label class="theme-name">
         <span class="visually-hidden">Theme name</span>
@@ -297,6 +294,38 @@ next: share mockups</code></pre>
         </div>
       </aside>
     </main>
+    <section class="style-panel" aria-label="Fonts and borders">
+      <h2>Fonts</h2>
+      <p class="style-note">
+        The replacement font is an installed font name, the same kind Zulip Desktop can use.
+        Font size accepts a number in pixels, or a value with px, rem, or em.
+      </p>
+      <div class="style-global">
+        <label>
+          Replacement font
+          <input id="font-family" type="text" spellcheck="false" placeholder="Press Start 2P" autocomplete="off" />
+        </label>
+        <label>
+          Font size
+          <input id="font-size" type="text" spellcheck="false" placeholder="14" autocomplete="off" />
+        </label>
+      </div>
+      <details class="style-fold">
+        <summary>Text variables</summary>
+        <input id="font-text-filter" class="style-filter" type="search" placeholder="Filter text variables" aria-label="Filter text variables" />
+        <div id="font-text-list" class="style-list"></div>
+      </details>
+
+      <h2>Borders</h2>
+      <p class="style-note">
+        Each bordered color can set its own border type, weight, and corner radius. Color stays in the list below.
+      </p>
+      <details class="style-fold">
+        <summary>Elements with a border</summary>
+        <input id="border-filter" class="style-filter" type="search" placeholder="Filter borders" aria-label="Filter borders" />
+        <div id="border-list" class="style-list"></div>
+      </details>
+    </section>
     <section class="catalog" aria-label="All colors">
       <div class="catalog-head">
         <h2>All colors</h2>
@@ -317,6 +346,7 @@ next: share mockups</code></pre>
     </section>
     <script src="catalog.js"></script>
     <script src="themes/isolate.js"></script>
+    <script src="themes/bundle.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
