@@ -1,0 +1,1099 @@
+html, body {
+  background-color: #000000 !important;
+  scrollbar-color: #000000 #000000;
+}
+
+body {
+  isolation: isolate;
+}
+
+body, body * {
+  color: #000000 !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: #000000 !important;
+  outline-color: #000000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  fill: transparent !important;
+  stroke: transparent !important;
+  caret-color: #000000 !important;
+  accent-color: transparent !important;
+  text-decoration-color: #000000 !important;
+  z-index: auto !important;
+  overflow: visible !important;
+  opacity: 1 !important;
+  filter: none !important;
+  position: relative;
+  cursor: url("data:image/png;base64,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") 42 28, auto !important;
+}
+
+body {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+body *::before,
+body *::after,
+body *::placeholder {
+  color: #000000 !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: #000000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  z-index: auto !important;
+}
+
+body *::selection {
+  background: #000000 !important;
+  color: #000000 !important;
+}
+
+body img,
+body svg,
+body video,
+body canvas {
+  opacity: 0 !important;
+  background-color: transparent !important;
+}
+
+body *:hover:not(:has(*:hover)) {
+  z-index: auto !important;
+  overflow: visible !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+body *::before {
+  content: "" !important;
+  position: absolute;
+  z-index: -1 !important;
+  left: 50%;
+  top: 50%;
+  --spot: 240px;
+  width: var(--spot);
+  height: var(--spot);
+  transform: translate(-50%, -50%);
+  border: 0 !important;
+  border-radius: 50%;
+  background: #ffe500 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  filter: blur(calc(var(--spot) * 64 / 390));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.feed *::before,
+.message-feed *::before,
+#message_feed_container *::before,
+.message_list *::before {
+  --spot: 390px;
+}
+
+body *:hover:not(:has(*:hover))::before {
+  opacity: 1;
+}
+
+body img:hover,
+body svg:hover,
+body video:hover,
+body canvas:hover {
+  opacity: 0 !important;
+}
+
+/* zulip theme: total-darkness
+   Same colors as the theme in the editor.
+*/
+:root {
+  --color-active-dropdown-item: #000000 !important;
+  --color-active-row-modal: #000000 !important;
+  --color-animated-button-text: #000000 !important;
+  --color-arrow-recent-view-table-thead-th: #000000 !important;
+  --color-background: #00000000 !important;
+  --color-background-active-narrow-filter: #00000000 !important;
+  --color-background-active-popover-menu: #00000000 !important;
+  --color-background-alert-word: #00000000 !important;
+  --color-background-animated-button: #00000000 !important;
+  --color-background-animated-button-hover: #00000000 !important;
+  --color-background-brand-banner: #00000000 !important;
+  --color-background-brand-icon-button-square-active: #00000000 !important;
+  --color-background-brand-icon-button-square-hover: #00000000 !important;
+  --color-background-brand-solid-action-button: #00000000 !important;
+  --color-background-brand-solid-action-button-active: #00000000 !important;
+  --color-background-brand-solid-action-button-hover: #00000000 !important;
+  --color-background-brand-subtle-action-button: #00000000 !important;
+  --color-background-brand-subtle-action-button-active: #00000000 !important;
+  --color-background-brand-subtle-action-button-hover: #00000000 !important;
+  --color-background-brand-text-action-button-active: #00000000 !important;
+  --color-background-brand-text-action-button-hover: #00000000 !important;
+  --color-background-button-inbox-focus: #00000000 !important;
+  --color-background-button-inbox-selected: #00000000 !important;
+  --color-background-compose-new-message-button: #00000000 !important;
+  --color-background-compose-new-message-button-active: #00000000 !important;
+  --color-background-compose-new-message-button-hover: #00000000 !important;
+  --color-background-danger-banner: #00000000 !important;
+  --color-background-danger-icon-button-square-active: #00000000 !important;
+  --color-background-danger-icon-button-square-hover: #00000000 !important;
+  --color-background-danger-solid-action-button: #00000000 !important;
+  --color-background-danger-solid-action-button-active: #00000000 !important;
+  --color-background-danger-solid-action-button-hover: #00000000 !important;
+  --color-background-danger-subtle-action-button: #00000000 !important;
+  --color-background-danger-subtle-action-button-active: #00000000 !important;
+  --color-background-danger-subtle-action-button-hover: #00000000 !important;
+  --color-background-danger-text-action-button-active: #00000000 !important;
+  --color-background-danger-text-action-button-hover: #00000000 !important;
+  --color-background-deactivated-user-pill: #00000000 !important;
+  --color-background-direct-mention: #00000000 !important;
+  --color-background-disabled-dropdown-widget-button: #00000000 !important;
+  --color-background-disabled-modal-select: #00000000 !important;
+  --color-background-disabled-settings-select: #00000000 !important;
+  --color-background-dropdown-widget: #00000000 !important;
+  --color-background-dropdown-widget-button: #00000000 !important;
+  --color-background-emoji-picker-emoji-focus: #00000000 !important;
+  --color-background-emoji-picker-emoji-reacted: #00000000 !important;
+  --color-background-emoji-picker-emoji-reacted-focus: #00000000 !important;
+  --color-background-emoji-picker-popover: #00000000 !important;
+  --color-background-emoji-picker-popover-tab-item-active: #00000000 !important;
+  --color-background-error-main-view-banner: #00000000 !important;
+  --color-background-error-main-view-banner-action-button: #00000000 !important;
+  --color-background-error-main-view-banner-action-button-active: #00000000 !important;
+  --color-background-error-main-view-banner-action-button-hover: #00000000 !important;
+  --color-background-exit-hover-deactivated-user-pill: #00000000 !important;
+  --color-background-group-mention: #00000000 !important;
+  --color-background-history-limited-box: #00000000 !important;
+  --color-background-hover-narrow-filter: #00000000 !important;
+  --color-background-hover-popover-menu: #00000000 !important;
+  --color-background-image-loader: #00000000 !important;
+  --color-background-image-thumbnail: #00000000 !important;
+  --color-background-image-thumbnail-hover: #00000000 !important;
+  --color-background-inbox: #00000000 !important;
+  --color-background-inbox-no-unreads-illustration: #00000000 !important;
+  --color-background-inbox-row: #00000000 !important;
+  --color-background-inbox-row-hover: #00000000 !important;
+  --color-background-inbox-search: #00000000 !important;
+  --color-background-inbox-search-focus: #00000000 !important;
+  --color-background-inbox-search-hover: #00000000 !important;
+  --color-background-info-banner: #00000000 !important;
+  --color-background-info-icon-button-square-active: #00000000 !important;
+  --color-background-info-icon-button-square-hover: #00000000 !important;
+  --color-background-info-main-view-banner: #00000000 !important;
+  --color-background-info-main-view-banner-action-button: #00000000 !important;
+  --color-background-info-main-view-banner-action-button-active: #00000000 !important;
+  --color-background-info-main-view-banner-action-button-hover: #00000000 !important;
+  --color-background-info-solid-action-button: #00000000 !important;
+  --color-background-info-solid-action-button-active: #00000000 !important;
+  --color-background-info-solid-action-button-hover: #00000000 !important;
+  --color-background-info-subtle-action-button: #00000000 !important;
+  --color-background-info-subtle-action-button-active: #00000000 !important;
+  --color-background-info-subtle-action-button-hover: #00000000 !important;
+  --color-background-info-text-action-button-active: #00000000 !important;
+  --color-background-info-text-action-button-hover: #00000000 !important;
+  --color-background-input: #00000000 !important;
+  --color-background-input-focus: #00000000 !important;
+  --color-background-input-pill: #00000000 !important;
+  --color-background-input-pill-exit-hover: #00000000 !important;
+  --color-background-input-pill-hover: #00000000 !important;
+  --color-background-input-pill-search: #00000000 !important;
+  --color-background-integration-url: #00000000 !important;
+  --color-background-legacy-input: #00000000 !important;
+  --color-background-main-view-banner-moving-bar: #00000000 !important;
+  --color-background-modal: #00000000 !important;
+  --color-background-modal-bar: #00000000 !important;
+  --color-background-modal-cancel-button-active: #00000000 !important;
+  --color-background-modal-cancel-button-hover: #00000000 !important;
+  --color-background-modal-confirm-button: #00000000 !important;
+  --color-background-modal-confirm-button-active: #00000000 !important;
+  --color-background-modal-confirm-button-hover: #00000000 !important;
+  --color-background-modal-overlay: #00000000 !important;
+  --color-background-navbar: #00000000 !important;
+  --color-background-navigation-item-hover: #00000000 !important;
+  --color-background-neutral-banner: #00000000 !important;
+  --color-background-neutral-icon-button-square-active: #00000000 !important;
+  --color-background-neutral-icon-button-square-hover: #00000000 !important;
+  --color-background-neutral-solid-action-button: #00000000 !important;
+  --color-background-neutral-solid-action-button-active: #00000000 !important;
+  --color-background-neutral-solid-action-button-hover: #00000000 !important;
+  --color-background-neutral-subtle-action-button: #00000000 !important;
+  --color-background-neutral-subtle-action-button-active: #00000000 !important;
+  --color-background-neutral-subtle-action-button-hover: #00000000 !important;
+  --color-background-neutral-text-action-button-active: #00000000 !important;
+  --color-background-neutral-text-action-button-hover: #00000000 !important;
+  --color-background-non-empty-overlay-indicator: #00000000 !important;
+  --color-background-notification-table-thead: #00000000 !important;
+  --color-background-overlay: #00000000 !important;
+  --color-background-pill-container: #00000000 !important;
+  --color-background-pill-container-input-disabled: #00000000 !important;
+  --color-background-pill-container-without-placeholder: #00000000 !important;
+  --color-background-poll-vote-focus: #00000000 !important;
+  --color-background-poll-vote-hover: #00000000 !important;
+  --color-background-popover: #00000000 !important;
+  --color-background-popover-menu: #00000000 !important;
+  --color-background-private-message-content: #00000000 !important;
+  --color-background-private-message-header: #00000000 !important;
+  --color-background-recent-filters-button-disabled: #00000000 !important;
+  --color-background-recent-filters-button-focus: #00000000 !important;
+  --color-background-recent-view-participant-overflow: #00000000 !important;
+  --color-background-recent-view-row: #00000000 !important;
+  --color-background-recent-view-row-hover: #00000000 !important;
+  --color-background-recent-view-table-thead-sort-header: #00000000 !important;
+  --color-background-recent-view-table-thead-th: #00000000 !important;
+  --color-background-rendered-markdown-thead: #00000000 !important;
+  --color-background-rendered-markdown-time: #00000000 !important;
+  --color-background-search: #00000000 !important;
+  --color-background-search-collapsed: #00000000 !important;
+  --color-background-search-highlight: #00000000 !important;
+  --color-background-search-option-hover: #00000000 !important;
+  --color-background-settings-plus-button: #00000000 !important;
+  --color-background-sidebar-action-heading-hover: #00000000 !important;
+  --color-background-sidebar-action-hover: #00000000 !important;
+  --color-background-simplebar-scrollbar: #00000000 !important;
+  --color-background-stream-email: #00000000 !important;
+  --color-background-stream-message-content: #00000000 !important;
+  --color-background-success-banner: #00000000 !important;
+  --color-background-success-icon-button-square-active: #00000000 !important;
+  --color-background-success-icon-button-square-hover: #00000000 !important;
+  --color-background-success-main-view-banner: #00000000 !important;
+  --color-background-success-main-view-banner-action-button: #00000000 !important;
+  --color-background-success-main-view-banner-action-button-active: #00000000 !important;
+  --color-background-success-main-view-banner-action-button-hover: #00000000 !important;
+  --color-background-success-solid-action-button: #00000000 !important;
+  --color-background-success-solid-action-button-active: #00000000 !important;
+  --color-background-success-solid-action-button-hover: #00000000 !important;
+  --color-background-success-subtle-action-button: #00000000 !important;
+  --color-background-success-subtle-action-button-active: #00000000 !important;
+  --color-background-success-subtle-action-button-hover: #00000000 !important;
+  --color-background-success-text-action-button-active: #00000000 !important;
+  --color-background-success-text-action-button-hover: #00000000 !important;
+  --color-background-tab-picker-container: #00000000 !important;
+  --color-background-tab-picker-selected-tab: #00000000 !important;
+  --color-background-tab-picker-tab-option-active: #00000000 !important;
+  --color-background-tab-picker-tab-option-hover: #00000000 !important;
+  --color-background-tab-switcher-ind-tab: #00000000 !important;
+  --color-background-tab-switcher-ind-tab-selected: #00000000 !important;
+  --color-background-table-header: #00000000 !important;
+  --color-background-table-header-sortable-hover: #00000000 !important;
+  --color-background-tbody-th-odd: #00000000 !important;
+  --color-background-text-direct-mention: #00000000 !important;
+  --color-background-text-group-mention: #00000000 !important;
+  --color-background-text-hover-direct-mention: #00000000 !important;
+  --color-background-text-hover-group-mention: #00000000 !important;
+  --color-background-tip: #00000000 !important;
+  --color-background-tippy-box: #00000000 !important;
+  --color-background-todo-checkbox-checked: #00000000 !important;
+  --color-background-todo-checkbox-hover: #00000000 !important;
+  --color-background-unread-counter: #00000000 !important;
+  --color-background-unread-counter-dot: #00000000 !important;
+  --color-background-unread-counter-no-alpha: #00000000 !important;
+  --color-background-unread-counter-normal: #00000000 !important;
+  --color-background-unread-counter-prominent: #00000000 !important;
+  --color-background-unread-counter-quiet: #00000000 !important;
+  --color-background-user-pill: #00000000 !important;
+  --color-background-warning-banner: #00000000 !important;
+  --color-background-warning-icon-button-square-active: #00000000 !important;
+  --color-background-warning-icon-button-square-hover: #00000000 !important;
+  --color-background-warning-main-view-banner: #00000000 !important;
+  --color-background-warning-main-view-banner-action-button: #00000000 !important;
+  --color-background-warning-main-view-banner-action-button-active: #00000000 !important;
+  --color-background-warning-main-view-banner-action-button-hover: #00000000 !important;
+  --color-background-warning-solid-action-button: #00000000 !important;
+  --color-background-warning-solid-action-button-active: #00000000 !important;
+  --color-background-warning-solid-action-button-hover: #00000000 !important;
+  --color-background-warning-subtle-action-button: #00000000 !important;
+  --color-background-warning-subtle-action-button-active: #00000000 !important;
+  --color-background-warning-subtle-action-button-hover: #00000000 !important;
+  --color-background-warning-text-action-button-active: #00000000 !important;
+  --color-background-warning-text-action-button-hover: #00000000 !important;
+  --color-background-white-box: #00000000 !important;
+  --color-background-widget-button: #00000000 !important;
+  --color-background-widget-input: #00000000 !important;
+  --color-background-zulip-button: #00000000 !important;
+  --color-background-zulip-button-active: #00000000 !important;
+  --color-background-zulip-button-disabled: #00000000 !important;
+  --color-background-zulip-button-hover: #00000000 !important;
+  --color-border-add-subscription-button-focus: #000000 !important;
+  --color-border-brand-banner: #000000 !important;
+  --color-border-compose-content: #000000 !important;
+  --color-border-compose-new-message-button: #000000 !important;
+  --color-border-compose-new-message-button-active: #000000 !important;
+  --color-border-compose-new-message-button-hover: #000000 !important;
+  --color-border-danger-banner: #000000 !important;
+  --color-border-dropdown-widget: #000000 !important;
+  --color-border-dropdown-widget-button: #000000 !important;
+  --color-border-emoji-picker-emoji-reacted: #000000 !important;
+  --color-border-emoji-picker-tippy-arrow: #000000 !important;
+  --color-border-error-main-view-banner: #000000 !important;
+  --color-border-inbox-folder-component: #000000 !important;
+  --color-border-inbox-search: #000000 !important;
+  --color-border-inbox-search-focus: #000000 !important;
+  --color-border-inbox-search-hover: #000000 !important;
+  --color-border-info-banner: #000000 !important;
+  --color-border-info-main-view-banner: #000000 !important;
+  --color-border-input-pill-image: #000000 !important;
+  --color-border-legacy-input: #000000 !important;
+  --color-border-legacy-input-focus: #000000 !important;
+  --color-border-manage-profile-footer: #000000 !important;
+  --color-border-message-group-spacer-line: #000000 !important;
+  --color-border-modal: #000000 !important;
+  --color-border-modal-bar: #000000 !important;
+  --color-border-neutral-banner: #000000 !important;
+  --color-border-personal-menu-avatar: #000000 !important;
+  --color-border-pill-container: #000000 !important;
+  --color-border-poll-vote: #000000 !important;
+  --color-border-poll-vote-focus: #000000 !important;
+  --color-border-poll-vote-hover: #000000 !important;
+  --color-border-popover-hotkey-hint: #000000 !important;
+  --color-border-popover-menu: #000000 !important;
+  --color-border-popover-menu-separator: #000000 !important;
+  --color-border-recent-filters-button-disabled: #000000 !important;
+  --color-border-recent-view-table: #000000 !important;
+  --color-border-rendered-checkbox: #000000 !important;
+  --color-border-rendered-markdown-table: #000000 !important;
+  --color-border-settings-plus-button: #000000 !important;
+  --color-border-sidebar: #000000 !important;
+  --color-border-sidebar-subheader: #000000 !important;
+  --color-border-success-banner: #000000 !important;
+  --color-border-success-main-view-banner: #000000 !important;
+  --color-border-tab-switcher-ind-tab: #000000 !important;
+  --color-border-tab-switcher-ind-tab-disabled: #000000 !important;
+  --color-border-tab-switcher-ind-tab-selected: #000000 !important;
+  --color-border-table-bordered: #000000 !important;
+  --color-border-table-striped: #000000 !important;
+  --color-border-table-subscriber-list: #000000 !important;
+  --color-border-tip: #000000 !important;
+  --color-border-todo-checkbox: #000000 !important;
+  --color-border-todo-checkbox-checked: #000000 !important;
+  --color-border-todo-checkbox-hover: #000000 !important;
+  --color-border-unread-counter: #000000 !important;
+  --color-border-unread-counter-popover-menu: #000000 !important;
+  --color-border-user-profile-list-container: #000000 !important;
+  --color-border-user-profile-table: #000000 !important;
+  --color-border-warning-banner: #000000 !important;
+  --color-border-warning-main-view-banner: #000000 !important;
+  --color-border-zulip-button: #000000 !important;
+  --color-border-zulip-button-interactive: #000000 !important;
+  --color-box-shadow-animated-purple-button-focus: #00000000 !important;
+  --color-box-shadow-emoji-picker-emoji-focus: #00000000 !important;
+  --color-box-shadow-inbox-search-focus: #00000000 !important;
+  --color-box-shadow-input-focus: #00000000 !important;
+  --color-box-shadow-rendered-markdown-time: #00000000 !important;
+  --color-box-shadow-simplebar-scrollbar: #00000000 !important;
+  --color-buddy-list-avatar-loading: #000000 !important;
+  --color-buddy-list-highlighted-user: #000000 !important;
+  --color-close-deactivated-user-pill: #000000 !important;
+  --color-compose-box-background: #00000000 !important;
+  --color-compose-chevron-arrow: #000000 !important;
+  --color-compose-collapsed-reply-button-area-background: #00000000 !important;
+  --color-compose-collapsed-reply-button-area-background-interactive: #00000000 !important;
+  --color-compose-collapsed-reply-button-area-border: #000000 !important;
+  --color-compose-collapsed-reply-button-area-border-interactive: #000000 !important;
+  --color-compose-control-button-background-hover: #00000000 !important;
+  --color-compose-embedded-button-background: #00000000 !important;
+  --color-compose-embedded-button-background-hover: #00000000 !important;
+  --color-compose-embedded-button-background-interactive: #00000000 !important;
+  --color-compose-embedded-button-text-color: #000000 !important;
+  --color-compose-embedded-button-text-color-hover: #000000 !important;
+  --color-compose-focus-ring: #000000 !important;
+  --color-compose-formatting-button-divider: #000000 !important;
+  --color-compose-message-content-background: #00000000 !important;
+  --color-compose-message-content-background-approaching-limit: #00000000 !important;
+  --color-compose-message-content-background-over-limit: #00000000 !important;
+  --color-compose-recipient-box-background-color: #00000000 !important;
+  --color-compose-recipient-box-border-color: #000000 !important;
+  --color-compose-recipient-box-has-focus: #000000 !important;
+  --color-compose-recipient-box-hover: #000000 !important;
+  --color-compose-recipient-box-text-color: #000000 !important;
+  --color-compose-scroll-icon: #000000 !important;
+  --color-compose-send-button-background: #00000000 !important;
+  --color-compose-send-button-background-interactive: #00000000 !important;
+  --color-compose-send-button-focus-border: #000000 !important;
+  --color-compose-send-button-focus-shadow: #00000000 !important;
+  --color-compose-send-button-icon-color: #000000 !important;
+  --color-compose-send-control-button: #000000 !important;
+  --color-compose-send-control-button-background: #00000000 !important;
+  --color-compose-send-control-button-background-interactive: #00000000 !important;
+  --color-compose-send-control-button-focus-shadow: #00000000 !important;
+  --color-compose-send-control-button-interactive: #000000 !important;
+  --color-composebox-button: #000000 !important;
+  --color-composebox-button-background: #00000000 !important;
+  --color-composebox-button-background-hover: #00000000 !important;
+  --color-composebox-button-hover: #000000 !important;
+  --color-copy-button: #000000 !important;
+  --color-copy-button-active: #000000 !important;
+  --color-copy-button-hover: #000000 !important;
+  --color-copy-button-square-active: #000000 !important;
+  --color-copy-button-square-bg-active: #000000 !important;
+  --color-copy-button-square-bg-hover: #000000 !important;
+  --color-copy-button-success: #000000 !important;
+  --color-current-setting-dropdown-item: #000000 !important;
+  --color-date: #000000 !important;
+  --color-dropdown-item: #000000 !important;
+  --color-dropdown-item-link-underline: #000000 !important;
+  --color-error-main-view-banner: #000000 !important;
+  --color-error-main-view-banner-action-button: #000000 !important;
+  --color-error-main-view-banner-close-button: #000000 !important;
+  --color-error-main-view-banner-close-button-active: #000000 !important;
+  --color-error-main-view-banner-close-button-hover: #000000 !important;
+  --color-exit-button-background: #00000000 !important;
+  --color-exit-button-background-interactive: #00000000 !important;
+  --color-exit-button-text: #000000 !important;
+  --color-failed-message-send-icon: #000000 !important;
+  --color-fill-hover-copy-icon: #000000 !important;
+  --color-fill-user-invite-copy-icon: #000000 !important;
+  --color-focus-outline-deactivated-user-pill: #000000 !important;
+  --color-focus-outline-input-pill: #000000 !important;
+  --color-folder-header: #000000 !important;
+  --color-gear-menu-blue-text: #000000 !important;
+  --color-gear-menu-lighter-text: #000000 !important;
+  --color-header-button-focus: #000000 !important;
+  --color-header-button-focus-no-alpha: #000000 !important;
+  --color-header-button-hover: #000000 !important;
+  --color-header-button-hover-no-alpha: #000000 !important;
+  --color-hotkey-hint: #000000 !important;
+  --color-hovered-gif-in-grid-picker: #000000 !important;
+  --color-icon-bot: #000000 !important;
+  --color-icon-purple: #000000 !important;
+  --color-icon-search-inbox: #000000 !important;
+  --color-icons-inbox: #000000 !important;
+  --color-inbox-row-chevron: #000000 !important;
+  --color-inbox-search-text: #000000 !important;
+  --color-info-density-button-hover-background: #00000000 !important;
+  --color-info-density-button-icon: #000000 !important;
+  --color-info-density-control-border: #000000 !important;
+  --color-info-main-view-banner: #000000 !important;
+  --color-info-main-view-banner-action-button: #000000 !important;
+  --color-info-main-view-banner-close-button: #000000 !important;
+  --color-info-main-view-banner-close-button-active: #000000 !important;
+  --color-info-main-view-banner-close-button-hover: #000000 !important;
+  --color-inner-shadow-action-button: #00000000 !important;
+  --color-input-pill-close: #000000 !important;
+  --color-invalid-input-border: #000000 !important;
+  --color-invalid-input-box-shadow: #00000000 !important;
+  --color-kbd-background: #00000000 !important;
+  --color-kbd-border: #000000 !important;
+  --color-kbd-enter-sends: #000000 !important;
+  --color-kbd-text: #000000 !important;
+  --color-left-sidebar-direct-messages-bottom-divider: #000000 !important;
+  --color-left-sidebar-dm-partners-icon: #000000 !important;
+  --color-left-sidebar-follow-icon-hover: #000000 !important;
+  --color-left-sidebar-inner-box-shadow: #00000000 !important;
+  --color-left-sidebar-middle-box-shadow: #00000000 !important;
+  --color-left-sidebar-middle-box-shadow-hover: #00000000 !important;
+  --color-left-sidebar-navigation-icon: #000000 !important;
+  --color-left-sidebar-outer-box-shadow: #00000000 !important;
+  --color-left-sidebar-outer-box-shadow-hover: #00000000 !important;
+  --color-limit-indicator: #000000 !important;
+  --color-limit-indicator-over-limit: #000000 !important;
+  --color-main-view-banner-action-link: #000000 !important;
+  --color-markdown-code-background: #00000000 !important;
+  --color-markdown-code-background-mentions: #00000000 !important;
+  --color-markdown-code-link: #000000 !important;
+  --color-markdown-code-link-hover: #000000 !important;
+  --color-markdown-code-text: #000000 !important;
+  --color-markdown-link: #000000 !important;
+  --color-markdown-link-alert-word: #000000 !important;
+  --color-markdown-link-alert-word-hover: #000000 !important;
+  --color-markdown-link-highlight: #000000 !important;
+  --color-markdown-link-highlight-hover: #000000 !important;
+  --color-markdown-link-hover: #000000 !important;
+  --color-markdown-pre-background: #00000000 !important;
+  --color-markdown-pre-background-mentions: #00000000 !important;
+  --color-markdown-pre-border: #00000000 !important;
+  --color-markdown-pre-border-mentions: #00000000 !important;
+  --color-markdown-pre-text: #000000 !important;
+  --color-masked-unread-marker: #000000 !important;
+  --color-message-action-interactive: #000000 !important;
+  --color-message-action-visible: #000000 !important;
+  --color-message-content-container-border: #000000 !important;
+  --color-message-content-container-border-approaching-limit: #000000 !important;
+  --color-message-content-container-border-focus: #000000 !important;
+  --color-message-content-container-border-over-limit: #000000 !important;
+  --color-message-edit-history-background-deleted: #00000000 !important;
+  --color-message-edit-history-background-inserted: #00000000 !important;
+  --color-message-edit-history-text-deleted: #000000 !important;
+  --color-message-edit-history-text-inserted: #000000 !important;
+  --color-message-formatting-controls-container: #000000 !important;
+  --color-message-header-contents-border: #000000 !important;
+  --color-message-header-contents-border-bottom: #000000 !important;
+  --color-message-header-icon-interactive: #000000 !important;
+  --color-message-header-icon-non-interactive: #000000 !important;
+  --color-message-list-border: #000000 !important;
+  --color-message-reaction-background: #00000000 !important;
+  --color-message-reaction-background-hover: #00000000 !important;
+  --color-message-reaction-background-reacted: #00000000 !important;
+  --color-message-reaction-border: #000000 !important;
+  --color-message-reaction-border-reacted: #000000 !important;
+  --color-message-reaction-button-background: #00000000 !important;
+  --color-message-reaction-button-background-hover: #00000000 !important;
+  --color-message-reaction-button-border: #00000000 !important;
+  --color-message-reaction-button-border-hover: #000000 !important;
+  --color-message-reaction-button-text: #000000 !important;
+  --color-message-reaction-button-text-hover: #000000 !important;
+  --color-message-reaction-shadow-inner: #00000000 !important;
+  --color-message-reaction-text: #000000 !important;
+  --color-message-reaction-text-reacted: #000000 !important;
+  --color-message-star-action: #000000 !important;
+  --color-modal-heading-text: #000000 !important;
+  --color-modal-selectable-icon: #000000 !important;
+  --color-modal-selectable-icon-hover: #000000 !important;
+  --color-narrow-to-compose-recipients: #000000 !important;
+  --color-narrow-to-compose-recipients-background: #00000000 !important;
+  --color-narrow-to-compose-recipients-background-hover: #00000000 !important;
+  --color-narrow-to-compose-recipients-hover: #000000 !important;
+  --color-navbar-bottom-border: #000000 !important;
+  --color-navbar-icon: #000000 !important;
+  --color-navbar-spectator-low-attention-brand-button-background: #00000000 !important;
+  --color-navbar-spectator-low-attention-brand-button-background-active: #00000000 !important;
+  --color-navbar-spectator-low-attention-brand-button-background-hover: #00000000 !important;
+  --color-navbar-spectator-low-attention-brand-button-text: #000000 !important;
+  --color-navbar-spectator-medium-attention-brand-button-background: #00000000 !important;
+  --color-navbar-spectator-medium-attention-brand-button-background-active: #00000000 !important;
+  --color-navbar-spectator-medium-attention-brand-button-background-hover: #00000000 !important;
+  --color-navbar-spectator-medium-attention-brand-button-text: #000000 !important;
+  --color-outline-button-focus: #000000 !important;
+  --color-outline-focus: #000000 !important;
+  --color-outline-input: #000000 !important;
+  --color-outline-input-focus: #000000 !important;
+  --color-outline-input-hover: #000000 !important;
+  --color-outline-low-attention-input-pill: #000000 !important;
+  --color-outline-tab-picker-tab-option: #000000 !important;
+  --color-poll-names: #000000 !important;
+  --color-poll-vote: #000000 !important;
+  --color-poll-vote-focus: #000000 !important;
+  --color-poll-vote-hover: #000000 !important;
+  --color-popover-hotkey-hint: #000000 !important;
+  --color-private-message-header-border: #000000 !important;
+  --color-private-message-header-border-bottom: #000000 !important;
+  --color-realm-enable-spectator-access-link: #000000 !important;
+  --color-recent-view-link: #000000 !important;
+  --color-recent-view-link-unread: #000000 !important;
+  --color-recent-view-loading-spinner: #000000 !important;
+  --color-recent-view-participant-overflow-text: #000000 !important;
+  --color-recipient-bar-controls-spinner: #000000 !important;
+  --color-request-progress-status-alert-text: #000000 !important;
+  --color-search-box-hover-shadow: #00000000 !important;
+  --color-search-dropdown-top-border: #000000 !important;
+  --color-search-icons: #000000 !important;
+  --color-search-shadow-tight: #00000000 !important;
+  --color-search-shadow-wide: #00000000 !important;
+  --color-selected-gif-in-grid-picker: #000000 !important;
+  --color-selected-message-outline: #000000 !important;
+  --color-shadow-sidebar-row-hover: #00000000 !important;
+  --color-show-more-less-button-background: #00000000 !important;
+  --color-show-more-less-button-background-active: #00000000 !important;
+  --color-show-more-less-button-background-hover: #00000000 !important;
+  --color-sidebar-action: #000000 !important;
+  --color-sidebar-action-hover: #000000 !important;
+  --color-stream-group-row-checked-icon: #000000 !important;
+  --color-stream-group-row-checked-icon-disabled: #000000 !important;
+  --color-stream-group-row-checked-icon-hover: #000000 !important;
+  --color-stream-group-row-plus-icon: #000000 !important;
+  --color-stream-group-row-plus-icon-disabled: #000000 !important;
+  --color-stream-group-row-plus-icon-hover: #000000 !important;
+  --color-success-main-view-banner: #000000 !important;
+  --color-success-main-view-banner-close-button: #000000 !important;
+  --color-success-main-view-banner-close-button-active: #000000 !important;
+  --color-success-main-view-banner-close-button-hover: #000000 !important;
+  --color-tab-picker-icon: #000000 !important;
+  --color-text-active-narrow-filter: #000000 !important;
+  --color-text-alert-word: #000000 !important;
+  --color-text-brand-banner: #000000 !important;
+  --color-text-brand-icon-button: #000000 !important;
+  --color-text-brand-icon-button-active: #000000 !important;
+  --color-text-brand-icon-button-hover: #000000 !important;
+  --color-text-brand-icon-button-square-active: #000000 !important;
+  --color-text-brand-solid-action-button: #000000 !important;
+  --color-text-brand-subtle-action-button: #000000 !important;
+  --color-text-brand-text-action-button: #000000 !important;
+  --color-text-clear-search-button: #000000 !important;
+  --color-text-clear-search-button-hover: #000000 !important;
+  --color-text-danger-banner: #000000 !important;
+  --color-text-danger-icon-button: #000000 !important;
+  --color-text-danger-icon-button-active: #000000 !important;
+  --color-text-danger-icon-button-hover: #000000 !important;
+  --color-text-danger-icon-button-square-active: #000000 !important;
+  --color-text-danger-solid-action-button: #000000 !important;
+  --color-text-danger-subtle-action-button: #000000 !important;
+  --color-text-danger-text-action-button: #000000 !important;
+  --color-text-default: #000000 !important;
+  --color-text-dropdown-input: #000000 !important;
+  --color-text-empty-list-message: #000000 !important;
+  --color-text-full-name: #000000 !important;
+  --color-text-generic-link: #000000 !important;
+  --color-text-generic-link-interactive: #000000 !important;
+  --color-text-info-banner: #000000 !important;
+  --color-text-info-icon-button: #000000 !important;
+  --color-text-info-icon-button-active: #000000 !important;
+  --color-text-info-icon-button-hover: #000000 !important;
+  --color-text-info-icon-button-square-active: #000000 !important;
+  --color-text-info-solid-action-button: #000000 !important;
+  --color-text-info-subtle-action-button: #000000 !important;
+  --color-text-info-text-action-button: #000000 !important;
+  --color-text-input: #000000 !important;
+  --color-text-item: #000000 !important;
+  --color-text-link: #000000 !important;
+  --color-text-link-active: #000000 !important;
+  --color-text-link-banner: #000000 !important;
+  --color-text-link-decoration: #000000 !important;
+  --color-text-link-decoration-hover: #000000 !important;
+  --color-text-link-hover: #000000 !important;
+  --color-text-message-blockquote-border: #000000 !important;
+  --color-text-message-default: #000000 !important;
+  --color-text-message-header: #000000 !important;
+  --color-text-message-header-archived: #000000 !important;
+  --color-text-message-view-header: #000000 !important;
+  --color-text-modal-cancel-button: #000000 !important;
+  --color-text-neutral-banner: #000000 !important;
+  --color-text-neutral-icon-button: #000000 !important;
+  --color-text-neutral-icon-button-active: #000000 !important;
+  --color-text-neutral-icon-button-hover: #000000 !important;
+  --color-text-neutral-icon-button-square-active: #000000 !important;
+  --color-text-neutral-solid-action-button: #000000 !important;
+  --color-text-neutral-subtle-action-button: #000000 !important;
+  --color-text-neutral-text-action-button: #000000 !important;
+  --color-text-other-mention: #000000 !important;
+  --color-text-personal-menu-no-status: #000000 !important;
+  --color-text-personal-menu-some-status: #000000 !important;
+  --color-text-placeholder: #000000 !important;
+  --color-text-popover-menu: #000000 !important;
+  --color-text-recent-view-last-msg-time: #000000 !important;
+  --color-text-recent-view-last-msg-time-unread: #000000 !important;
+  --color-text-recent-view-table-thead-th: #000000 !important;
+  --color-text-scroll-to-bottom-button: #000000 !important;
+  --color-text-search: #000000 !important;
+  --color-text-search-highlight: #000000 !important;
+  --color-text-search-hover: #000000 !important;
+  --color-text-search-placeholder: #000000 !important;
+  --color-text-self-direct-mention: #000000 !important;
+  --color-text-self-group-mention: #000000 !important;
+  --color-text-sender-name: #000000 !important;
+  --color-text-sender-name-hover: #000000 !important;
+  --color-text-settings-field-hint: #000000 !important;
+  --color-text-settings-plus-button: #000000 !important;
+  --color-text-show-more-less-button: #000000 !important;
+  --color-text-sidebar-action-heading: #000000 !important;
+  --color-text-sidebar-action-heading-hover: #000000 !important;
+  --color-text-sidebar-base: #000000 !important;
+  --color-text-sidebar-heading: #000000 !important;
+  --color-text-sidebar-popover-menu: #000000 !important;
+  --color-text-sidebar-row: #000000 !important;
+  --color-text-success-banner: #000000 !important;
+  --color-text-success-icon-button: #000000 !important;
+  --color-text-success-icon-button-active: #000000 !important;
+  --color-text-success-icon-button-hover: #000000 !important;
+  --color-text-success-icon-button-square-active: #000000 !important;
+  --color-text-success-solid-action-button: #000000 !important;
+  --color-text-success-subtle-action-button: #000000 !important;
+  --color-text-success-text-action-button: #000000 !important;
+  --color-text-tab-switcher-ind-tab-disabled: #000000 !important;
+  --color-text-url: #000000 !important;
+  --color-text-url-hover: #000000 !important;
+  --color-text-user-card-secondary: #000000 !important;
+  --color-text-warning-banner: #000000 !important;
+  --color-text-warning-icon-button: #000000 !important;
+  --color-text-warning-icon-button-active: #000000 !important;
+  --color-text-warning-icon-button-hover: #000000 !important;
+  --color-text-warning-icon-button-square-active: #000000 !important;
+  --color-text-warning-solid-action-button: #000000 !important;
+  --color-text-warning-subtle-action-button: #000000 !important;
+  --color-text-warning-text-action-button: #000000 !important;
+  --color-topic-indent-border: #000000 !important;
+  --color-typeahead-option-label: #000000 !important;
+  --color-unmuted-or-followed-topic-list-item: #000000 !important;
+  --color-unread-counter-muted: #000000 !important;
+  --color-unread-counter-normal: #000000 !important;
+  --color-unread-counter-prominent: #000000 !important;
+  --color-unread-counter-quiet: #000000 !important;
+  --color-unread-marker: #000000 !important;
+  --color-user-circle-active: #000000 !important;
+  --color-user-circle-deactivated: #000000 !important;
+  --color-user-circle-idle: #000000 !important;
+  --color-user-circle-offline: #000000 !important;
+  --color-user-circle-offline-typeahead-highlight: #000000 !important;
+  --color-user-profile-field-name: #000000 !important;
+  --color-vdots-hint: #000000 !important;
+  --color-vdots-hover: #000000 !important;
+  --color-vdots-visible: #000000 !important;
+  --color-warning-main-view-banner: #000000 !important;
+  --color-warning-main-view-banner-action-button: #000000 !important;
+  --color-warning-main-view-banner-close-button: #000000 !important;
+  --color-warning-main-view-banner-close-button-active: #000000 !important;
+  --color-warning-main-view-banner-close-button-hover: #000000 !important;
+  --color-zulip-logo: #000000 !important;
+  --color-zulip-logo-loading: #000000 !important;
+  --color-zulip-logo-z: #000000 !important;
+}
+
+/* Desktop shell colors from Zulip.app. Add custom CSS does not apply these rules. */
+:host {
+  background: #00000000 !important;
+  color: #000000 !important;
+  --tagify-dd-color-primary: #000000 !important;
+  --tagify-dd-bg-color: #000000 !important;
+}
+
+#version {
+  color: #000000 !important;
+}
+
+.about p {
+  color: #000000 !important;
+}
+
+.maintenance-info {
+  color: #000000 !important;
+}
+
+p.detail a {
+  color: #000000 !important;
+}
+
+@charset "UTF-8";:root {
+  --tagify-dd-color-primary: #000000 !important;
+  --tagify-dd-text-color: #000000 !important;
+  --tagify-dd-bg-color: #000000 !important;
+}
+
+.tagify {
+  --tags-disabled-bg: #000000 !important;
+  --tags-border-color: #000000 !important;
+  --tags-hover-border-color: #000000 !important;
+  --tags-focus-border-color: #000000 !important;
+  --tag-bg: #000000 !important;
+  --tag-hover: #000000 !important;
+  --tag-text-color: #000000 !important;
+  --tag-text-color--edit: #000000 !important;
+  --tag-invalid-color: #000000 !important;
+  --tag-invalid-bg: #000000 !important;
+  --tag-remove-bg: #000000 !important;
+  --tag-remove-btn-color: #000000 !important;
+  --tag-remove-btn-bg--hover: #000000 !important;
+  --placeholder-color: #000000 !important;
+  --placeholder-color-focus: #000000 !important;
+}
+
+0% {
+  background: linear-gradient(45deg,var(--tag-bg) 25%,#00000000 25%,#00000000 50%,var(--tag-bg) 50%,var(--tag-bg) 75%,#00000000 75%,#00000000) 0/5px 5px !important;
+}
+
+.tagify--loading .tagify__input::after {
+  border-color: #000000 #000000 #000000 #00000000 !important;
+}
+
+.tagify__tag--loading::after {
+  border-color: #000000 #000000 #000000 #00000000 !important;
+}
+
+.tagify__tag__removeBtn:hover {
+  color: #000000 !important;
+}
+
+.tagify__tag__removeBtn:hover+div::before {
+  box-shadow: 0 0 0 var(--tag-inset-shadow-size) var(--tag-remove-bg,#00000000) inset!important !important;
+}
+
+.tagify__input:last-child:focus:empty::before {
+  color: #000000 !important;
+}
+
+.tagify--invalid {
+  --tags-border-color: #000000 !important;
+}
+
+.tagify__dropdown__wrapper {
+  box-shadow: 0 2px 4px -2px #00000000 !important;
+}
+
+.tagify__dropdown__item--active {
+  color: #000000 !important;
+}
+
+kbd {
+  border: 1px solid #000000 !important;
+  background-color: #00000000 !important;
+  color: #000000 !important;
+  text-shadow: 0 1px 0 #00000000 !important;
+}
+
+table, th, td {
+  color: #000000 !important;
+}
+
+#sidebar {
+  background: #00000000 !important;
+}
+
+.nav {
+  color: #000000 !important;
+}
+
+.nav.active {
+  color: #000000 !important;
+}
+
+.nav.active::before {
+  background: #00000000 !important;
+}
+
+#settings-header {
+  color: #000000 !important;
+}
+
+.title {
+  color: #000000 !important;
+}
+
+.page-title {
+  color: #000000 !important;
+}
+
+.sub-title {
+  color: #000000 !important;
+}
+
+.setting-input-key {
+  background: #00000000 !important;
+}
+
+.setting-input-value {
+  border: #000000 2px solid !important;
+  background: #00000000 !important;
+}
+
+.setting-input-value:focus {
+  border: #000000 2px solid !important;
+}
+
+.invalid-input-value:focus {
+  border: #000000 2px solid !important;
+}
+
+.actions-container {
+  color: #000000 !important;
+}
+
+.action.disabled {
+  color: #000000 !important;
+}
+
+.settings-card {
+  background: #00000000 !important;
+}
+
+.settings-card:hover {
+  box-shadow: 0 2px 5px 0 #00000000, 0 2px 0 0 #00000000 !important;
+}
+
+.red {
+  color: #000000 !important;
+  background: #00000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+.red:hover {
+  background-color: #00000000 !important;
+  color: #000000 !important;
+}
+
+.green {
+  color: #000000 !important;
+  background: #00000000 !important;
+}
+
+.green:hover {
+  background-color: #00000000 !important;
+  color: #000000 !important;
+}
+
+.grey {
+  color: #000000 !important;
+  background: #00000000 !important;
+  border: 1px solid #000000 !important;
+}
+
+.selected-css-path, .download-folder-path {
+  background: #00000000 !important;
+}
+
+.disallowed:hover {
+  background-color: #00000000 !important;
+}
+
+input.toggle-round + label {
+  background-color: #00000000 !important;
+}
+
+input.toggle-round + label::before {
+  background-color: #00000000 !important;
+}
+
+input.toggle-round + label::after {
+  background-color: #00000000 !important;
+}
+
+input.toggle-round:checked + label::before {
+  background-color: #00000000 !important;
+}
+
+.add-server-modal {
+  background: linear-gradient( 35deg, #00000000, #00000000 ) !important;
+}
+
+.modal-container {
+  background-color: #00000000 !important;
+  border: #000000 1px solid !important;
+}
+
+.divider {
+  color: #000000 !important;
+}
+
+.server-center button {
+  color: #000000 !important;
+  background: #00000000 !important;
+}
+
+.server-center button:hover {
+  background: #00000000 !important;
+}
+
+.server-center button:focus {
+  background: #00000000 !important;
+}
+
+.server-network-option {
+  color: #000000 !important;
+}
+
+.lang-menu {
+  background: #00000000 !important;
+  color: #000000 !important;
+  border-color: #00000000 !important;
+}
+
+.toggle-sidebar {
+  background: #00000000 !important;
+}
+
+#view-controls-container::-webkit-scrollbar-track {
+  background-color: #00000000 !important;
+}
+
+#view-controls-container::-webkit-scrollbar-thumb {
+  background-color: #00000000 !important;
+}
+
+.action-button i {
+  color: #000000 !important;
+}
+
+.action-button:hover i {
+  color: #000000 !important;
+}
+
+.action-button > .dnd-on {
+  color: #000000 !important;
+}
+
+.action-button:hover > .dnd-on {
+  color: #000000 !important;
+}
+
+.action-button.active {
+  background-color: #00000000 !important;
+}
+
+.action-button.active i {
+  color: #000000 !important;
+}
+
+.action-button.disable:hover i {
+  color: #000000 !important;
+}
+
+.tab .server-tab {
+  color: #000000 !important;
+}
+
+.server-tab .alt-icon {
+  border: 2px solid #000000 !important;
+}
+
+.tab.active .server-tab {
+  background-color: #00000000 !important;
+}
+
+.tab.functional-tab.active .server-tab {
+  background-color: #00000000 !important;
+}
+
+.tab .server-tab-badge.active {
+  background-color: #00000000 !important;
+  color: #000000 !important;
+}
+
+.tab .server-tab-shortcut {
+  color: #000000 !important;
+}
+
+#webviews-container::before {
+  background: #00000000 url("data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3csvg%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20style='margin:%20auto !important;
+}
+
+webview.focus {
+  outline: 0 solid #00000000 !important;
+}
+
+.webview-unsupported {
+  background: #00000000 !important;
+  border: 1px solid #000000 !important;
+  color: #000000 !important;
+}
+
+#loading-tooltip, #dnd-tooltip, #back-tooltip, #reload-tooltip, #setting-tooltip {
+  background: #00000000 !important;
+  color: #000000 !important;
+}
+
+#loading-tooltip::after, #dnd-tooltip::after, #back-tooltip::after, #reload-tooltip::after, #setting-tooltip::after {
+  border-top: 8px solid #00000000 !important;
+  border-bottom: 8px solid #00000000 !important;
+  border-right: 8px solid #000000 !important;
+}
+
+#add-server-tooltip, .server-tooltip {
+  background: #00000000 !important;
+  color: #000000 !important;
+}
+
+#add-server-tooltip::after, .server-tooltip::after {
+  border-top: 8px solid #00000000 !important;
+  border-bottom: 8px solid #00000000 !important;
+  border-right: 8px solid #000000 !important;
+}
+
+#collapse-button {
+  background: #00000000 !important;
+  box-shadow: #00000000 1px 1px !important;
+}
+
+#collapse-button i {
+  color: #000000 !important;
+}
+
+.popup .popuptext {
+  background-color: #00000000 !important;
+  color: #000000 !important;
+}
+
+html, body {
+  color: #000000 !important;
+  background: #00000000 !important;
+}
+
+.button {
+  background: #00000000 !important;
+  color: #000000 !important;
+}

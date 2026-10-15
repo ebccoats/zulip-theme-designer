@@ -222,6 +222,10 @@ function cloneTheme(theme) {
   const copy = { name: theme.name, tokens, fonts: cloneFonts(theme.fonts), borders: cloneBorders(theme.borders) };
   if (theme.font) copy.font = theme.font;
   if (theme.shadow) copy.shadow = { x: theme.shadow.x, y: theme.shadow.y, blur: theme.shadow.blur, color: theme.shadow.color };
+  if (theme.disco && theme.disco.frames) copy.disco = { size: theme.disco.size, frames: theme.disco.frames.slice() };
+  if (theme.darkness) copy.darkness = true;
+  if (theme.crt) copy.crt = true;
+  if (theme.cssFile) copy.cssFile = theme.cssFile;
   return copy;
 }
 
@@ -237,6 +241,17 @@ function normalizeShadow(data) {
     blur,
     color,
   };
+}
+
+function normalizeDisco(data) {
+  const disco = data && data.disco;
+  if (!disco || typeof disco !== "object" || typeof disco.size !== "string") return null;
+  const size = disco.size.trim();
+  const frames = Array.isArray(disco.frames)
+    ? disco.frames.filter((frame) => typeof frame === "string" && frame.trim()).map((frame) => frame.trim())
+    : [];
+  if (!size || frames.length < 2) return null;
+  return { size, frames };
 }
 
 function shadowValue(shadow) {
@@ -267,6 +282,11 @@ function normalizeTheme(data, fallback) {
   const theme = { name, tokens, fonts: normalizeFonts(data, name), borders: normalizeBorders(data) };
   const shadow = normalizeShadow(data);
   if (shadow) theme.shadow = shadow;
+  const disco = normalizeDisco(data);
+  if (disco) theme.disco = disco;
+  if (data.darkness === true || data.cssFile === "total-darkness.css" || name === "total-darkness") theme.darkness = true;
+  if (data.crt === true || data.cssFile === "crt.css" || name === "crt") theme.crt = true;
+  if (typeof data.cssFile === "string" && data.cssFile.trim()) theme.cssFile = data.cssFile.trim();
   if (data.font === "pixel" || name === "nes") theme.font = "pixel";
   return theme;
 }
@@ -281,6 +301,9 @@ function persist() {
         fonts: state.theme.fonts,
         borders: state.theme.borders,
         shadow: state.theme.shadow,
+        disco: state.theme.disco || undefined,
+        darkness: state.theme.darkness || undefined,
+        crt: state.theme.crt || undefined,
         mode: state.mode,
       }),
     );
@@ -321,6 +344,9 @@ function applyColors() {
   applyFonts();
   applyBorders();
   applyShadow();
+  applyDisco();
+  applyDarkness();
+  applyCrt();
   document.getElementById("mode-light").setAttribute("aria-pressed", String(state.mode === "light"));
   document.getElementById("mode-dark").setAttribute("aria-pressed", String(state.mode === "dark"));
 }
@@ -402,6 +428,10 @@ function snapshotTheme() {
     borders: cloneBorders(state.theme.borders),
   };
   if (state.theme.shadow) theme.shadow = { x: state.theme.shadow.x, y: state.theme.shadow.y, blur: state.theme.shadow.blur, color: state.theme.shadow.color };
+  if (state.theme.disco && state.theme.disco.frames) theme.disco = { size: state.theme.disco.size, frames: state.theme.disco.frames.slice() };
+  if (state.theme.darkness) theme.darkness = true;
+  if (state.theme.crt) theme.crt = true;
+  if (state.theme.cssFile) theme.cssFile = state.theme.cssFile;
   if (state.theme.font === "pixel" || name === "nes") theme.font = "pixel";
   return theme;
 }
@@ -470,6 +500,302 @@ function shadowCss(theme) {
   return `body {\n  filter: drop-shadow(${value});\n}\n\n`;
 }
 
+function discoKeyframes(frames) {
+  const lines = frames.map((frame, index) => {
+    const at = (index / frames.length) * 100;
+    return `  ${at}% { background-image: ${frame}; }`;
+  });
+  return `@keyframes disco-cycle {\n${lines.join("\n")}\n}`;
+}
+
+function discoCss(theme) {
+  const disco = theme.disco;
+  if (!disco || !disco.frames || !disco.frames.length || !disco.size) return "";
+  return `${discoKeyframes(disco.frames)}
+
+body {
+  isolation: isolate;
+  background-color: #000000 !important;
+  background-image: none !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #000000;
+  background-image: ${disco.frames[0]};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: disco-cycle 2.4s linear infinite;
+}
+
+body, body * {
+  text-shadow:
+    1px 0 0 #120814,
+    -1px 0 0 #120814,
+    0 1px 0 #120814,
+    0 -1px 0 #120814 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none !important;
+  }
+}
+
+`;
+}
+
+const MATCH_CURSOR = `url("data:image/png;base64,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") 42 28, auto`;
+
+function crtCss(theme) {
+  if (!theme.crt) return "";
+  return `@keyframes crt-flicker {
+  0% { opacity: 0.27861; }
+  5% { opacity: 0.34769; }
+  10% { opacity: 0.23604; }
+  15% { opacity: 0.90626; }
+  20% { opacity: 0.18128; }
+  25% { opacity: 0.83891; }
+  30% { opacity: 0.65583; }
+  35% { opacity: 0.67807; }
+  40% { opacity: 0.26559; }
+  45% { opacity: 0.84693; }
+  50% { opacity: 0.96019; }
+  55% { opacity: 0.08594; }
+  60% { opacity: 0.20313; }
+  65% { opacity: 0.71988; }
+  70% { opacity: 0.53455; }
+  75% { opacity: 0.37288; }
+  80% { opacity: 0.71428; }
+  85% { opacity: 0.70419; }
+  90% { opacity: 0.7003; }
+  95% { opacity: 0.36108; }
+  100% { opacity: 0.24387; }
+}
+
+@keyframes crt-text-shadow {
+  0% {
+    text-shadow: 0.4389924193300864px 0 1px rgba(0, 30, 255, 0.5), -0.4389924193300864px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7928974010788217px 0 1px rgba(0, 30, 255, 0.5), -2.7928974010788217px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.02956275843481219px 0 1px rgba(0, 30, 255, 0.5), -0.02956275843481219px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.40218538552878136px 0 1px rgba(0, 30, 255, 0.5), -0.40218538552878136px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.4794037899852017px 0 1px rgba(0, 30, 255, 0.5), -3.4794037899852017px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401149584px 0 1px rgba(0, 30, 255, 0.5), -1.6125630401149584px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085143956px 0 1px rgba(0, 30, 255, 0.5), -0.7015590085143956px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.896914047650351px 0 1px rgba(0, 30, 255, 0.5), -3.896914047650351px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.870905614848819px 0 1px rgba(0, 30, 255, 0.5), -3.870905614848819px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.231056963361899px 0 1px rgba(0, 30, 255, 0.5), -2.231056963361899px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.08084290417898504px 0 1px rgba(0, 30, 255, 0.5), -0.08084290417898504px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.3758461067427543px 0 1px rgba(0, 30, 255, 0.5), -2.3758461067427543px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.202193051050636px 0 1px rgba(0, 30, 255, 0.5), -2.202193051050636px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780614874975px 0 1px rgba(0, 30, 255, 0.5), -2.8638780614874975px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.48874025155497314px 0 1px rgba(0, 30, 255, 0.5), -0.48874025155497314px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491305757957px 0 1px rgba(0, 30, 255, 0.5), -1.8948491305757957px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308038857px 0 1px rgba(0, 30, 255, 0.5), -0.0833037308038857px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.09769827255241735px 0 1px rgba(0, 30, 255, 0.5), -0.09769827255241735px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.443339761481782px 0 1px rgba(0, 30, 255, 0.5), -3.443339761481782px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838852799786px 0 1px rgba(0, 30, 255, 0.5), -2.1841838852799786px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764473832513px 0 1px rgba(0, 30, 255, 0.5), -2.6208764473832513px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+}
+
+body {
+  isolation: isolate;
+  background-color: #070500 !important;
+}
+
+body::before {
+  content: " ";
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+}
+
+body::after {
+  content: " ";
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  pointer-events: none;
+  background: rgba(18, 16, 16, 0.1);
+  animation: crt-flicker 0.15s infinite;
+}
+
+body,
+body * {
+  text-shadow: 0 0 5px;
+  -webkit-font-smoothing: auto;
+}
+
+pre,
+.codehilite,
+.code-block {
+  animation: crt-text-shadow 1.6s infinite;
+  white-space: pre;
+  overflow-x: auto;
+}
+`;
+}
+
+function darknessCss(theme) {
+  if (!theme.darkness) return "";
+  return `html, body {
+  background-color: #000000 !important;
+  scrollbar-color: #000000 #000000;
+}
+
+body {
+  isolation: isolate;
+}
+
+body, body * {
+  color: #000000 !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: #000000 !important;
+  outline-color: #000000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  fill: transparent !important;
+  stroke: transparent !important;
+  caret-color: #000000 !important;
+  accent-color: transparent !important;
+  text-decoration-color: #000000 !important;
+  z-index: auto !important;
+  overflow: visible !important;
+  opacity: 1 !important;
+  filter: none !important;
+  position: relative;
+  cursor: ${MATCH_CURSOR} !important;
+}
+
+body {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+body *::before,
+body *::after,
+body *::placeholder {
+  color: #000000 !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: #000000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  z-index: auto !important;
+}
+
+body *::selection {
+  background: #000000 !important;
+  color: #000000 !important;
+}
+
+body img,
+body svg,
+body video,
+body canvas {
+  opacity: 0 !important;
+  background-color: transparent !important;
+}
+
+body *:hover:not(:has(*:hover)) {
+  z-index: auto !important;
+  overflow: visible !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+body *::before {
+  content: "" !important;
+  position: absolute;
+  z-index: -1 !important;
+  left: 50%;
+  top: 50%;
+  --spot: 240px;
+  width: var(--spot);
+  height: var(--spot);
+  transform: translate(-50%, -50%);
+  border: 0 !important;
+  border-radius: 50%;
+  background: #ffe500 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  filter: blur(calc(var(--spot) * 64 / 390));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.feed *::before,
+.message-feed *::before,
+#message_feed_container *::before,
+.message_list *::before {
+  --spot: 390px;
+}
+
+body *:hover:not(:has(*:hover))::before {
+  opacity: 1;
+}
+
+body img:hover,
+body svg:hover,
+body video:hover,
+body canvas:hover {
+  opacity: 0 !important;
+}
+
+`;
+}
+
 function borderCss(theme) {
   const lines = [];
   for (const [id, row] of Object.entries(theme.borders || {})) {
@@ -512,7 +838,7 @@ function buildCss(theme) {
   const shellBlocks = [...bySelector.entries()].map(
     ([selector, props]) => `${selector} {\n${props.join("\n")}\n}`,
   );
-  return `${fontCss(theme)}${shadowCss(theme)}${borderCss(theme)}/* zulip theme: ${theme.name}
+  return `${fontCss(theme)}${discoCss(theme)}${darknessCss(theme)}${crtCss(theme)}${shadowCss(theme)}${borderCss(theme)}/* zulip theme: ${theme.name}
    Same colors as the theme in the editor.
 */
 :root {
@@ -872,6 +1198,35 @@ function renderCatalog() {
     }
     if (group) group.hidden = !visibleInGroup;
   });
+}
+
+function applyDarkness() {
+  dummy.classList.toggle("is-darkness", Boolean(state.theme && state.theme.darkness));
+}
+
+function applyCrt() {
+  dummy.classList.toggle("is-crt", Boolean(state.theme && state.theme.crt));
+}
+
+function applyDisco() {
+  const disco = state.theme.disco;
+  const on = Boolean(disco && disco.frames && disco.frames.length && disco.size);
+  dummy.classList.toggle("is-disco", on);
+  let tag = document.getElementById("disco-cycle-style");
+  if (!tag) {
+    tag = document.createElement("style");
+    tag.id = "disco-cycle-style";
+    document.head.appendChild(tag);
+  }
+  if (on) {
+    tag.textContent = discoKeyframes(disco.frames);
+    dummy.style.setProperty("--disco-size", disco.size);
+    dummy.style.setProperty("--disco-image", disco.frames[0]);
+  } else {
+    tag.textContent = "";
+    dummy.style.removeProperty("--disco-size");
+    dummy.style.removeProperty("--disco-image");
+  }
 }
 
 function applyShadow() {

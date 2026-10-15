@@ -1,0 +1,1140 @@
+@keyframes crt-flicker {
+  0% { opacity: 0.27861; }
+  5% { opacity: 0.34769; }
+  10% { opacity: 0.23604; }
+  15% { opacity: 0.90626; }
+  20% { opacity: 0.18128; }
+  25% { opacity: 0.83891; }
+  30% { opacity: 0.65583; }
+  35% { opacity: 0.67807; }
+  40% { opacity: 0.26559; }
+  45% { opacity: 0.84693; }
+  50% { opacity: 0.96019; }
+  55% { opacity: 0.08594; }
+  60% { opacity: 0.20313; }
+  65% { opacity: 0.71988; }
+  70% { opacity: 0.53455; }
+  75% { opacity: 0.37288; }
+  80% { opacity: 0.71428; }
+  85% { opacity: 0.70419; }
+  90% { opacity: 0.7003; }
+  95% { opacity: 0.36108; }
+  100% { opacity: 0.24387; }
+}
+
+@keyframes crt-text-shadow {
+  0% {
+    text-shadow: 0.4389924193300864px 0 1px rgba(0, 30, 255, 0.5), -0.4389924193300864px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7928974010788217px 0 1px rgba(0, 30, 255, 0.5), -2.7928974010788217px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.02956275843481219px 0 1px rgba(0, 30, 255, 0.5), -0.02956275843481219px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.40218538552878136px 0 1px rgba(0, 30, 255, 0.5), -0.40218538552878136px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.4794037899852017px 0 1px rgba(0, 30, 255, 0.5), -3.4794037899852017px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401149584px 0 1px rgba(0, 30, 255, 0.5), -1.6125630401149584px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085143956px 0 1px rgba(0, 30, 255, 0.5), -0.7015590085143956px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.896914047650351px 0 1px rgba(0, 30, 255, 0.5), -3.896914047650351px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.870905614848819px 0 1px rgba(0, 30, 255, 0.5), -3.870905614848819px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.231056963361899px 0 1px rgba(0, 30, 255, 0.5), -2.231056963361899px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.08084290417898504px 0 1px rgba(0, 30, 255, 0.5), -0.08084290417898504px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.3758461067427543px 0 1px rgba(0, 30, 255, 0.5), -2.3758461067427543px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.202193051050636px 0 1px rgba(0, 30, 255, 0.5), -2.202193051050636px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780614874975px 0 1px rgba(0, 30, 255, 0.5), -2.8638780614874975px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.48874025155497314px 0 1px rgba(0, 30, 255, 0.5), -0.48874025155497314px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491305757957px 0 1px rgba(0, 30, 255, 0.5), -1.8948491305757957px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308038857px 0 1px rgba(0, 30, 255, 0.5), -0.0833037308038857px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.09769827255241735px 0 1px rgba(0, 30, 255, 0.5), -0.09769827255241735px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.443339761481782px 0 1px rgba(0, 30, 255, 0.5), -3.443339761481782px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838852799786px 0 1px rgba(0, 30, 255, 0.5), -2.1841838852799786px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764473832513px 0 1px rgba(0, 30, 255, 0.5), -2.6208764473832513px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+}
+
+body {
+  isolation: isolate;
+  background-color: #070500 !important;
+}
+
+body::before {
+  content: " ";
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+}
+
+body::after {
+  content: " ";
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  pointer-events: none;
+  background: rgba(18, 16, 16, 0.1);
+  animation: crt-flicker 0.15s infinite;
+}
+
+body,
+body * {
+  text-shadow: 0 0 5px;
+  -webkit-font-smoothing: auto;
+}
+
+pre,
+.codehilite,
+.code-block {
+  animation: crt-text-shadow 1.6s infinite;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+@font-face {
+  font-family: "Installed Press Start 2P";
+  src: local("Press Start 2P"), local("Press Start 2P Regular");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body,
+body * {
+  font-family: "Press Start 2P", "Installed Press Start 2P", sans-serif !important;
+  font-size: 18px !important;
+}
+
+body,
+body * {
+  border-radius: 0 !important;
+}
+
+/* zulip theme: crt
+   Same colors as the theme in the editor.
+*/
+:root {
+  --color-active-dropdown-item: #ffa900 !important;
+  --color-active-row-modal: #ffa900 !important;
+  --color-animated-button-text: #ffa900 !important;
+  --color-arrow-recent-view-table-thead-th: #ffa900 !important;
+  --color-background: #070500 !important;
+  --color-background-active-narrow-filter: #2a1c00 !important;
+  --color-background-active-popover-menu: #2a1c00 !important;
+  --color-background-alert-word: #070500 !important;
+  --color-background-animated-button: #070500 !important;
+  --color-background-animated-button-hover: #2a1c00 !important;
+  --color-background-brand-banner: #070500 !important;
+  --color-background-brand-icon-button-square-active: #2a1c00 !important;
+  --color-background-brand-icon-button-square-hover: #2a1c00 !important;
+  --color-background-brand-solid-action-button: #070500 !important;
+  --color-background-brand-solid-action-button-active: #2a1c00 !important;
+  --color-background-brand-solid-action-button-hover: #2a1c00 !important;
+  --color-background-brand-subtle-action-button: #070500 !important;
+  --color-background-brand-subtle-action-button-active: #2a1c00 !important;
+  --color-background-brand-subtle-action-button-hover: #2a1c00 !important;
+  --color-background-brand-text-action-button-active: #2a1c00 !important;
+  --color-background-brand-text-action-button-hover: #2a1c00 !important;
+  --color-background-button-inbox-focus: #2a1c00 !important;
+  --color-background-button-inbox-selected: #2a1c00 !important;
+  --color-background-compose-new-message-button: #070500 !important;
+  --color-background-compose-new-message-button-active: #2a1c00 !important;
+  --color-background-compose-new-message-button-hover: #2a1c00 !important;
+  --color-background-danger-banner: #070500 !important;
+  --color-background-danger-icon-button-square-active: #2a1c00 !important;
+  --color-background-danger-icon-button-square-hover: #2a1c00 !important;
+  --color-background-danger-solid-action-button: #070500 !important;
+  --color-background-danger-solid-action-button-active: #2a1c00 !important;
+  --color-background-danger-solid-action-button-hover: #2a1c00 !important;
+  --color-background-danger-subtle-action-button: #070500 !important;
+  --color-background-danger-subtle-action-button-active: #2a1c00 !important;
+  --color-background-danger-subtle-action-button-hover: #2a1c00 !important;
+  --color-background-danger-text-action-button-active: #2a1c00 !important;
+  --color-background-danger-text-action-button-hover: #2a1c00 !important;
+  --color-background-deactivated-user-pill: #070500 !important;
+  --color-background-direct-mention: #070500 !important;
+  --color-background-disabled-dropdown-widget-button: #070500 !important;
+  --color-background-disabled-modal-select: #070500 !important;
+  --color-background-disabled-settings-select: #070500 !important;
+  --color-background-dropdown-widget: #070500 !important;
+  --color-background-dropdown-widget-button: #070500 !important;
+  --color-background-emoji-picker-emoji-focus: #2a1c00 !important;
+  --color-background-emoji-picker-emoji-reacted: #070500 !important;
+  --color-background-emoji-picker-emoji-reacted-focus: #2a1c00 !important;
+  --color-background-emoji-picker-popover: #070500 !important;
+  --color-background-emoji-picker-popover-tab-item-active: #2a1c00 !important;
+  --color-background-error-main-view-banner: #070500 !important;
+  --color-background-error-main-view-banner-action-button: #070500 !important;
+  --color-background-error-main-view-banner-action-button-active: #2a1c00 !important;
+  --color-background-error-main-view-banner-action-button-hover: #2a1c00 !important;
+  --color-background-exit-hover-deactivated-user-pill: #2a1c00 !important;
+  --color-background-group-mention: #070500 !important;
+  --color-background-history-limited-box: #00000000 !important;
+  --color-background-hover-narrow-filter: #2a1c00 !important;
+  --color-background-hover-popover-menu: #2a1c00 !important;
+  --color-background-image-loader: #070500 !important;
+  --color-background-image-thumbnail: #070500 !important;
+  --color-background-image-thumbnail-hover: #2a1c00 !important;
+  --color-background-inbox: #070500 !important;
+  --color-background-inbox-no-unreads-illustration: #070500 !important;
+  --color-background-inbox-row: #070500 !important;
+  --color-background-inbox-row-hover: #2a1c00 !important;
+  --color-background-inbox-search: #070500 !important;
+  --color-background-inbox-search-focus: #2a1c00 !important;
+  --color-background-inbox-search-hover: #2a1c00 !important;
+  --color-background-info-banner: #070500 !important;
+  --color-background-info-icon-button-square-active: #2a1c00 !important;
+  --color-background-info-icon-button-square-hover: #2a1c00 !important;
+  --color-background-info-main-view-banner: #070500 !important;
+  --color-background-info-main-view-banner-action-button: #070500 !important;
+  --color-background-info-main-view-banner-action-button-active: #2a1c00 !important;
+  --color-background-info-main-view-banner-action-button-hover: #2a1c00 !important;
+  --color-background-info-solid-action-button: #070500 !important;
+  --color-background-info-solid-action-button-active: #2a1c00 !important;
+  --color-background-info-solid-action-button-hover: #2a1c00 !important;
+  --color-background-info-subtle-action-button: #070500 !important;
+  --color-background-info-subtle-action-button-active: #2a1c00 !important;
+  --color-background-info-subtle-action-button-hover: #2a1c00 !important;
+  --color-background-info-text-action-button-active: #2a1c00 !important;
+  --color-background-info-text-action-button-hover: #2a1c00 !important;
+  --color-background-input: #070500 !important;
+  --color-background-input-focus: #2a1c00 !important;
+  --color-background-input-pill: #070500 !important;
+  --color-background-input-pill-exit-hover: #2a1c00 !important;
+  --color-background-input-pill-hover: #2a1c00 !important;
+  --color-background-input-pill-search: #070500 !important;
+  --color-background-integration-url: #00000000 !important;
+  --color-background-legacy-input: #070500 !important;
+  --color-background-main-view-banner-moving-bar: #070500 !important;
+  --color-background-modal: #070500 !important;
+  --color-background-modal-bar: #070500 !important;
+  --color-background-modal-cancel-button-active: #2a1c00 !important;
+  --color-background-modal-cancel-button-hover: #2a1c00 !important;
+  --color-background-modal-confirm-button: #070500 !important;
+  --color-background-modal-confirm-button-active: #2a1c00 !important;
+  --color-background-modal-confirm-button-hover: #2a1c00 !important;
+  --color-background-modal-overlay: #070500 !important;
+  --color-background-navbar: #070500 !important;
+  --color-background-navigation-item-hover: #2a1c00 !important;
+  --color-background-neutral-banner: #070500 !important;
+  --color-background-neutral-icon-button-square-active: #2a1c00 !important;
+  --color-background-neutral-icon-button-square-hover: #2a1c00 !important;
+  --color-background-neutral-solid-action-button: #070500 !important;
+  --color-background-neutral-solid-action-button-active: #2a1c00 !important;
+  --color-background-neutral-solid-action-button-hover: #2a1c00 !important;
+  --color-background-neutral-subtle-action-button: #070500 !important;
+  --color-background-neutral-subtle-action-button-active: #2a1c00 !important;
+  --color-background-neutral-subtle-action-button-hover: #2a1c00 !important;
+  --color-background-neutral-text-action-button-active: #2a1c00 !important;
+  --color-background-neutral-text-action-button-hover: #2a1c00 !important;
+  --color-background-non-empty-overlay-indicator: #070500 !important;
+  --color-background-notification-table-thead: #070500 !important;
+  --color-background-overlay: #070500 !important;
+  --color-background-pill-container: #070500 !important;
+  --color-background-pill-container-input-disabled: #070500 !important;
+  --color-background-pill-container-without-placeholder: #070500 !important;
+  --color-background-poll-vote-focus: #2a1c00 !important;
+  --color-background-poll-vote-hover: #2a1c00 !important;
+  --color-background-popover: #070500 !important;
+  --color-background-popover-menu: #070500 !important;
+  --color-background-private-message-content: #070500 !important;
+  --color-background-private-message-header: #070500 !important;
+  --color-background-recent-filters-button-disabled: #070500 !important;
+  --color-background-recent-filters-button-focus: #2a1c00 !important;
+  --color-background-recent-view-participant-overflow: #070500 !important;
+  --color-background-recent-view-row: #070500 !important;
+  --color-background-recent-view-row-hover: #2a1c00 !important;
+  --color-background-recent-view-table-thead-sort-header: #070500 !important;
+  --color-background-recent-view-table-thead-th: #070500 !important;
+  --color-background-rendered-markdown-thead: #070500 !important;
+  --color-background-rendered-markdown-time: #070500 !important;
+  --color-background-search: #070500 !important;
+  --color-background-search-collapsed: #070500 !important;
+  --color-background-search-highlight: #070500 !important;
+  --color-background-search-option-hover: #2a1c00 !important;
+  --color-background-settings-plus-button: #070500 !important;
+  --color-background-sidebar-action-heading-hover: #2a1c00 !important;
+  --color-background-sidebar-action-hover: #2a1c00 !important;
+  --color-background-simplebar-scrollbar: #070500 !important;
+  --color-background-stream-email: #070500 !important;
+  --color-background-stream-message-content: #070500 !important;
+  --color-background-success-banner: #070500 !important;
+  --color-background-success-icon-button-square-active: #2a1c00 !important;
+  --color-background-success-icon-button-square-hover: #2a1c00 !important;
+  --color-background-success-main-view-banner: #070500 !important;
+  --color-background-success-main-view-banner-action-button: #070500 !important;
+  --color-background-success-main-view-banner-action-button-active: #2a1c00 !important;
+  --color-background-success-main-view-banner-action-button-hover: #2a1c00 !important;
+  --color-background-success-solid-action-button: #070500 !important;
+  --color-background-success-solid-action-button-active: #2a1c00 !important;
+  --color-background-success-solid-action-button-hover: #2a1c00 !important;
+  --color-background-success-subtle-action-button: #070500 !important;
+  --color-background-success-subtle-action-button-active: #2a1c00 !important;
+  --color-background-success-subtle-action-button-hover: #2a1c00 !important;
+  --color-background-success-text-action-button-active: #2a1c00 !important;
+  --color-background-success-text-action-button-hover: #2a1c00 !important;
+  --color-background-tab-picker-container: #070500 !important;
+  --color-background-tab-picker-selected-tab: #2a1c00 !important;
+  --color-background-tab-picker-tab-option-active: #2a1c00 !important;
+  --color-background-tab-picker-tab-option-hover: #2a1c00 !important;
+  --color-background-tab-switcher-ind-tab: #070500 !important;
+  --color-background-tab-switcher-ind-tab-selected: #2a1c00 !important;
+  --color-background-table-header: #070500 !important;
+  --color-background-table-header-sortable-hover: #2a1c00 !important;
+  --color-background-tbody-th-odd: #00000000 !important;
+  --color-background-text-direct-mention: #ffa900 !important;
+  --color-background-text-group-mention: #ffa900 !important;
+  --color-background-text-hover-direct-mention: #ffa900 !important;
+  --color-background-text-hover-group-mention: #ffa900 !important;
+  --color-background-tip: #070500 !important;
+  --color-background-tippy-box: #070500 !important;
+  --color-background-todo-checkbox-checked: #070500 !important;
+  --color-background-todo-checkbox-hover: #00000000 !important;
+  --color-background-unread-counter: #ffa900 !important;
+  --color-background-unread-counter-dot: #ffa900 !important;
+  --color-background-unread-counter-no-alpha: #ffa900 !important;
+  --color-background-unread-counter-normal: #ffa900 !important;
+  --color-background-unread-counter-prominent: #ffa900 !important;
+  --color-background-unread-counter-quiet: #00000000 !important;
+  --color-background-user-pill: #070500 !important;
+  --color-background-warning-banner: #070500 !important;
+  --color-background-warning-icon-button-square-active: #2a1c00 !important;
+  --color-background-warning-icon-button-square-hover: #2a1c00 !important;
+  --color-background-warning-main-view-banner: #070500 !important;
+  --color-background-warning-main-view-banner-action-button: #070500 !important;
+  --color-background-warning-main-view-banner-action-button-active: #2a1c00 !important;
+  --color-background-warning-main-view-banner-action-button-hover: #2a1c00 !important;
+  --color-background-warning-solid-action-button: #070500 !important;
+  --color-background-warning-solid-action-button-active: #2a1c00 !important;
+  --color-background-warning-solid-action-button-hover: #2a1c00 !important;
+  --color-background-warning-subtle-action-button: #070500 !important;
+  --color-background-warning-subtle-action-button-active: #2a1c00 !important;
+  --color-background-warning-subtle-action-button-hover: #2a1c00 !important;
+  --color-background-warning-text-action-button-active: #2a1c00 !important;
+  --color-background-warning-text-action-button-hover: #2a1c00 !important;
+  --color-background-white-box: #070500 !important;
+  --color-background-widget-button: #070500 !important;
+  --color-background-widget-input: #070500 !important;
+  --color-background-zulip-button: #070500 !important;
+  --color-background-zulip-button-active: #2a1c00 !important;
+  --color-background-zulip-button-disabled: #070500 !important;
+  --color-background-zulip-button-hover: #2a1c00 !important;
+  --color-border-add-subscription-button-focus: #ffa900 !important;
+  --color-border-brand-banner: #5c3a00 !important;
+  --color-border-compose-content: #5c3a00 !important;
+  --color-border-compose-new-message-button: #5c3a00 !important;
+  --color-border-compose-new-message-button-active: #ffa900 !important;
+  --color-border-compose-new-message-button-hover: #5c3a00 !important;
+  --color-border-danger-banner: #5c3a00 !important;
+  --color-border-dropdown-widget: #5c3a00 !important;
+  --color-border-dropdown-widget-button: #5c3a00 !important;
+  --color-border-emoji-picker-emoji-reacted: #5c3a00 !important;
+  --color-border-emoji-picker-tippy-arrow: #5c3a00 !important;
+  --color-border-error-main-view-banner: #5c3a00 !important;
+  --color-border-inbox-folder-component: #5c3a00 !important;
+  --color-border-inbox-search: #5c3a00 !important;
+  --color-border-inbox-search-focus: #ffa900 !important;
+  --color-border-inbox-search-hover: #5c3a00 !important;
+  --color-border-info-banner: #5c3a00 !important;
+  --color-border-info-main-view-banner: #5c3a00 !important;
+  --color-border-input-pill-image: #5c3a00 !important;
+  --color-border-legacy-input: #5c3a00 !important;
+  --color-border-legacy-input-focus: #ffa900 !important;
+  --color-border-manage-profile-footer: #5c3a00 !important;
+  --color-border-message-group-spacer-line: #5c3a00 !important;
+  --color-border-modal: #5c3a00 !important;
+  --color-border-modal-bar: #5c3a00 !important;
+  --color-border-neutral-banner: #5c3a00 !important;
+  --color-border-personal-menu-avatar: #5c3a00 !important;
+  --color-border-pill-container: #5c3a00 !important;
+  --color-border-poll-vote: #5c3a00 !important;
+  --color-border-poll-vote-focus: #ffa900 !important;
+  --color-border-poll-vote-hover: #5c3a00 !important;
+  --color-border-popover-hotkey-hint: #5c3a00 !important;
+  --color-border-popover-menu: #5c3a00 !important;
+  --color-border-popover-menu-separator: #5c3a00 !important;
+  --color-border-recent-filters-button-disabled: #5c3a00 !important;
+  --color-border-recent-view-table: #5c3a00 !important;
+  --color-border-rendered-checkbox: #5c3a00 !important;
+  --color-border-rendered-markdown-table: #5c3a00 !important;
+  --color-border-settings-plus-button: #5c3a00 !important;
+  --color-border-sidebar: #5c3a00 !important;
+  --color-border-sidebar-subheader: #5c3a00 !important;
+  --color-border-success-banner: #5c3a00 !important;
+  --color-border-success-main-view-banner: #5c3a00 !important;
+  --color-border-tab-switcher-ind-tab: #5c3a00 !important;
+  --color-border-tab-switcher-ind-tab-disabled: #5c3a00 !important;
+  --color-border-tab-switcher-ind-tab-selected: #ffa900 !important;
+  --color-border-table-bordered: #5c3a00 !important;
+  --color-border-table-striped: #5c3a00 !important;
+  --color-border-table-subscriber-list: #5c3a00 !important;
+  --color-border-tip: #5c3a00 !important;
+  --color-border-todo-checkbox: #5c3a00 !important;
+  --color-border-todo-checkbox-checked: #5c3a00 !important;
+  --color-border-todo-checkbox-hover: #5c3a00 !important;
+  --color-border-unread-counter: #5c3a00 !important;
+  --color-border-unread-counter-popover-menu: #5c3a00 !important;
+  --color-border-user-profile-list-container: #5c3a00 !important;
+  --color-border-user-profile-table: #5c3a00 !important;
+  --color-border-warning-banner: #5c3a00 !important;
+  --color-border-warning-main-view-banner: #5c3a00 !important;
+  --color-border-zulip-button: #5c3a00 !important;
+  --color-border-zulip-button-interactive: #ffa900 !important;
+  --color-box-shadow-animated-purple-button-focus: #2a1c00 !important;
+  --color-box-shadow-emoji-picker-emoji-focus: #00000000 !important;
+  --color-box-shadow-inbox-search-focus: #2a1c00 !important;
+  --color-box-shadow-input-focus: #2a1c00 !important;
+  --color-box-shadow-rendered-markdown-time: #070500 !important;
+  --color-box-shadow-simplebar-scrollbar: #070500 !important;
+  --color-buddy-list-avatar-loading: #ffa900 !important;
+  --color-buddy-list-highlighted-user: #ffa900 !important;
+  --color-close-deactivated-user-pill: #a56b00 !important;
+  --color-compose-box-background: #070500 !important;
+  --color-compose-chevron-arrow: #ffa900 !important;
+  --color-compose-collapsed-reply-button-area-background: #070500 !important;
+  --color-compose-collapsed-reply-button-area-background-interactive: #2a1c00 !important;
+  --color-compose-collapsed-reply-button-area-border: #5c3a00 !important;
+  --color-compose-collapsed-reply-button-area-border-interactive: #ffa900 !important;
+  --color-compose-control-button-background-hover: #2a1c00 !important;
+  --color-compose-embedded-button-background: #00000000 !important;
+  --color-compose-embedded-button-background-hover: #2a1c00 !important;
+  --color-compose-embedded-button-background-interactive: #2a1c00 !important;
+  --color-compose-embedded-button-text-color: #ffa900 !important;
+  --color-compose-embedded-button-text-color-hover: #ffa900 !important;
+  --color-compose-focus-ring: #ffa900 !important;
+  --color-compose-formatting-button-divider: #ffa900 !important;
+  --color-compose-message-content-background: #070500 !important;
+  --color-compose-message-content-background-approaching-limit: #070500 !important;
+  --color-compose-message-content-background-over-limit: #070500 !important;
+  --color-compose-recipient-box-background-color: #070500 !important;
+  --color-compose-recipient-box-border-color: #5c3a00 !important;
+  --color-compose-recipient-box-has-focus: #ffa900 !important;
+  --color-compose-recipient-box-hover: #ffa900 !important;
+  --color-compose-recipient-box-text-color: #ffa900 !important;
+  --color-compose-scroll-icon: #ffa900 !important;
+  --color-compose-send-button-background: #ffa900 !important;
+  --color-compose-send-button-background-interactive: #ffa900 !important;
+  --color-compose-send-button-focus-border: #ffa900 !important;
+  --color-compose-send-button-focus-shadow: #ffa900 !important;
+  --color-compose-send-button-icon-color: #100c04 !important;
+  --color-compose-send-control-button: #ffa900 !important;
+  --color-compose-send-control-button-background: #00000000 !important;
+  --color-compose-send-control-button-background-interactive: #2a1c00 !important;
+  --color-compose-send-control-button-focus-shadow: #2a1c00 !important;
+  --color-compose-send-control-button-interactive: #ffa900 !important;
+  --color-composebox-button: #ffa900 !important;
+  --color-composebox-button-background: #070500 !important;
+  --color-composebox-button-background-hover: #2a1c00 !important;
+  --color-composebox-button-hover: #ffa900 !important;
+  --color-copy-button: #ffa900 !important;
+  --color-copy-button-active: #ffa900 !important;
+  --color-copy-button-hover: #ffa900 !important;
+  --color-copy-button-square-active: #ffa900 !important;
+  --color-copy-button-square-bg-active: #ffa900 !important;
+  --color-copy-button-square-bg-hover: #ffa900 !important;
+  --color-copy-button-success: #ffa900 !important;
+  --color-current-setting-dropdown-item: #ffa900 !important;
+  --color-date: #ffa900 !important;
+  --color-dropdown-item: #ffa900 !important;
+  --color-dropdown-item-link-underline: #ffa900 !important;
+  --color-error-main-view-banner: #ffa900 !important;
+  --color-error-main-view-banner-action-button: #ffa900 !important;
+  --color-error-main-view-banner-close-button: #ffa900 !important;
+  --color-error-main-view-banner-close-button-active: #ffa900 !important;
+  --color-error-main-view-banner-close-button-hover: #ffa900 !important;
+  --color-exit-button-background: #070500 !important;
+  --color-exit-button-background-interactive: #2a1c00 !important;
+  --color-exit-button-text: #ffa900 !important;
+  --color-failed-message-send-icon: #ffa900 !important;
+  --color-fill-hover-copy-icon: #ffa900 !important;
+  --color-fill-user-invite-copy-icon: #ffa900 !important;
+  --color-focus-outline-deactivated-user-pill: #ffa900 !important;
+  --color-focus-outline-input-pill: #ffa900 !important;
+  --color-folder-header: #ffa900 !important;
+  --color-gear-menu-blue-text: #ffa900 !important;
+  --color-gear-menu-lighter-text: #ffa900 !important;
+  --color-header-button-focus: #ffa900 !important;
+  --color-header-button-focus-no-alpha: #ffa900 !important;
+  --color-header-button-hover: #ffa900 !important;
+  --color-header-button-hover-no-alpha: #ffa900 !important;
+  --color-hotkey-hint: #ffa900 !important;
+  --color-hovered-gif-in-grid-picker: #ffa900 !important;
+  --color-icon-bot: #ffa900 !important;
+  --color-icon-purple: #ffa900 !important;
+  --color-icon-search-inbox: #ffa900 !important;
+  --color-icons-inbox: #ffa900 !important;
+  --color-inbox-row-chevron: #ffa900 !important;
+  --color-inbox-search-text: #ffa900 !important;
+  --color-info-density-button-hover-background: #2a1c00 !important;
+  --color-info-density-button-icon: #ffa900 !important;
+  --color-info-density-control-border: #5c3a00 !important;
+  --color-info-main-view-banner: #ffa900 !important;
+  --color-info-main-view-banner-action-button: #ffa900 !important;
+  --color-info-main-view-banner-close-button: #ffa900 !important;
+  --color-info-main-view-banner-close-button-active: #ffa900 !important;
+  --color-info-main-view-banner-close-button-hover: #ffa900 !important;
+  --color-inner-shadow-action-button: #070500 !important;
+  --color-input-pill-close: #ffa900 !important;
+  --color-invalid-input-border: #5c3a00 !important;
+  --color-invalid-input-box-shadow: #070500 !important;
+  --color-kbd-background: #070500 !important;
+  --color-kbd-border: #5c3a00 !important;
+  --color-kbd-enter-sends: #ffa900 !important;
+  --color-kbd-text: #ffa900 !important;
+  --color-left-sidebar-direct-messages-bottom-divider: #ffa900 !important;
+  --color-left-sidebar-dm-partners-icon: #ffa900 !important;
+  --color-left-sidebar-follow-icon-hover: #ffa900 !important;
+  --color-left-sidebar-inner-box-shadow: #070500 !important;
+  --color-left-sidebar-middle-box-shadow: #070500 !important;
+  --color-left-sidebar-middle-box-shadow-hover: #2a1c00 !important;
+  --color-left-sidebar-navigation-icon: #ffa900 !important;
+  --color-left-sidebar-outer-box-shadow: #070500 !important;
+  --color-left-sidebar-outer-box-shadow-hover: #2a1c00 !important;
+  --color-limit-indicator: #ffa900 !important;
+  --color-limit-indicator-over-limit: #ffa900 !important;
+  --color-main-view-banner-action-link: #ffa900 !important;
+  --color-markdown-code-background: #070500 !important;
+  --color-markdown-code-background-mentions: #070500 !important;
+  --color-markdown-code-link: #ffa900 !important;
+  --color-markdown-code-link-hover: #ffa900 !important;
+  --color-markdown-code-text: #ffa900 !important;
+  --color-markdown-link: #ffc14d !important;
+  --color-markdown-link-alert-word: #ffc14d !important;
+  --color-markdown-link-alert-word-hover: #ffc14d !important;
+  --color-markdown-link-highlight: #ffc14d !important;
+  --color-markdown-link-highlight-hover: #ffc14d !important;
+  --color-markdown-link-hover: #ffc14d !important;
+  --color-markdown-pre-background: #070500 !important;
+  --color-markdown-pre-background-mentions: #070500 !important;
+  --color-markdown-pre-border: #00000000 !important;
+  --color-markdown-pre-border-mentions: #00000000 !important;
+  --color-markdown-pre-text: #ffa900 !important;
+  --color-masked-unread-marker: #100c04 !important;
+  --color-message-action-interactive: #ffa900 !important;
+  --color-message-action-visible: #ffa900 !important;
+  --color-message-content-container-border: #5c3a00 !important;
+  --color-message-content-container-border-approaching-limit: #5c3a00 !important;
+  --color-message-content-container-border-focus: #ffa900 !important;
+  --color-message-content-container-border-over-limit: #5c3a00 !important;
+  --color-message-edit-history-background-deleted: #070500 !important;
+  --color-message-edit-history-background-inserted: #070500 !important;
+  --color-message-edit-history-text-deleted: #ffa900 !important;
+  --color-message-edit-history-text-inserted: #ffa900 !important;
+  --color-message-formatting-controls-container: #ffa900 !important;
+  --color-message-header-contents-border: #5c3a00 !important;
+  --color-message-header-contents-border-bottom: #5c3a00 !important;
+  --color-message-header-icon-interactive: #ffa900 !important;
+  --color-message-header-icon-non-interactive: #ffa900 !important;
+  --color-message-list-border: #5c3a00 !important;
+  --color-message-reaction-background: #070500 !important;
+  --color-message-reaction-background-hover: #2a1c00 !important;
+  --color-message-reaction-background-reacted: #070500 !important;
+  --color-message-reaction-border: #5c3a00 !important;
+  --color-message-reaction-border-reacted: #5c3a00 !important;
+  --color-message-reaction-button-background: #070500 !important;
+  --color-message-reaction-button-background-hover: #2a1c00 !important;
+  --color-message-reaction-button-border: #00000000 !important;
+  --color-message-reaction-button-border-hover: #5c3a00 !important;
+  --color-message-reaction-button-text: #ffa900 !important;
+  --color-message-reaction-button-text-hover: #ffa900 !important;
+  --color-message-reaction-shadow-inner: #070500 !important;
+  --color-message-reaction-text: #ffa900 !important;
+  --color-message-reaction-text-reacted: #ffa900 !important;
+  --color-message-star-action: #ffa900 !important;
+  --color-modal-heading-text: #ffa900 !important;
+  --color-modal-selectable-icon: #ffa900 !important;
+  --color-modal-selectable-icon-hover: #ffa900 !important;
+  --color-narrow-to-compose-recipients: #ffa900 !important;
+  --color-narrow-to-compose-recipients-background: #070500 !important;
+  --color-narrow-to-compose-recipients-background-hover: #2a1c00 !important;
+  --color-narrow-to-compose-recipients-hover: #ffa900 !important;
+  --color-navbar-bottom-border: #5c3a00 !important;
+  --color-navbar-icon: #ffa900 !important;
+  --color-navbar-spectator-low-attention-brand-button-background: #00000000 !important;
+  --color-navbar-spectator-low-attention-brand-button-background-active: #2a1c00 !important;
+  --color-navbar-spectator-low-attention-brand-button-background-hover: #2a1c00 !important;
+  --color-navbar-spectator-low-attention-brand-button-text: #ffa900 !important;
+  --color-navbar-spectator-medium-attention-brand-button-background: #070500 !important;
+  --color-navbar-spectator-medium-attention-brand-button-background-active: #2a1c00 !important;
+  --color-navbar-spectator-medium-attention-brand-button-background-hover: #2a1c00 !important;
+  --color-navbar-spectator-medium-attention-brand-button-text: #ffa900 !important;
+  --color-outline-button-focus: #ffa900 !important;
+  --color-outline-focus: #ffa900 !important;
+  --color-outline-input: #5c3a00 !important;
+  --color-outline-input-focus: #ffa900 !important;
+  --color-outline-input-hover: #5c3a00 !important;
+  --color-outline-low-attention-input-pill: #5c3a00 !important;
+  --color-outline-tab-picker-tab-option: #5c3a00 !important;
+  --color-poll-names: #ffa900 !important;
+  --color-poll-vote: #ffa900 !important;
+  --color-poll-vote-focus: #ffa900 !important;
+  --color-poll-vote-hover: #ffa900 !important;
+  --color-popover-hotkey-hint: #ffa900 !important;
+  --color-private-message-header-border: #5c3a00 !important;
+  --color-private-message-header-border-bottom: #5c3a00 !important;
+  --color-realm-enable-spectator-access-link: #ffa900 !important;
+  --color-recent-view-link: #ffa900 !important;
+  --color-recent-view-link-unread: #100c04 !important;
+  --color-recent-view-loading-spinner: #ffa900 !important;
+  --color-recent-view-participant-overflow-text: #ffa900 !important;
+  --color-recipient-bar-controls-spinner: #ffa900 !important;
+  --color-request-progress-status-alert-text: #ffa900 !important;
+  --color-search-box-hover-shadow: #2a1c00 !important;
+  --color-search-dropdown-top-border: #5c3a00 !important;
+  --color-search-icons: #ffa900 !important;
+  --color-search-shadow-tight: #070500 !important;
+  --color-search-shadow-wide: #070500 !important;
+  --color-selected-gif-in-grid-picker: #ffa900 !important;
+  --color-selected-message-outline: #ffa900 !important;
+  --color-shadow-sidebar-row-hover: #2a1c00 !important;
+  --color-show-more-less-button-background: #070500 !important;
+  --color-show-more-less-button-background-active: #2a1c00 !important;
+  --color-show-more-less-button-background-hover: #2a1c00 !important;
+  --color-sidebar-action: #ffa900 !important;
+  --color-sidebar-action-hover: #ffa900 !important;
+  --color-stream-group-row-checked-icon: #ffa900 !important;
+  --color-stream-group-row-checked-icon-disabled: #a56b00 !important;
+  --color-stream-group-row-checked-icon-hover: #ffa900 !important;
+  --color-stream-group-row-plus-icon: #ffa900 !important;
+  --color-stream-group-row-plus-icon-disabled: #a56b00 !important;
+  --color-stream-group-row-plus-icon-hover: #ffa900 !important;
+  --color-success-main-view-banner: #ffa900 !important;
+  --color-success-main-view-banner-close-button: #ffa900 !important;
+  --color-success-main-view-banner-close-button-active: #ffa900 !important;
+  --color-success-main-view-banner-close-button-hover: #ffa900 !important;
+  --color-tab-picker-icon: #ffa900 !important;
+  --color-text-active-narrow-filter: #ffc14d !important;
+  --color-text-alert-word: #ffa900 !important;
+  --color-text-brand-banner: #ffa900 !important;
+  --color-text-brand-icon-button: #ffa900 !important;
+  --color-text-brand-icon-button-active: #ffa900 !important;
+  --color-text-brand-icon-button-hover: #ffa900 !important;
+  --color-text-brand-icon-button-square-active: #ffa900 !important;
+  --color-text-brand-solid-action-button: #ffa900 !important;
+  --color-text-brand-subtle-action-button: #ffa900 !important;
+  --color-text-brand-text-action-button: #ffa900 !important;
+  --color-text-clear-search-button: #ffa900 !important;
+  --color-text-clear-search-button-hover: #ffa900 !important;
+  --color-text-danger-banner: #ffa900 !important;
+  --color-text-danger-icon-button: #ffa900 !important;
+  --color-text-danger-icon-button-active: #ffa900 !important;
+  --color-text-danger-icon-button-hover: #ffa900 !important;
+  --color-text-danger-icon-button-square-active: #ffa900 !important;
+  --color-text-danger-solid-action-button: #ffa900 !important;
+  --color-text-danger-subtle-action-button: #ffa900 !important;
+  --color-text-danger-text-action-button: #ffa900 !important;
+  --color-text-default: #ffa900 !important;
+  --color-text-dropdown-input: #ffa900 !important;
+  --color-text-empty-list-message: #ffa900 !important;
+  --color-text-full-name: #ffa900 !important;
+  --color-text-generic-link: #ffa900 !important;
+  --color-text-generic-link-interactive: #ffa900 !important;
+  --color-text-info-banner: #ffa900 !important;
+  --color-text-info-icon-button: #ffa900 !important;
+  --color-text-info-icon-button-active: #ffa900 !important;
+  --color-text-info-icon-button-hover: #ffa900 !important;
+  --color-text-info-icon-button-square-active: #ffa900 !important;
+  --color-text-info-solid-action-button: #ffa900 !important;
+  --color-text-info-subtle-action-button: #ffa900 !important;
+  --color-text-info-text-action-button: #ffa900 !important;
+  --color-text-input: #ffa900 !important;
+  --color-text-item: #ffa900 !important;
+  --color-text-link: #ffa900 !important;
+  --color-text-link-active: #ffa900 !important;
+  --color-text-link-banner: #ffa900 !important;
+  --color-text-link-decoration: #ffa900 !important;
+  --color-text-link-decoration-hover: #ffa900 !important;
+  --color-text-link-hover: #ffa900 !important;
+  --color-text-message-blockquote-border: #5c3a00 !important;
+  --color-text-message-default: #ffa900 !important;
+  --color-text-message-header: #ffa900 !important;
+  --color-text-message-header-archived: #ffa900 !important;
+  --color-text-message-view-header: #ffa900 !important;
+  --color-text-modal-cancel-button: #ffa900 !important;
+  --color-text-neutral-banner: #ffa900 !important;
+  --color-text-neutral-icon-button: #ffa900 !important;
+  --color-text-neutral-icon-button-active: #ffa900 !important;
+  --color-text-neutral-icon-button-hover: #ffa900 !important;
+  --color-text-neutral-icon-button-square-active: #ffa900 !important;
+  --color-text-neutral-solid-action-button: #ffa900 !important;
+  --color-text-neutral-subtle-action-button: #ffa900 !important;
+  --color-text-neutral-text-action-button: #ffa900 !important;
+  --color-text-other-mention: #100c04 !important;
+  --color-text-personal-menu-no-status: #ffa900 !important;
+  --color-text-personal-menu-some-status: #ffa900 !important;
+  --color-text-placeholder: #a56b00 !important;
+  --color-text-popover-menu: #ffa900 !important;
+  --color-text-recent-view-last-msg-time: #ffa900 !important;
+  --color-text-recent-view-last-msg-time-unread: #100c04 !important;
+  --color-text-recent-view-table-thead-th: #ffa900 !important;
+  --color-text-scroll-to-bottom-button: #ffa900 !important;
+  --color-text-search: #ffa900 !important;
+  --color-text-search-highlight: #ffa900 !important;
+  --color-text-search-hover: #ffa900 !important;
+  --color-text-search-placeholder: #a56b00 !important;
+  --color-text-self-direct-mention: #100c04 !important;
+  --color-text-self-group-mention: #100c04 !important;
+  --color-text-sender-name: #ffc14d !important;
+  --color-text-sender-name-hover: #ffc14d !important;
+  --color-text-settings-field-hint: #ffa900 !important;
+  --color-text-settings-plus-button: #ffa900 !important;
+  --color-text-show-more-less-button: #ffa900 !important;
+  --color-text-sidebar-action-heading: #ffa900 !important;
+  --color-text-sidebar-action-heading-hover: #ffa900 !important;
+  --color-text-sidebar-base: #ffa900 !important;
+  --color-text-sidebar-heading: #ffa900 !important;
+  --color-text-sidebar-popover-menu: #ffa900 !important;
+  --color-text-sidebar-row: #ffa900 !important;
+  --color-text-success-banner: #ffa900 !important;
+  --color-text-success-icon-button: #ffa900 !important;
+  --color-text-success-icon-button-active: #ffa900 !important;
+  --color-text-success-icon-button-hover: #ffa900 !important;
+  --color-text-success-icon-button-square-active: #ffa900 !important;
+  --color-text-success-solid-action-button: #ffa900 !important;
+  --color-text-success-subtle-action-button: #ffa900 !important;
+  --color-text-success-text-action-button: #ffa900 !important;
+  --color-text-tab-switcher-ind-tab-disabled: #a56b00 !important;
+  --color-text-url: #ffa900 !important;
+  --color-text-url-hover: #ffa900 !important;
+  --color-text-user-card-secondary: #ffa900 !important;
+  --color-text-warning-banner: #ffa900 !important;
+  --color-text-warning-icon-button: #ffa900 !important;
+  --color-text-warning-icon-button-active: #ffa900 !important;
+  --color-text-warning-icon-button-hover: #ffa900 !important;
+  --color-text-warning-icon-button-square-active: #ffa900 !important;
+  --color-text-warning-solid-action-button: #ffa900 !important;
+  --color-text-warning-subtle-action-button: #ffa900 !important;
+  --color-text-warning-text-action-button: #ffa900 !important;
+  --color-topic-indent-border: #5c3a00 !important;
+  --color-typeahead-option-label: #ffa900 !important;
+  --color-unmuted-or-followed-topic-list-item: #ffa900 !important;
+  --color-unread-counter-muted: #100c04 !important;
+  --color-unread-counter-normal: #100c04 !important;
+  --color-unread-counter-prominent: #100c04 !important;
+  --color-unread-counter-quiet: #100c04 !important;
+  --color-unread-marker: #100c04 !important;
+  --color-user-circle-active: #ffa900 !important;
+  --color-user-circle-deactivated: #a56b00 !important;
+  --color-user-circle-idle: #ffa900 !important;
+  --color-user-circle-offline: #ffa900 !important;
+  --color-user-circle-offline-typeahead-highlight: #ffa900 !important;
+  --color-user-profile-field-name: #ffa900 !important;
+  --color-vdots-hint: #ffa900 !important;
+  --color-vdots-hover: #ffa900 !important;
+  --color-vdots-visible: #ffa900 !important;
+  --color-warning-main-view-banner: #ffa900 !important;
+  --color-warning-main-view-banner-action-button: #ffa900 !important;
+  --color-warning-main-view-banner-close-button: #ffa900 !important;
+  --color-warning-main-view-banner-close-button-active: #ffa900 !important;
+  --color-warning-main-view-banner-close-button-hover: #ffa900 !important;
+  --color-zulip-logo: #ffa900 !important;
+  --color-zulip-logo-loading: #ffa900 !important;
+  --color-zulip-logo-z: #ffa900 !important;
+}
+
+/* Desktop shell colors from Zulip.app. Add custom CSS does not apply these rules. */
+:host {
+  background: #070500 !important;
+  color: #ffa900 !important;
+  --tagify-dd-color-primary: #ffa900 !important;
+  --tagify-dd-bg-color: #ffa900 !important;
+}
+
+#version {
+  color: #ffa900 !important;
+}
+
+.about p {
+  color: #ffa900 !important;
+}
+
+.maintenance-info {
+  color: #ffa900 !important;
+}
+
+p.detail a {
+  color: #ffa900 !important;
+}
+
+@charset "UTF-8";:root {
+  --tagify-dd-color-primary: #ffa900 !important;
+  --tagify-dd-text-color: #ffa900 !important;
+  --tagify-dd-bg-color: #ffa900 !important;
+}
+
+.tagify {
+  --tags-disabled-bg: #a56b00 !important;
+  --tags-border-color: #5c3a00 !important;
+  --tags-hover-border-color: #5c3a00 !important;
+  --tags-focus-border-color: #ffa900 !important;
+  --tag-bg: #ffa900 !important;
+  --tag-hover: #ffa900 !important;
+  --tag-text-color: #ffa900 !important;
+  --tag-text-color--edit: #ffa900 !important;
+  --tag-invalid-color: #ffa900 !important;
+  --tag-invalid-bg: #ffa900 !important;
+  --tag-remove-bg: #ffa900 !important;
+  --tag-remove-btn-color: #ffa900 !important;
+  --tag-remove-btn-bg--hover: #ffa900 !important;
+  --placeholder-color: #a56b00 !important;
+  --placeholder-color-focus: #a56b00 !important;
+}
+
+0% {
+  background: linear-gradient(45deg,var(--tag-bg) 25%,#00000000 25%,#00000000 50%,var(--tag-bg) 50%,var(--tag-bg) 75%,#00000000 75%,#00000000) 0/5px 5px !important;
+}
+
+.tagify--loading .tagify__input::after {
+  border-color: #5c3a00 #5c3a00 #5c3a00 #00000000 !important;
+}
+
+.tagify__tag--loading::after {
+  border-color: #5c3a00 #5c3a00 #5c3a00 #00000000 !important;
+}
+
+.tagify__tag__removeBtn:hover {
+  color: #ffa900 !important;
+}
+
+.tagify__tag__removeBtn:hover+div::before {
+  box-shadow: 0 0 0 var(--tag-inset-shadow-size) var(--tag-remove-bg,#070500) inset!important !important;
+}
+
+.tagify__input:last-child:focus:empty::before {
+  color: #ffa900 !important;
+}
+
+.tagify--invalid {
+  --tags-border-color: #5c3a00 !important;
+}
+
+.tagify__dropdown__wrapper {
+  box-shadow: 0 2px 4px -2px #070500 !important;
+}
+
+.tagify__dropdown__item--active {
+  color: #ffa900 !important;
+}
+
+kbd {
+  border: 1px solid #5c3a00 !important;
+  background-color: #070500 !important;
+  color: #ffa900 !important;
+  text-shadow: 0 1px 0 #070500 !important;
+}
+
+table, th, td {
+  color: #ffa900 !important;
+}
+
+#sidebar {
+  background: #070500 !important;
+}
+
+.nav {
+  color: #ffa900 !important;
+}
+
+.nav.active {
+  color: #ffa900 !important;
+}
+
+.nav.active::before {
+  background: #070500 !important;
+}
+
+#settings-header {
+  color: #ffa900 !important;
+}
+
+.title {
+  color: #ffa900 !important;
+}
+
+.page-title {
+  color: #ffa900 !important;
+}
+
+.sub-title {
+  color: #ffa900 !important;
+}
+
+.setting-input-key {
+  background: #00000000 !important;
+}
+
+.setting-input-value {
+  border: #5c3a00 2px solid !important;
+  background: #00000000 !important;
+}
+
+.setting-input-value:focus {
+  border: #5c3a00 2px solid !important;
+}
+
+.invalid-input-value:focus {
+  border: #5c3a00 2px solid !important;
+}
+
+.actions-container {
+  color: #ffa900 !important;
+}
+
+.action.disabled {
+  color: #ffa900 !important;
+}
+
+.settings-card {
+  background: #070500 !important;
+}
+
+.settings-card:hover {
+  box-shadow: 0 2px 5px 0 #070500, 0 2px 0 0 #070500 !important;
+}
+
+.red {
+  color: #ffa900 !important;
+  background: #070500 !important;
+  border: 2px solid #5c3a00 !important;
+}
+
+.red:hover {
+  background-color: #070500 !important;
+  color: #ffa900 !important;
+}
+
+.green {
+  color: #ffa900 !important;
+  background: #070500 !important;
+}
+
+.green:hover {
+  background-color: #070500 !important;
+  color: #ffa900 !important;
+}
+
+.grey {
+  color: #ffa900 !important;
+  background: #070500 !important;
+  border: 1px solid #5c3a00 !important;
+}
+
+.selected-css-path, .download-folder-path {
+  background: #070500 !important;
+}
+
+.disallowed:hover {
+  background-color: #070500 !important;
+}
+
+input.toggle-round + label {
+  background-color: #070500 !important;
+}
+
+input.toggle-round + label::before {
+  background-color: #070500 !important;
+}
+
+input.toggle-round + label::after {
+  background-color: #070500 !important;
+}
+
+input.toggle-round:checked + label::before {
+  background-color: #070500 !important;
+}
+
+.add-server-modal {
+  background: linear-gradient( 35deg, #070500, #070500 ) !important;
+}
+
+.modal-container {
+  background-color: #070500 !important;
+  border: #5c3a00 1px solid !important;
+}
+
+.divider {
+  color: #ffa900 !important;
+}
+
+.server-center button {
+  color: #ffa900 !important;
+  background: #070500 !important;
+}
+
+.server-center button:hover {
+  background: #070500 !important;
+}
+
+.server-center button:focus {
+  background: #070500 !important;
+}
+
+.server-network-option {
+  color: #ffa900 !important;
+}
+
+.lang-menu {
+  background: #070500 !important;
+  color: #ffa900 !important;
+  border-color: #00000000 !important;
+}
+
+.toggle-sidebar {
+  background: #070500 !important;
+}
+
+#view-controls-container::-webkit-scrollbar-track {
+  background-color: #070500 !important;
+}
+
+#view-controls-container::-webkit-scrollbar-thumb {
+  background-color: #070500 !important;
+}
+
+.action-button i {
+  color: #ffa900 !important;
+}
+
+.action-button:hover i {
+  color: #ffa900 !important;
+}
+
+.action-button > .dnd-on {
+  color: #ffa900 !important;
+}
+
+.action-button:hover > .dnd-on {
+  color: #ffa900 !important;
+}
+
+.action-button.active {
+  background-color: #070500 !important;
+}
+
+.action-button.active i {
+  color: #ffa900 !important;
+}
+
+.action-button.disable:hover i {
+  color: #ffa900 !important;
+}
+
+.tab .server-tab {
+  color: #ffa900 !important;
+}
+
+.server-tab .alt-icon {
+  border: 2px solid #5c3a00 !important;
+}
+
+.tab.active .server-tab {
+  background-color: #070500 !important;
+}
+
+.tab.functional-tab.active .server-tab {
+  background-color: #070500 !important;
+}
+
+.tab .server-tab-badge.active {
+  background-color: #070500 !important;
+  color: #ffa900 !important;
+}
+
+.tab .server-tab-shortcut {
+  color: #ffa900 !important;
+}
+
+#webviews-container::before {
+  background: #070500 url("data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3csvg%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20style='margin:%20auto !important;
+}
+
+webview.focus {
+  outline: 0 solid #5c3a00 !important;
+}
+
+.webview-unsupported {
+  background: #070500 !important;
+  border: 1px solid #5c3a00 !important;
+  color: #ffa900 !important;
+}
+
+#loading-tooltip, #dnd-tooltip, #back-tooltip, #reload-tooltip, #setting-tooltip {
+  background: #070500 !important;
+  color: #ffa900 !important;
+}
+
+#loading-tooltip::after, #dnd-tooltip::after, #back-tooltip::after, #reload-tooltip::after, #setting-tooltip::after {
+  border-top: 8px solid #00000000 !important;
+  border-bottom: 8px solid #00000000 !important;
+  border-right: 8px solid #5c3a00 !important;
+}
+
+#add-server-tooltip, .server-tooltip {
+  background: #070500 !important;
+  color: #ffa900 !important;
+}
+
+#add-server-tooltip::after, .server-tooltip::after {
+  border-top: 8px solid #00000000 !important;
+  border-bottom: 8px solid #00000000 !important;
+  border-right: 8px solid #5c3a00 !important;
+}
+
+#collapse-button {
+  background: #070500 !important;
+  box-shadow: #070500 1px 1px !important;
+}
+
+#collapse-button i {
+  color: #ffa900 !important;
+}
+
+.popup .popuptext {
+  background-color: #070500 !important;
+  color: #ffa900 !important;
+}
+
+html, body {
+  color: #ffa900 !important;
+  background: #070500 !important;
+}
+
+.button {
+  background: #070500 !important;
+  color: #ffa900 !important;
+}
