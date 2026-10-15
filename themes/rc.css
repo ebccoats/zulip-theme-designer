@@ -1,0 +1,1018 @@
+body {
+  isolation: isolate;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2012%2015%22%20shape-rendering%3D%22crispEdges%22%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%2210%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%2211%22%20y%3D%220%22%20width%3D%221%22%20height%3D%2210%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%220%22%20y%3D%229%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%224%22%20y%3D%229%22%20width%3D%224%22%20height%3D%223%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%221%22%20y%3D%2211%22%20width%3D%2210%22%20height%3D%221%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%221%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%224%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%2210%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%224%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%221%22%20y%3D%2214%22%20width%3D%2210%22%20height%3D%221%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%220%22%20y%3D%2212%22%20width%3D%222%22%20height%3D%223%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%2210%22%20y%3D%2212%22%20width%3D%222%22%20height%3D%223%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%2210%22%20y%3D%2212%22%20width%3D%222%22%20height%3D%223%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%221%22%20y%3D%2211%22%20width%3D%222%22%20height%3D%222%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%224%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%222%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%226%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%222%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%228%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%222%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%229%22%20y%3D%2213%22%20width%3D%222%22%20height%3D%222%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%227%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%222%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%225%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%222%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%223%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%222%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%0A%20%20%3Crect%20class%3D%22rc-logo__secondary%22%20x%3D%221%22%20y%3D%221%22%20width%3D%2210%22%20height%3D%228%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__secondary%22%20x%3D%222%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__secondary%22%20x%3D%223%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__secondary%22%20x%3D%224%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__secondary%22%20x%3D%225%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__secondary%22%20x%3D%226%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__secondary%22%20x%3D%227%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__secondary%22%20x%3D%228%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__secondary%22%20x%3D%229%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%0A%0A%20%20%3Crect%20class%3D%22rc-logo__primary%22%20x%3D%222%22%20y%3D%222%22%20width%3D%228%22%20height%3D%226%22%20fill%3D%22%232a2d2d%22%3E%3C%2Frect%3E%0A%0A%20%20%3Crect%20class%3D%22rc-logo__accent%20rc-logo__pixel1%22%20x%3D%222%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%233dc06c%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__accent%20rc-logo__pixel2%22%20x%3D%224%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%233dc06c%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__accent%20rc-logo__pixel3%22%20x%3D%226%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%233dc06c%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__accent%20rc-logo__pixel4%22%20x%3D%223%22%20y%3D%225%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233dc06c%22%3E%3C%2Frect%3E%0A%20%20%3Crect%20class%3D%22rc-logo__accent%20rc-logo__pixel5%22%20x%3D%226%22%20y%3D%225%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233dc06c%22%3E%3C%2Frect%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 82vh;
+}
+
+body,
+body * {
+  -webkit-text-stroke: 7px #ffffff;
+  paint-order: stroke fill;
+  text-shadow: -3px 0 0 #ffffff, 3px 0 0 #ffffff, 0 -3px 0 #ffffff, 0 3px 0 #ffffff, -3px -3px 0 #ffffff, 3px -3px 0 #ffffff, -3px 3px 0 #ffffff, 3px 3px 0 #ffffff;
+}
+/* zulip theme: rc
+   Same colors as the theme in the editor.
+*/
+:root {
+  --color-active-dropdown-item: #23a05038 !important;
+  --color-active-row-modal: #23a05038 !important;
+  --color-animated-button-text: #2a2d2d !important;
+  --color-arrow-recent-view-table-thead-th: #2a2d2d !important;
+  --color-background: #ffffff3d !important;
+  --color-background-active-narrow-filter: #23a05038 !important;
+  --color-background-active-popover-menu: #23a05038 !important;
+  --color-background-alert-word: #ffffff3d !important;
+  --color-background-animated-button: #ffffff3d !important;
+  --color-background-animated-button-hover: #23a05038 !important;
+  --color-background-brand-banner: #ffffff80 !important;
+  --color-background-brand-icon-button-square-active: #23a05038 !important;
+  --color-background-brand-icon-button-square-hover: #23a05038 !important;
+  --color-background-brand-solid-action-button: #ffffff3d !important;
+  --color-background-brand-solid-action-button-active: #23a05038 !important;
+  --color-background-brand-solid-action-button-hover: #23a05038 !important;
+  --color-background-brand-subtle-action-button: #ffffff3d !important;
+  --color-background-brand-subtle-action-button-active: #23a05038 !important;
+  --color-background-brand-subtle-action-button-hover: #23a05038 !important;
+  --color-background-brand-text-action-button-active: #23a05038 !important;
+  --color-background-brand-text-action-button-hover: #23a05038 !important;
+  --color-background-button-inbox-focus: #23a05038 !important;
+  --color-background-button-inbox-selected: #23a05038 !important;
+  --color-background-compose-new-message-button: #ffffff80 !important;
+  --color-background-compose-new-message-button-active: #23a05038 !important;
+  --color-background-compose-new-message-button-hover: #23a05038 !important;
+  --color-background-danger-banner: #ffffff80 !important;
+  --color-background-danger-icon-button-square-active: #23a05038 !important;
+  --color-background-danger-icon-button-square-hover: #23a05038 !important;
+  --color-background-danger-solid-action-button: #ffffff3d !important;
+  --color-background-danger-solid-action-button-active: #23a05038 !important;
+  --color-background-danger-solid-action-button-hover: #23a05038 !important;
+  --color-background-danger-subtle-action-button: #ffffff3d !important;
+  --color-background-danger-subtle-action-button-active: #23a05038 !important;
+  --color-background-danger-subtle-action-button-hover: #23a05038 !important;
+  --color-background-danger-text-action-button-active: #23a05038 !important;
+  --color-background-danger-text-action-button-hover: #23a05038 !important;
+  --color-background-deactivated-user-pill: #ffffff3d !important;
+  --color-background-direct-mention: #ffffff3d !important;
+  --color-background-disabled-dropdown-widget-button: #ffffff80 !important;
+  --color-background-disabled-modal-select: #ffffff80 !important;
+  --color-background-disabled-settings-select: #ffffff3d !important;
+  --color-background-dropdown-widget: #ffffff80 !important;
+  --color-background-dropdown-widget-button: #ffffff80 !important;
+  --color-background-emoji-picker-emoji-focus: #23a05038 !important;
+  --color-background-emoji-picker-emoji-reacted: #ffffff3d !important;
+  --color-background-emoji-picker-emoji-reacted-focus: #23a05038 !important;
+  --color-background-emoji-picker-popover: #ffffff80 !important;
+  --color-background-emoji-picker-popover-tab-item-active: #23a05038 !important;
+  --color-background-error-main-view-banner: #ffffff80 !important;
+  --color-background-error-main-view-banner-action-button: #ffffff80 !important;
+  --color-background-error-main-view-banner-action-button-active: #23a05038 !important;
+  --color-background-error-main-view-banner-action-button-hover: #23a05038 !important;
+  --color-background-exit-hover-deactivated-user-pill: #23a05038 !important;
+  --color-background-group-mention: #ffffff3d !important;
+  --color-background-history-limited-box: #00000000 !important;
+  --color-background-hover-narrow-filter: #23a05038 !important;
+  --color-background-hover-popover-menu: #23a05038 !important;
+  --color-background-image-loader: #ffffff3d !important;
+  --color-background-image-thumbnail: #ffffff3d !important;
+  --color-background-image-thumbnail-hover: #23a05038 !important;
+  --color-background-inbox: #ffffff3d !important;
+  --color-background-inbox-no-unreads-illustration: #ffffff3d !important;
+  --color-background-inbox-row: #ffffff3d !important;
+  --color-background-inbox-row-hover: #23a05038 !important;
+  --color-background-inbox-search: #ffffff80 !important;
+  --color-background-inbox-search-focus: #23a05038 !important;
+  --color-background-inbox-search-hover: #23a05038 !important;
+  --color-background-info-banner: #ffffff80 !important;
+  --color-background-info-icon-button-square-active: #23a05038 !important;
+  --color-background-info-icon-button-square-hover: #23a05038 !important;
+  --color-background-info-main-view-banner: #ffffff80 !important;
+  --color-background-info-main-view-banner-action-button: #ffffff80 !important;
+  --color-background-info-main-view-banner-action-button-active: #23a05038 !important;
+  --color-background-info-main-view-banner-action-button-hover: #23a05038 !important;
+  --color-background-info-solid-action-button: #ffffff3d !important;
+  --color-background-info-solid-action-button-active: #23a05038 !important;
+  --color-background-info-solid-action-button-hover: #23a05038 !important;
+  --color-background-info-subtle-action-button: #ffffff3d !important;
+  --color-background-info-subtle-action-button-active: #23a05038 !important;
+  --color-background-info-subtle-action-button-hover: #23a05038 !important;
+  --color-background-info-text-action-button-active: #23a05038 !important;
+  --color-background-info-text-action-button-hover: #23a05038 !important;
+  --color-background-input: #ffffff80 !important;
+  --color-background-input-focus: #23a05038 !important;
+  --color-background-input-pill: #ffffff80 !important;
+  --color-background-input-pill-exit-hover: #23a05038 !important;
+  --color-background-input-pill-hover: #23a05038 !important;
+  --color-background-input-pill-search: #ffffff80 !important;
+  --color-background-integration-url: #00000000 !important;
+  --color-background-legacy-input: #ffffff80 !important;
+  --color-background-main-view-banner-moving-bar: #ffffff80 !important;
+  --color-background-modal: #ffffff80 !important;
+  --color-background-modal-bar: #ffffff80 !important;
+  --color-background-modal-cancel-button-active: #23a05038 !important;
+  --color-background-modal-cancel-button-hover: #23a05038 !important;
+  --color-background-modal-confirm-button: #ffffff80 !important;
+  --color-background-modal-confirm-button-active: #23a05038 !important;
+  --color-background-modal-confirm-button-hover: #23a05038 !important;
+  --color-background-modal-overlay: #ffffff80 !important;
+  --color-background-navbar: #ffffff3d !important;
+  --color-background-navigation-item-hover: #23a05038 !important;
+  --color-background-neutral-banner: #ffffff80 !important;
+  --color-background-neutral-icon-button-square-active: #23a05038 !important;
+  --color-background-neutral-icon-button-square-hover: #23a05038 !important;
+  --color-background-neutral-solid-action-button: #ffffff3d !important;
+  --color-background-neutral-solid-action-button-active: #23a05038 !important;
+  --color-background-neutral-solid-action-button-hover: #23a05038 !important;
+  --color-background-neutral-subtle-action-button: #ffffff3d !important;
+  --color-background-neutral-subtle-action-button-active: #23a05038 !important;
+  --color-background-neutral-subtle-action-button-hover: #23a05038 !important;
+  --color-background-neutral-text-action-button-active: #23a05038 !important;
+  --color-background-neutral-text-action-button-hover: #23a05038 !important;
+  --color-background-non-empty-overlay-indicator: #ffffff3d !important;
+  --color-background-notification-table-thead: #ffffff3d !important;
+  --color-background-overlay: #ffffff3d !important;
+  --color-background-pill-container: #ffffff80 !important;
+  --color-background-pill-container-input-disabled: #ffffff80 !important;
+  --color-background-pill-container-without-placeholder: #ffffff80 !important;
+  --color-background-poll-vote-focus: #23a05038 !important;
+  --color-background-poll-vote-hover: #23a05038 !important;
+  --color-background-popover: #ffffff80 !important;
+  --color-background-popover-menu: #ffffff80 !important;
+  --color-background-private-message-content: #ffffff3d !important;
+  --color-background-private-message-header: #ffffff3d !important;
+  --color-background-recent-filters-button-disabled: #ffffff3d !important;
+  --color-background-recent-filters-button-focus: #23a05038 !important;
+  --color-background-recent-view-participant-overflow: #ffffff3d !important;
+  --color-background-recent-view-row: #ffffff3d !important;
+  --color-background-recent-view-row-hover: #23a05038 !important;
+  --color-background-recent-view-table-thead-sort-header: #ffffff3d !important;
+  --color-background-recent-view-table-thead-th: #ffffff3d !important;
+  --color-background-rendered-markdown-thead: #ffffff3d !important;
+  --color-background-rendered-markdown-time: #ffffff3d !important;
+  --color-background-search: #ffffff80 !important;
+  --color-background-search-collapsed: #ffffff80 !important;
+  --color-background-search-highlight: #ffffff80 !important;
+  --color-background-search-option-hover: #23a05038 !important;
+  --color-background-settings-plus-button: #ffffff3d !important;
+  --color-background-sidebar-action-heading-hover: #23a05038 !important;
+  --color-background-sidebar-action-hover: #23a05038 !important;
+  --color-background-simplebar-scrollbar: #ffffff3d !important;
+  --color-background-stream-email: #ffffff3d !important;
+  --color-background-stream-message-content: #ffffff3d !important;
+  --color-background-success-banner: #ffffff80 !important;
+  --color-background-success-icon-button-square-active: #23a05038 !important;
+  --color-background-success-icon-button-square-hover: #23a05038 !important;
+  --color-background-success-main-view-banner: #ffffff80 !important;
+  --color-background-success-main-view-banner-action-button: #ffffff80 !important;
+  --color-background-success-main-view-banner-action-button-active: #23a05038 !important;
+  --color-background-success-main-view-banner-action-button-hover: #23a05038 !important;
+  --color-background-success-solid-action-button: #ffffff3d !important;
+  --color-background-success-solid-action-button-active: #23a05038 !important;
+  --color-background-success-solid-action-button-hover: #23a05038 !important;
+  --color-background-success-subtle-action-button: #ffffff3d !important;
+  --color-background-success-subtle-action-button-active: #23a05038 !important;
+  --color-background-success-subtle-action-button-hover: #23a05038 !important;
+  --color-background-success-text-action-button-active: #23a05038 !important;
+  --color-background-success-text-action-button-hover: #23a05038 !important;
+  --color-background-tab-picker-container: #ffffff80 !important;
+  --color-background-tab-picker-selected-tab: #23a05038 !important;
+  --color-background-tab-picker-tab-option-active: #23a05038 !important;
+  --color-background-tab-picker-tab-option-hover: #23a05038 !important;
+  --color-background-tab-switcher-ind-tab: #ffffff3d !important;
+  --color-background-tab-switcher-ind-tab-selected: #23a05038 !important;
+  --color-background-table-header: #ffffff3d !important;
+  --color-background-table-header-sortable-hover: #23a05038 !important;
+  --color-background-tbody-th-odd: #00000000 !important;
+  --color-background-text-direct-mention: #23a050 !important;
+  --color-background-text-group-mention: #23a050 !important;
+  --color-background-text-hover-direct-mention: #23a050 !important;
+  --color-background-text-hover-group-mention: #23a050 !important;
+  --color-background-tip: #ffffff3d !important;
+  --color-background-tippy-box: #ffffff3d !important;
+  --color-background-todo-checkbox-checked: #ffffff3d !important;
+  --color-background-todo-checkbox-hover: #00000000 !important;
+  --color-background-unread-counter: #23a050 !important;
+  --color-background-unread-counter-dot: #23a050 !important;
+  --color-background-unread-counter-no-alpha: #23a050 !important;
+  --color-background-unread-counter-normal: #23a050 !important;
+  --color-background-unread-counter-prominent: #23a050 !important;
+  --color-background-unread-counter-quiet: #00000000 !important;
+  --color-background-user-pill: #ffffff3d !important;
+  --color-background-warning-banner: #ffffff80 !important;
+  --color-background-warning-icon-button-square-active: #23a05038 !important;
+  --color-background-warning-icon-button-square-hover: #23a05038 !important;
+  --color-background-warning-main-view-banner: #ffffff80 !important;
+  --color-background-warning-main-view-banner-action-button: #ffffff80 !important;
+  --color-background-warning-main-view-banner-action-button-active: #23a05038 !important;
+  --color-background-warning-main-view-banner-action-button-hover: #23a05038 !important;
+  --color-background-warning-solid-action-button: #ffffff3d !important;
+  --color-background-warning-solid-action-button-active: #23a05038 !important;
+  --color-background-warning-solid-action-button-hover: #23a05038 !important;
+  --color-background-warning-subtle-action-button: #ffffff3d !important;
+  --color-background-warning-subtle-action-button-active: #23a05038 !important;
+  --color-background-warning-subtle-action-button-hover: #23a05038 !important;
+  --color-background-warning-text-action-button-active: #23a05038 !important;
+  --color-background-warning-text-action-button-hover: #23a05038 !important;
+  --color-background-white-box: #ffffff3d !important;
+  --color-background-widget-button: #ffffff3d !important;
+  --color-background-widget-input: #ffffff80 !important;
+  --color-background-zulip-button: #ffffff3d !important;
+  --color-background-zulip-button-active: #23a05038 !important;
+  --color-background-zulip-button-disabled: #ffffff3d !important;
+  --color-background-zulip-button-hover: #23a05038 !important;
+  --color-border-add-subscription-button-focus: #23a050 !important;
+  --color-border-brand-banner: #23a050 !important;
+  --color-border-compose-content: #23a050 !important;
+  --color-border-compose-new-message-button: #23a050 !important;
+  --color-border-compose-new-message-button-active: #23a050 !important;
+  --color-border-compose-new-message-button-hover: #23a050 !important;
+  --color-border-danger-banner: #23a050 !important;
+  --color-border-dropdown-widget: #23a050 !important;
+  --color-border-dropdown-widget-button: #23a050 !important;
+  --color-border-emoji-picker-emoji-reacted: #23a050 !important;
+  --color-border-emoji-picker-tippy-arrow: #23a050 !important;
+  --color-border-error-main-view-banner: #23a050 !important;
+  --color-border-inbox-folder-component: #23a050 !important;
+  --color-border-inbox-search: #23a050 !important;
+  --color-border-inbox-search-focus: #23a050 !important;
+  --color-border-inbox-search-hover: #23a050 !important;
+  --color-border-info-banner: #23a050 !important;
+  --color-border-info-main-view-banner: #23a050 !important;
+  --color-border-input-pill-image: #23a050 !important;
+  --color-border-legacy-input: #23a050 !important;
+  --color-border-legacy-input-focus: #23a050 !important;
+  --color-border-manage-profile-footer: #23a050 !important;
+  --color-border-message-group-spacer-line: #23a050 !important;
+  --color-border-modal: #23a050 !important;
+  --color-border-modal-bar: #23a050 !important;
+  --color-border-neutral-banner: #23a050 !important;
+  --color-border-personal-menu-avatar: #23a050 !important;
+  --color-border-pill-container: #23a050 !important;
+  --color-border-poll-vote: #23a050 !important;
+  --color-border-poll-vote-focus: #23a050 !important;
+  --color-border-poll-vote-hover: #23a050 !important;
+  --color-border-popover-hotkey-hint: #23a050 !important;
+  --color-border-popover-menu: #23a050 !important;
+  --color-border-popover-menu-separator: #23a050 !important;
+  --color-border-recent-filters-button-disabled: #23a050 !important;
+  --color-border-recent-view-table: #23a050 !important;
+  --color-border-rendered-checkbox: #23a050 !important;
+  --color-border-rendered-markdown-table: #23a050 !important;
+  --color-border-settings-plus-button: #23a050 !important;
+  --color-border-sidebar: #23a050 !important;
+  --color-border-sidebar-subheader: #23a050 !important;
+  --color-border-success-banner: #23a050 !important;
+  --color-border-success-main-view-banner: #23a050 !important;
+  --color-border-tab-switcher-ind-tab: #23a050 !important;
+  --color-border-tab-switcher-ind-tab-disabled: #23a050 !important;
+  --color-border-tab-switcher-ind-tab-selected: #23a050 !important;
+  --color-border-table-bordered: #23a050 !important;
+  --color-border-table-striped: #23a050 !important;
+  --color-border-table-subscriber-list: #23a050 !important;
+  --color-border-tip: #23a050 !important;
+  --color-border-todo-checkbox: #23a050 !important;
+  --color-border-todo-checkbox-checked: #23a050 !important;
+  --color-border-todo-checkbox-hover: #23a050 !important;
+  --color-border-unread-counter: #23a050 !important;
+  --color-border-unread-counter-popover-menu: #23a050 !important;
+  --color-border-user-profile-list-container: #23a050 !important;
+  --color-border-user-profile-table: #23a050 !important;
+  --color-border-warning-banner: #23a050 !important;
+  --color-border-warning-main-view-banner: #23a050 !important;
+  --color-border-zulip-button: #23a050 !important;
+  --color-border-zulip-button-interactive: #23a050 !important;
+  --color-box-shadow-animated-purple-button-focus: #2a2d2d2b !important;
+  --color-box-shadow-emoji-picker-emoji-focus: #00000000 !important;
+  --color-box-shadow-inbox-search-focus: #2a2d2d2b !important;
+  --color-box-shadow-input-focus: #2a2d2d2b !important;
+  --color-box-shadow-rendered-markdown-time: #2a2d2d2b !important;
+  --color-box-shadow-simplebar-scrollbar: #2a2d2d2b !important;
+  --color-buddy-list-avatar-loading: #2a2d2d !important;
+  --color-buddy-list-highlighted-user: #23a05038 !important;
+  --color-close-deactivated-user-pill: #626a6a !important;
+  --color-compose-box-background: #ffffff80 !important;
+  --color-compose-chevron-arrow: #2a2d2d !important;
+  --color-compose-collapsed-reply-button-area-background: #ffffff80 !important;
+  --color-compose-collapsed-reply-button-area-background-interactive: #23a05038 !important;
+  --color-compose-collapsed-reply-button-area-border: #23a050 !important;
+  --color-compose-collapsed-reply-button-area-border-interactive: #23a050 !important;
+  --color-compose-control-button-background-hover: #23a05038 !important;
+  --color-compose-embedded-button-background: #00000000 !important;
+  --color-compose-embedded-button-background-hover: #23a05038 !important;
+  --color-compose-embedded-button-background-interactive: #23a05038 !important;
+  --color-compose-embedded-button-text-color: #2a2d2d !important;
+  --color-compose-embedded-button-text-color-hover: #2a2d2d !important;
+  --color-compose-focus-ring: #23a05038 !important;
+  --color-compose-formatting-button-divider: #23a050 !important;
+  --color-compose-message-content-background: #ffffff80 !important;
+  --color-compose-message-content-background-approaching-limit: #ffffff80 !important;
+  --color-compose-message-content-background-over-limit: #ffffff80 !important;
+  --color-compose-recipient-box-background-color: #ffffff80 !important;
+  --color-compose-recipient-box-border-color: #23a050 !important;
+  --color-compose-recipient-box-has-focus: #23a05038 !important;
+  --color-compose-recipient-box-hover: #23a05038 !important;
+  --color-compose-recipient-box-text-color: #2a2d2d !important;
+  --color-compose-scroll-icon: #2a2d2d !important;
+  --color-compose-send-button-background: #23a050 !important;
+  --color-compose-send-button-background-interactive: #23a050 !important;
+  --color-compose-send-button-focus-border: #23a050 !important;
+  --color-compose-send-button-focus-shadow: #2a2d2d2b !important;
+  --color-compose-send-button-icon-color: #ffffff !important;
+  --color-compose-send-control-button: #2a2d2d !important;
+  --color-compose-send-control-button-background: #00000000 !important;
+  --color-compose-send-control-button-background-interactive: #23a05038 !important;
+  --color-compose-send-control-button-focus-shadow: #2a2d2d2b !important;
+  --color-compose-send-control-button-interactive: #23a05038 !important;
+  --color-composebox-button: #2a2d2d !important;
+  --color-composebox-button-background: #ffffff80 !important;
+  --color-composebox-button-background-hover: #23a05038 !important;
+  --color-composebox-button-hover: #23a05038 !important;
+  --color-copy-button: #2a2d2d !important;
+  --color-copy-button-active: #23a05038 !important;
+  --color-copy-button-hover: #23a05038 !important;
+  --color-copy-button-square-active: #23a05038 !important;
+  --color-copy-button-square-bg-active: #23a05038 !important;
+  --color-copy-button-square-bg-hover: #23a05038 !important;
+  --color-copy-button-success: #2a2d2d !important;
+  --color-current-setting-dropdown-item: #23a05038 !important;
+  --color-date: #626a6a !important;
+  --color-dropdown-item: #2a2d2d !important;
+  --color-dropdown-item-link-underline: #23a050 !important;
+  --color-error-main-view-banner: #2a2d2d !important;
+  --color-error-main-view-banner-action-button: #2a2d2d !important;
+  --color-error-main-view-banner-close-button: #2a2d2d !important;
+  --color-error-main-view-banner-close-button-active: #23a05038 !important;
+  --color-error-main-view-banner-close-button-hover: #23a05038 !important;
+  --color-exit-button-background: #ffffff3d !important;
+  --color-exit-button-background-interactive: #23a05038 !important;
+  --color-exit-button-text: #2a2d2d !important;
+  --color-failed-message-send-icon: #2a2d2d !important;
+  --color-fill-hover-copy-icon: #2a2d2d !important;
+  --color-fill-user-invite-copy-icon: #2a2d2d !important;
+  --color-focus-outline-deactivated-user-pill: #23a050 !important;
+  --color-focus-outline-input-pill: #23a050 !important;
+  --color-folder-header: #2a2d2d !important;
+  --color-gear-menu-blue-text: #2a2d2d !important;
+  --color-gear-menu-lighter-text: #2a2d2d !important;
+  --color-header-button-focus: #23a05038 !important;
+  --color-header-button-focus-no-alpha: #23a05038 !important;
+  --color-header-button-hover: #23a05038 !important;
+  --color-header-button-hover-no-alpha: #23a05038 !important;
+  --color-hotkey-hint: #2a2d2d !important;
+  --color-hovered-gif-in-grid-picker: #23a05038 !important;
+  --color-icon-bot: #2a2d2d !important;
+  --color-icon-purple: #2a2d2d !important;
+  --color-icon-search-inbox: #2a2d2d !important;
+  --color-icons-inbox: #2a2d2d !important;
+  --color-inbox-row-chevron: #2a2d2d !important;
+  --color-inbox-search-text: #2a2d2d !important;
+  --color-info-density-button-hover-background: #23a05038 !important;
+  --color-info-density-button-icon: #2a2d2d !important;
+  --color-info-density-control-border: #23a050 !important;
+  --color-info-main-view-banner: #2a2d2d !important;
+  --color-info-main-view-banner-action-button: #2a2d2d !important;
+  --color-info-main-view-banner-close-button: #2a2d2d !important;
+  --color-info-main-view-banner-close-button-active: #23a05038 !important;
+  --color-info-main-view-banner-close-button-hover: #23a05038 !important;
+  --color-inner-shadow-action-button: #2a2d2d2b !important;
+  --color-input-pill-close: #2a2d2d !important;
+  --color-invalid-input-border: #23a050 !important;
+  --color-invalid-input-box-shadow: #2a2d2d2b !important;
+  --color-kbd-background: #ffffff3d !important;
+  --color-kbd-border: #23a050 !important;
+  --color-kbd-enter-sends: #2a2d2d !important;
+  --color-kbd-text: #2a2d2d !important;
+  --color-left-sidebar-direct-messages-bottom-divider: #23a050 !important;
+  --color-left-sidebar-dm-partners-icon: #2a2d2d !important;
+  --color-left-sidebar-follow-icon-hover: #2a2d2d !important;
+  --color-left-sidebar-inner-box-shadow: #2a2d2d2b !important;
+  --color-left-sidebar-middle-box-shadow: #2a2d2d2b !important;
+  --color-left-sidebar-middle-box-shadow-hover: #2a2d2d2b !important;
+  --color-left-sidebar-navigation-icon: #2a2d2d !important;
+  --color-left-sidebar-outer-box-shadow: #2a2d2d2b !important;
+  --color-left-sidebar-outer-box-shadow-hover: #2a2d2d2b !important;
+  --color-limit-indicator: #2a2d2d !important;
+  --color-limit-indicator-over-limit: #2a2d2d !important;
+  --color-main-view-banner-action-link: #23a050 !important;
+  --color-markdown-code-background: #ffffff80 !important;
+  --color-markdown-code-background-mentions: #ffffff80 !important;
+  --color-markdown-code-link: #23a050 !important;
+  --color-markdown-code-link-hover: #23a050 !important;
+  --color-markdown-code-text: #2a2d2d !important;
+  --color-markdown-link: #23a050 !important;
+  --color-markdown-link-alert-word: #23a050 !important;
+  --color-markdown-link-alert-word-hover: #23a050 !important;
+  --color-markdown-link-highlight: #23a050 !important;
+  --color-markdown-link-highlight-hover: #23a050 !important;
+  --color-markdown-link-hover: #23a050 !important;
+  --color-markdown-pre-background: #ffffff80 !important;
+  --color-markdown-pre-background-mentions: #ffffff80 !important;
+  --color-markdown-pre-border: #00000000 !important;
+  --color-markdown-pre-border-mentions: #00000000 !important;
+  --color-markdown-pre-text: #2a2d2d !important;
+  --color-masked-unread-marker: #23a050 !important;
+  --color-message-action-interactive: #23a05038 !important;
+  --color-message-action-visible: #2a2d2d !important;
+  --color-message-content-container-border: #23a050 !important;
+  --color-message-content-container-border-approaching-limit: #23a050 !important;
+  --color-message-content-container-border-focus: #23a050 !important;
+  --color-message-content-container-border-over-limit: #23a050 !important;
+  --color-message-edit-history-background-deleted: #ffffff3d !important;
+  --color-message-edit-history-background-inserted: #ffffff3d !important;
+  --color-message-edit-history-text-deleted: #2a2d2d !important;
+  --color-message-edit-history-text-inserted: #2a2d2d !important;
+  --color-message-formatting-controls-container: #ffffff80 !important;
+  --color-message-header-contents-border: #23a050 !important;
+  --color-message-header-contents-border-bottom: #23a050 !important;
+  --color-message-header-icon-interactive: #2a2d2d !important;
+  --color-message-header-icon-non-interactive: #2a2d2d !important;
+  --color-message-list-border: #23a050 !important;
+  --color-message-reaction-background: #ffffff3d !important;
+  --color-message-reaction-background-hover: #23a05038 !important;
+  --color-message-reaction-background-reacted: #ffffff3d !important;
+  --color-message-reaction-border: #23a050 !important;
+  --color-message-reaction-border-reacted: #23a050 !important;
+  --color-message-reaction-button-background: #ffffff3d !important;
+  --color-message-reaction-button-background-hover: #23a05038 !important;
+  --color-message-reaction-button-border: #00000000 !important;
+  --color-message-reaction-button-border-hover: #23a050 !important;
+  --color-message-reaction-button-text: #2a2d2d !important;
+  --color-message-reaction-button-text-hover: #2a2d2d !important;
+  --color-message-reaction-shadow-inner: #2a2d2d2b !important;
+  --color-message-reaction-text: #2a2d2d !important;
+  --color-message-reaction-text-reacted: #2a2d2d !important;
+  --color-message-star-action: #2a2d2d !important;
+  --color-modal-heading-text: #2a2d2d !important;
+  --color-modal-selectable-icon: #2a2d2d !important;
+  --color-modal-selectable-icon-hover: #2a2d2d !important;
+  --color-narrow-to-compose-recipients: #2a2d2d !important;
+  --color-narrow-to-compose-recipients-background: #ffffff80 !important;
+  --color-narrow-to-compose-recipients-background-hover: #23a05038 !important;
+  --color-narrow-to-compose-recipients-hover: #2a2d2d !important;
+  --color-navbar-bottom-border: #23a050 !important;
+  --color-navbar-icon: #2a2d2d !important;
+  --color-navbar-spectator-low-attention-brand-button-background: #00000000 !important;
+  --color-navbar-spectator-low-attention-brand-button-background-active: #23a05038 !important;
+  --color-navbar-spectator-low-attention-brand-button-background-hover: #23a05038 !important;
+  --color-navbar-spectator-low-attention-brand-button-text: #2a2d2d !important;
+  --color-navbar-spectator-medium-attention-brand-button-background: #ffffff3d !important;
+  --color-navbar-spectator-medium-attention-brand-button-background-active: #23a05038 !important;
+  --color-navbar-spectator-medium-attention-brand-button-background-hover: #23a05038 !important;
+  --color-navbar-spectator-medium-attention-brand-button-text: #2a2d2d !important;
+  --color-outline-button-focus: #23a050 !important;
+  --color-outline-focus: #23a050 !important;
+  --color-outline-input: #23a050 !important;
+  --color-outline-input-focus: #23a050 !important;
+  --color-outline-input-hover: #23a050 !important;
+  --color-outline-low-attention-input-pill: #23a050 !important;
+  --color-outline-tab-picker-tab-option: #23a050 !important;
+  --color-poll-names: #2a2d2d !important;
+  --color-poll-vote: #2a2d2d !important;
+  --color-poll-vote-focus: #23a05038 !important;
+  --color-poll-vote-hover: #23a05038 !important;
+  --color-popover-hotkey-hint: #2a2d2d !important;
+  --color-private-message-header-border: #23a050 !important;
+  --color-private-message-header-border-bottom: #23a050 !important;
+  --color-realm-enable-spectator-access-link: #23a050 !important;
+  --color-recent-view-link: #23a050 !important;
+  --color-recent-view-link-unread: #23a050 !important;
+  --color-recent-view-loading-spinner: #2a2d2d !important;
+  --color-recent-view-participant-overflow-text: #2a2d2d !important;
+  --color-recipient-bar-controls-spinner: #2a2d2d !important;
+  --color-request-progress-status-alert-text: #2a2d2d !important;
+  --color-search-box-hover-shadow: #2a2d2d2b !important;
+  --color-search-dropdown-top-border: #23a050 !important;
+  --color-search-icons: #2a2d2d !important;
+  --color-search-shadow-tight: #2a2d2d2b !important;
+  --color-search-shadow-wide: #2a2d2d2b !important;
+  --color-selected-gif-in-grid-picker: #23a05038 !important;
+  --color-selected-message-outline: #23a050 !important;
+  --color-shadow-sidebar-row-hover: #2a2d2d2b !important;
+  --color-show-more-less-button-background: #ffffff3d !important;
+  --color-show-more-less-button-background-active: #23a05038 !important;
+  --color-show-more-less-button-background-hover: #23a05038 !important;
+  --color-sidebar-action: #2a2d2d !important;
+  --color-sidebar-action-hover: #23a05038 !important;
+  --color-stream-group-row-checked-icon: #2a2d2d !important;
+  --color-stream-group-row-checked-icon-disabled: #626a6a !important;
+  --color-stream-group-row-checked-icon-hover: #2a2d2d !important;
+  --color-stream-group-row-plus-icon: #2a2d2d !important;
+  --color-stream-group-row-plus-icon-disabled: #626a6a !important;
+  --color-stream-group-row-plus-icon-hover: #2a2d2d !important;
+  --color-success-main-view-banner: #2a2d2d !important;
+  --color-success-main-view-banner-close-button: #2a2d2d !important;
+  --color-success-main-view-banner-close-button-active: #23a05038 !important;
+  --color-success-main-view-banner-close-button-hover: #23a05038 !important;
+  --color-tab-picker-icon: #2a2d2d !important;
+  --color-text-active-narrow-filter: #2a2d2d !important;
+  --color-text-alert-word: #2a2d2d !important;
+  --color-text-brand-banner: #2a2d2d !important;
+  --color-text-brand-icon-button: #2a2d2d !important;
+  --color-text-brand-icon-button-active: #2a2d2d !important;
+  --color-text-brand-icon-button-hover: #2a2d2d !important;
+  --color-text-brand-icon-button-square-active: #2a2d2d !important;
+  --color-text-brand-solid-action-button: #2a2d2d !important;
+  --color-text-brand-subtle-action-button: #2a2d2d !important;
+  --color-text-brand-text-action-button: #2a2d2d !important;
+  --color-text-clear-search-button: #2a2d2d !important;
+  --color-text-clear-search-button-hover: #2a2d2d !important;
+  --color-text-danger-banner: #2a2d2d !important;
+  --color-text-danger-icon-button: #2a2d2d !important;
+  --color-text-danger-icon-button-active: #2a2d2d !important;
+  --color-text-danger-icon-button-hover: #2a2d2d !important;
+  --color-text-danger-icon-button-square-active: #2a2d2d !important;
+  --color-text-danger-solid-action-button: #2a2d2d !important;
+  --color-text-danger-subtle-action-button: #2a2d2d !important;
+  --color-text-danger-text-action-button: #2a2d2d !important;
+  --color-text-default: #2a2d2d !important;
+  --color-text-dropdown-input: #2a2d2d !important;
+  --color-text-empty-list-message: #2a2d2d !important;
+  --color-text-full-name: #2a2d2d !important;
+  --color-text-generic-link: #23a050 !important;
+  --color-text-generic-link-interactive: #23a050 !important;
+  --color-text-info-banner: #2a2d2d !important;
+  --color-text-info-icon-button: #2a2d2d !important;
+  --color-text-info-icon-button-active: #2a2d2d !important;
+  --color-text-info-icon-button-hover: #2a2d2d !important;
+  --color-text-info-icon-button-square-active: #2a2d2d !important;
+  --color-text-info-solid-action-button: #2a2d2d !important;
+  --color-text-info-subtle-action-button: #2a2d2d !important;
+  --color-text-info-text-action-button: #2a2d2d !important;
+  --color-text-input: #2a2d2d !important;
+  --color-text-item: #2a2d2d !important;
+  --color-text-link: #23a050 !important;
+  --color-text-link-active: #23a050 !important;
+  --color-text-link-banner: #23a050 !important;
+  --color-text-link-decoration: #23a050 !important;
+  --color-text-link-decoration-hover: #23a050 !important;
+  --color-text-link-hover: #23a050 !important;
+  --color-text-message-blockquote-border: #23a050 !important;
+  --color-text-message-default: #2a2d2d !important;
+  --color-text-message-header: #2a2d2d !important;
+  --color-text-message-header-archived: #2a2d2d !important;
+  --color-text-message-view-header: #2a2d2d !important;
+  --color-text-modal-cancel-button: #2a2d2d !important;
+  --color-text-neutral-banner: #2a2d2d !important;
+  --color-text-neutral-icon-button: #2a2d2d !important;
+  --color-text-neutral-icon-button-active: #2a2d2d !important;
+  --color-text-neutral-icon-button-hover: #2a2d2d !important;
+  --color-text-neutral-icon-button-square-active: #2a2d2d !important;
+  --color-text-neutral-solid-action-button: #2a2d2d !important;
+  --color-text-neutral-subtle-action-button: #2a2d2d !important;
+  --color-text-neutral-text-action-button: #2a2d2d !important;
+  --color-text-other-mention: #ffffff !important;
+  --color-text-personal-menu-no-status: #2a2d2d !important;
+  --color-text-personal-menu-some-status: #2a2d2d !important;
+  --color-text-placeholder: #626a6a !important;
+  --color-text-popover-menu: #2a2d2d !important;
+  --color-text-recent-view-last-msg-time: #2a2d2d !important;
+  --color-text-recent-view-last-msg-time-unread: #2a2d2d !important;
+  --color-text-recent-view-table-thead-th: #2a2d2d !important;
+  --color-text-scroll-to-bottom-button: #2a2d2d !important;
+  --color-text-search: #2a2d2d !important;
+  --color-text-search-highlight: #2a2d2d !important;
+  --color-text-search-hover: #2a2d2d !important;
+  --color-text-search-placeholder: #626a6a !important;
+  --color-text-self-direct-mention: #ffffff !important;
+  --color-text-self-group-mention: #ffffff !important;
+  --color-text-sender-name: #23a050 !important;
+  --color-text-sender-name-hover: #23a050 !important;
+  --color-text-settings-field-hint: #2a2d2d !important;
+  --color-text-settings-plus-button: #2a2d2d !important;
+  --color-text-show-more-less-button: #2a2d2d !important;
+  --color-text-sidebar-action-heading: #2a2d2d !important;
+  --color-text-sidebar-action-heading-hover: #2a2d2d !important;
+  --color-text-sidebar-base: #2a2d2d !important;
+  --color-text-sidebar-heading: #2a2d2d !important;
+  --color-text-sidebar-popover-menu: #2a2d2d !important;
+  --color-text-sidebar-row: #2a2d2d !important;
+  --color-text-success-banner: #2a2d2d !important;
+  --color-text-success-icon-button: #2a2d2d !important;
+  --color-text-success-icon-button-active: #2a2d2d !important;
+  --color-text-success-icon-button-hover: #2a2d2d !important;
+  --color-text-success-icon-button-square-active: #2a2d2d !important;
+  --color-text-success-solid-action-button: #2a2d2d !important;
+  --color-text-success-subtle-action-button: #2a2d2d !important;
+  --color-text-success-text-action-button: #2a2d2d !important;
+  --color-text-tab-switcher-ind-tab-disabled: #626a6a !important;
+  --color-text-url: #2a2d2d !important;
+  --color-text-url-hover: #2a2d2d !important;
+  --color-text-user-card-secondary: #2a2d2d !important;
+  --color-text-warning-banner: #2a2d2d !important;
+  --color-text-warning-icon-button: #2a2d2d !important;
+  --color-text-warning-icon-button-active: #2a2d2d !important;
+  --color-text-warning-icon-button-hover: #2a2d2d !important;
+  --color-text-warning-icon-button-square-active: #2a2d2d !important;
+  --color-text-warning-solid-action-button: #2a2d2d !important;
+  --color-text-warning-subtle-action-button: #2a2d2d !important;
+  --color-text-warning-text-action-button: #2a2d2d !important;
+  --color-topic-indent-border: #23a050 !important;
+  --color-typeahead-option-label: #2a2d2d !important;
+  --color-unmuted-or-followed-topic-list-item: #626a6a !important;
+  --color-unread-counter-muted: #626a6a !important;
+  --color-unread-counter-normal: #ffffff !important;
+  --color-unread-counter-prominent: #ffffff !important;
+  --color-unread-counter-quiet: #626a6a !important;
+  --color-unread-marker: #23a050 !important;
+  --color-user-circle-active: #3dc06c !important;
+  --color-user-circle-deactivated: #626a6a !important;
+  --color-user-circle-idle: #626a6a !important;
+  --color-user-circle-offline: #626a6a !important;
+  --color-user-circle-offline-typeahead-highlight: #626a6a !important;
+  --color-user-profile-field-name: #2a2d2d !important;
+  --color-vdots-hint: #2a2d2d !important;
+  --color-vdots-hover: #2a2d2d !important;
+  --color-vdots-visible: #2a2d2d !important;
+  --color-warning-main-view-banner: #2a2d2d !important;
+  --color-warning-main-view-banner-action-button: #2a2d2d !important;
+  --color-warning-main-view-banner-close-button: #2a2d2d !important;
+  --color-warning-main-view-banner-close-button-active: #23a05038 !important;
+  --color-warning-main-view-banner-close-button-hover: #23a05038 !important;
+  --color-zulip-logo: #23a050 !important;
+  --color-zulip-logo-loading: #23a050 !important;
+  --color-zulip-logo-z: #ffffff !important;
+}
+
+/* Desktop shell colors from Zulip.app. Add custom CSS does not apply these rules. */
+:host {
+  background: #ffffff3d !important;
+  color: #2a2d2d !important;
+  --tagify-dd-color-primary: #2a2d2d !important;
+  --tagify-dd-bg-color: #2a2d2d !important;
+}}
+
+#version {
+  color: #2a2d2d !important;
+}}
+
+.about p {
+  color: #2a2d2d !important;
+}}
+
+.maintenance-info {
+  color: #2a2d2d !important;
+}}
+
+p.detail a {
+  color: #2a2d2d !important;
+}}
+
+@charset "UTF-8";:root {
+  --tagify-dd-color-primary: #2a2d2d !important;
+  --tagify-dd-text-color: #2a2d2d !important;
+  --tagify-dd-bg-color: #2a2d2d !important;
+}}
+
+.tagify {
+  --tags-disabled-bg: #2a2d2d !important;
+  --tags-border-color: #2a2d2d !important;
+  --tags-hover-border-color: #2a2d2d !important;
+  --tags-focus-border-color: #2a2d2d !important;
+  --tag-bg: #2a2d2d !important;
+  --tag-hover: #2a2d2d !important;
+  --tag-text-color: #2a2d2d !important;
+  --tag-text-color--edit: #2a2d2d !important;
+  --tag-invalid-color: #2a2d2d !important;
+  --tag-invalid-bg: #2a2d2d !important;
+  --tag-remove-bg: #2a2d2d !important;
+  --tag-remove-btn-color: #2a2d2d !important;
+  --tag-remove-btn-bg--hover: #2a2d2d !important;
+  --placeholder-color: #2a2d2d !important;
+  --placeholder-color-focus: #2a2d2d !important;
+}}
+
+0% {
+  background: linear-gradient(45deg,var(--tag-bg) 25%,#00000000 25%,#00000000 50%,var(--tag-bg) 50%,var(--tag-bg) 75%,#00000000 75%,#00000000) 0/5px 5px !important;
+}}
+
+.tagify--loading .tagify__input::after {
+  border-color: #23a050 #23a050 #23a050 #00000000 !important;
+}}
+
+.tagify__tag--loading::after {
+  border-color: #23a050 #23a050 #23a050 #00000000 !important;
+}}
+
+.tagify__tag__removeBtn:hover {
+  color: #2a2d2d !important;
+}}
+
+.tagify__tag__removeBtn:hover+div::before {
+  box-shadow: 0 0 0 var(--tag-inset-shadow-size) var(--tag-remove-bg,#2a2d2d2b) inset!important !important;
+}}
+
+.tagify__input:last-child:focus:empty::before {
+  color: #2a2d2d !important;
+}}
+
+.tagify--invalid {
+  --tags-border-color: #2a2d2d !important;
+}}
+
+.tagify__dropdown__wrapper {
+  box-shadow: 0 2px 4px -2px #2a2d2d2b !important;
+}}
+
+.tagify__dropdown__item--active {
+  color: #2a2d2d !important;
+}}
+
+kbd {
+  border: 1px solid #23a050 !important;
+  background-color: #ffffff80 !important;
+  color: #2a2d2d !important;
+  text-shadow: 0 1px 0 #2a2d2d2b !important;
+}}
+
+table, th, td {
+  color: #2a2d2d !important;
+}}
+
+#sidebar {
+  background: #ffffff80 !important;
+}}
+
+.nav {
+  color: #2a2d2d !important;
+}}
+
+.nav.active {
+  color: #2a2d2d !important;
+}}
+
+.nav.active::before {
+  background: #ffffff80 !important;
+}}
+
+#settings-header {
+  color: #2a2d2d !important;
+}}
+
+.title {
+  color: #2a2d2d !important;
+}}
+
+.page-title {
+  color: #2a2d2d !important;
+}}
+
+.sub-title {
+  color: #2a2d2d !important;
+}}
+
+.setting-input-key {
+  background: #00000000 !important;
+}}
+
+.setting-input-value {
+  border: #23a050 2px solid !important;
+  background: #00000000 !important;
+}}
+
+.setting-input-value:focus {
+  border: #23a050 2px solid !important;
+}}
+
+.invalid-input-value:focus {
+  border: #23a050 2px solid !important;
+}}
+
+.actions-container {
+  color: #2a2d2d !important;
+}}
+
+.action.disabled {
+  color: #2a2d2d !important;
+}}
+
+.settings-card {
+  background: #ffffff80 !important;
+}}
+
+.settings-card:hover {
+  box-shadow: 0 2px 5px 0 #2a2d2d2b, 0 2px 0 0 #2a2d2d2b !important;
+}}
+
+.red {
+  color: #2a2d2d !important;
+  background: #ffffff80 !important;
+  border: 2px solid #23a050 !important;
+}}
+
+.red:hover {
+  background-color: #ffffff80 !important;
+  color: #2a2d2d !important;
+}}
+
+.green {
+  color: #2a2d2d !important;
+  background: #ffffff80 !important;
+}}
+
+.green:hover {
+  background-color: #ffffff80 !important;
+  color: #2a2d2d !important;
+}}
+
+.grey {
+  color: #2a2d2d !important;
+  background: #ffffff80 !important;
+  border: 1px solid #23a050 !important;
+}}
+
+.selected-css-path, .download-folder-path {
+  background: #ffffff80 !important;
+}}
+
+.disallowed:hover {
+  background-color: #ffffff80 !important;
+}}
+
+input.toggle-round + label {
+  background-color: #ffffff80 !important;
+}}
+
+input.toggle-round + label::before {
+  background-color: #ffffff80 !important;
+}}
+
+input.toggle-round + label::after {
+  background-color: #ffffff80 !important;
+}}
+
+input.toggle-round:checked + label::before {
+  background-color: #ffffff80 !important;
+}}
+
+.add-server-modal {
+  background: linear-gradient( 35deg, #ffffff80, #ffffff80 ) !important;
+}}
+
+.modal-container {
+  background-color: #ffffff80 !important;
+  border: #23a050 1px solid !important;
+}}
+
+.divider {
+  color: #2a2d2d !important;
+}}
+
+.server-center button {
+  color: #2a2d2d !important;
+  background: #ffffff80 !important;
+}}
+
+.server-center button:hover {
+  background: #ffffff80 !important;
+}}
+
+.server-center button:focus {
+  background: #ffffff80 !important;
+}}
+
+.server-network-option {
+  color: #2a2d2d !important;
+}}
+
+.lang-menu {
+  background: #ffffff80 !important;
+  color: #2a2d2d !important;
+  border-color: #00000000 !important;
+}}
+
+.toggle-sidebar {
+  background: #ffffff3d !important;
+}}
+
+#view-controls-container::-webkit-scrollbar-track {
+  background-color: #ffffff3d !important;
+}}
+
+#view-controls-container::-webkit-scrollbar-thumb {
+  background-color: #ffffff3d !important;
+}}
+
+.action-button i {
+  color: #2a2d2d !important;
+}}
+
+.action-button:hover i {
+  color: #2a2d2d !important;
+}}
+
+.action-button > .dnd-on {
+  color: #2a2d2d !important;
+}}
+
+.action-button:hover > .dnd-on {
+  color: #2a2d2d !important;
+}}
+
+.action-button.active {
+  background-color: #ffffff3d !important;
+}}
+
+.action-button.active i {
+  color: #2a2d2d !important;
+}}
+
+.action-button.disable:hover i {
+  color: #2a2d2d !important;
+}}
+
+.tab .server-tab {
+  color: #2a2d2d !important;
+}}
+
+.server-tab .alt-icon {
+  border: 2px solid #23a050 !important;
+}}
+
+.tab.active .server-tab {
+  background-color: #ffffff3d !important;
+}}
+
+.tab.functional-tab.active .server-tab {
+  background-color: #ffffff3d !important;
+}}
+
+.tab .server-tab-badge.active {
+  background-color: #ffffff3d !important;
+  color: #2a2d2d !important;
+}}
+
+.tab .server-tab-shortcut {
+  color: #2a2d2d !important;
+}}
+
+#webviews-container::before {
+  background: #ffffff3d url("data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3csvg%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20style='margin:%20auto !important;
+}}
+
+webview.focus {
+  outline: 0 solid #00000000 !important;
+}}
+
+.webview-unsupported {
+  background: #ffffff3d !important;
+  border: 1px solid #23a050 !important;
+  color: #2a2d2d !important;
+}}
+
+#loading-tooltip, #dnd-tooltip, #back-tooltip, #reload-tooltip, #setting-tooltip {
+  background: #ffffff3d !important;
+  color: #2a2d2d !important;
+}}
+
+#loading-tooltip::after, #dnd-tooltip::after, #back-tooltip::after, #reload-tooltip::after, #setting-tooltip::after {
+  border-top: 8px solid #00000000 !important;
+  border-bottom: 8px solid #00000000 !important;
+  border-right: 8px solid #23a050 !important;
+}}
+
+#add-server-tooltip, .server-tooltip {
+  background: #ffffff3d !important;
+  color: #2a2d2d !important;
+}}
+
+#add-server-tooltip::after, .server-tooltip::after {
+  border-top: 8px solid #00000000 !important;
+  border-bottom: 8px solid #00000000 !important;
+  border-right: 8px solid #23a050 !important;
+}}
+
+#collapse-button {
+  background: #ffffff3d !important;
+  box-shadow: #2a2d2d2b 1px 1px !important;
+}}
+
+#collapse-button i {
+  color: #2a2d2d !important;
+}}
+
+.popup .popuptext {
+  background-color: #ffffff3d !important;
+  color: #2a2d2d !important;
+}}
+
+html, body {
+  color: #2a2d2d !important;
+  background: #ffffff3d !important;
+}}
+
+.button {
+  background: #ffffff3d !important;
+  color: #2a2d2d !important;
+}}
